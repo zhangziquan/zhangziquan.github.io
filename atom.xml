@@ -5,9 +5,9 @@
   <subtitle>zhangzq&#39;s index</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="ziquanzhang.ink/"/>
+  <link href="http://ziquanzhang.ink/"/>
   <updated>2018-09-04T10:58:54.147Z</updated>
-  <id>ziquanzhang.ink/</id>
+  <id>http://ziquanzhang.ink/</id>
   
   <author>
     <name>zhang ziquan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="ziquanzhang.ink/2018/09/04/hello-world/"/>
-    <id>ziquanzhang.ink/2018/09/04/hello-world/</id>
+    <link href="http://ziquanzhang.ink/2018/09/04/hello-world/"/>
+    <id>http://ziquanzhang.ink/2018/09/04/hello-world/</id>
     <published>2018-09-04T10:58:54.147Z</published>
     <updated>2018-09-04T10:58:54.147Z</updated>
     
