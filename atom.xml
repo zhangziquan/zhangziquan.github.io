@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ziquanzhang.ink/"/>
-  <updated>2018-09-04T10:58:54.147Z</updated>
+  <updated>2018-09-05T08:00:57.312Z</updated>
   <id>http://ziquanzhang.ink/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>I am a title</title>
+    <link href="http://ziquanzhang.ink/2018/09/05/I-am-a-title-1/"/>
+    <id>http://ziquanzhang.ink/2018/09/05/I-am-a-title-1/</id>
+    <published>2018-09-05T07:59:00.000Z</published>
+    <updated>2018-09-05T08:00:57.312Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="I-am-the-text"><a href="#I-am-the-text" class="headerlink" title="I am the text"></a>I am the text</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;I-am-the-text&quot;&gt;&lt;a href=&quot;#I-am-the-text&quot; class=&quot;headerlink&quot; title=&quot;I am the text&quot;&gt;&lt;/a&gt;I am the text&lt;/h3&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="test" scheme="http://ziquanzhang.ink/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
