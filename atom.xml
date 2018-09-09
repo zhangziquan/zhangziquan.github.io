@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ziquanzhang.ink/"/>
-  <updated>2018-09-09T04:50:28.191Z</updated>
+  <updated>2018-09-09T04:51:47.040Z</updated>
   <id>http://ziquanzhang.ink/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/"/>
     <id>http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/</id>
     <published>2018-09-09T02:46:00.000Z</published>
-    <updated>2018-09-09T04:50:28.191Z</updated>
+    <updated>2018-09-09T04:51:47.040Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Sort-Colors"><a href="#Sort-Colors" class="headerlink" title="Sort Colors"></a>Sort Colors</h1><p><a href="https://leetcode.com/problems/sort-colors/description/&quot;" target="_blank" rel="noopener">题目链接</a></p><hr><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given an array with n objects colored red, white or blue, sort them <a href="&quot;https://en.wikipedia.org/wiki/In-place_algorithm&quot;">in-place</a> so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p><p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p><p><strong>Note:</strong> You are not suppose to use the library’s sort function for this problem.</p><p><strong>Example:</strong></p><pre>Input: [2,0,2,1,1,0]Output: [0,0,1,1,2,2]</pre><p><strong>Follow up:</strong></p><ul><br><li><p>A rather straight forward solution is a two-pass algorithm using counting sort.</p>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</li><br><li>Could you come up with a one-pass algorithm using only constant space?</li><br></ul><hr><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题主要是对已知数的排序，数组中的每一个数的范围都已确定，因此用以往的排序如快排，归并排序并不合适，要做到一次遍历完成并使用常空间，所以我选择使用插排来完成。</p><p>先使用普通的插排发现时间会很慢，而在这个过程中发现一般的插排都是逐个比较的，而这道题目的特殊点在于数的种类较少只有3个，而且是已知的，那么我们可以记录下每个数应插到的位置，就节省了比较的过程。</p><p>记录下0，1，2的可插入点的前一位，比如插入1后，1可插点向后移，而2因为只能在1后，所以也向后移，而0不受1影响，插入点不变。最重要的一点是当插入0/1时，会替换掉原本的数，因为后面的数向后移动，可以当作(1，2)/2也插入到数组中（后移替换掉原本的数）。</p><hr><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>class Solution {public:    void sortColors(vector<int>& nums) {        int red = -1, white = -1, blue = -1;        for(int i = 0; i < nums.size(); i ++)        {            if(nums[i] == 0)            {                red++;                white++;                blue++;                nums[blue] = 2;                nums[white] = 1;                nums[red] = 0;            }            else if(nums[i] == 1)            {                white++;                blue++;                nums[blue] = 2;                nums[white] = 1;            }            else            {                blue++;                nums[blue] = 2;            }        }    }};</int></code></pre><hr><h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>值得注意的是我们在写的时候，要把要插入的步骤写在其它数做完后移操作之后，因为存在一种可能假设现在整个数组中还不存在1，当你要插入0时，此时0和1的插入点是相同的，假设你先插入再后移，会使得插入的0被1替换掉（因为我们的后移操作是假设1的插入点前是1，0的插入点前是0），反之1被0替换则正确。</p><p>这种算法适合于已知数且不同数较少的排序，用替换取代后移，节省时间和空间。<br>时间复杂度和空间复杂度均为常数。</p>]]></content>
     
