@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="Legend never dies">
 <meta property="og:description" content="Sort Colors题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue. Here">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-09T04:41:09.085Z">
+<meta property="og:updated_time" content="2018-09-09T04:50:28.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Leetcode] 75.Sort Colors">
 <meta name="twitter:description" content="Sort Colors题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue. Here">
@@ -169,7 +169,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Sort-Colors"><span class="post-toc-number">1.</span> <span class="post-toc-text">Sort Colors</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Note"><span class="post-toc-number">1.0.0.4.</span> <span class="post-toc-text">Note</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Sort-Colors"><span class="post-toc-number">1.</span> <span class="post-toc-text">Sort Colors</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Note"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Note</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -197,7 +197,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="Sort-Colors"><a href="#Sort-Colors" class="headerlink" title="Sort Colors"></a>Sort Colors</h1><p><a href="https://leetcode.com/problems/sort-colors/description/&quot;" target="_blank" rel="noopener">题目链接</a></p>
 <hr>
-<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>Given an array with n objects colored red, white or blue, sort them <a href="&quot;https://en.wikipedia.org/wiki/In-place_algorithm&quot;">in-place</a> so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given an array with n objects colored red, white or blue, sort them <a href="&quot;https://en.wikipedia.org/wiki/In-place_algorithm&quot;">in-place</a> so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
 <p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
 <p><strong>Note:</strong> You are not suppose to use the library’s sort function for this problem.</p>
 <p><strong>Example:</strong></p>
@@ -208,13 +208,45 @@ Output: [0,0,1,1,2,2]</pre>
 <ul><br><li><p>A rather straight forward solution is a two-pass algorithm using counting sort.</p>First, iterate the array counting number of 0’s, 1’s, and 2’s, then overwrite array with total number of 0’s, then 1’s and followed by 2’s.</li><br><li>Could you come up with a one-pass algorithm using only constant space?</li><br></ul>
 
 <hr>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>这道题主要是对已知数的排序，数组中的每一个数的范围都已确定，因此用以往的排序如快排，归并排序并不合适，要做到一次遍历完成并使用常空间，所以我选择使用插排来完成。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题主要是对已知数的排序，数组中的每一个数的范围都已确定，因此用以往的排序如快排，归并排序并不合适，要做到一次遍历完成并使用常空间，所以我选择使用插排来完成。</p>
 <p>先使用普通的插排发现时间会很慢，而在这个过程中发现一般的插排都是逐个比较的，而这道题目的特殊点在于数的种类较少只有3个，而且是已知的，那么我们可以记录下每个数应插到的位置，就节省了比较的过程。</p>
 <p>记录下0，1，2的可插入点的前一位，比如插入1后，1可插点向后移，而2因为只能在1后，所以也向后移，而0不受1影响，插入点不变。最重要的一点是当插入0/1时，会替换掉原本的数，因为后面的数向后移动，可以当作(1，2)/2也插入到数组中（后移替换掉原本的数）。</p>
 <hr>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void sortColors(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int red = -1, white = -1, blue = -1;</span><br><span class="line">        for(int i = 0; i &lt; nums.size(); i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(nums[i] == 0)</span><br><span class="line">            &#123;</span><br><span class="line">                red++;</span><br><span class="line">                white++;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = 2;</span><br><span class="line">                nums[white] = 1;</span><br><span class="line">                nums[red] = 0;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(nums[i] == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                white++;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = 2;</span><br><span class="line">                nums[white] = 1;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = 2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int red = -1, white = -1, blue = -1;
+        for(int i = 0; i < nums.size(); i ++)
+        {
+            if(nums[i] == 0)
+            {
+                red++;
+                white++;
+                blue++;
+                nums[blue] = 2;
+                nums[white] = 1;
+                nums[red] = 0;
+            }
+            else if(nums[i] == 1)
+            {
+                white++;
+                blue++;
+                nums[blue] = 2;
+                nums[white] = 1;
+            }
+            else
+            {
+                blue++;
+                nums[blue] = 2;
+            }
+        }
+    }
+};
+</int></code></pre>
+
 <hr>
-<h4 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h4><p>值得注意的是我们在写的时候，要把要插入的步骤写在其它数做完后移操作之后，因为存在一种可能假设现在整个数组中还不存在1，当你要插入0时，此时0和1的插入点是相同的，假设你先插入再后移，会使得插入的0被1替换掉（因为我们的后移操作是假设1的插入点前是1，0的插入点前是0），反之1被0替换则正确。</p>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>值得注意的是我们在写的时候，要把要插入的步骤写在其它数做完后移操作之后，因为存在一种可能假设现在整个数组中还不存在1，当你要插入0时，此时0和1的插入点是相同的，假设你先插入再后移，会使得插入的0被1替换掉（因为我们的后移操作是假设1的插入点前是1，0的插入点前是0），反之1被0替换则正确。</p>
 <p>这种算法适合于已知数且不同数较少的排序，用替换取代后移，节省时间和空间。<br>时间复杂度和空间复杂度均为常数。</p>
 
         </div>
@@ -224,7 +256,7 @@ Output: [0,0,1,1,2,2]</pre>
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-09T04:41:09.085Z" itemprop="dateUpdated">2018-09-09 12:41:09</time>
+    最后更新时间：<time datetime="2018-09-09T04:50:28.191Z" itemprop="dateUpdated">2018-09-09 12:50:28</time>
 </span><br>
 
 
