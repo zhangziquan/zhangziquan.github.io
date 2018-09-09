@@ -23,17 +23,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="game5.0幻彩的喜马拉雅猫 	 	 	 	 	 	 	 	 	 	 	 	 	 	       	 		* { 			padding: 0; 			margin: 0; 		} 		html, body { 			background: #000; 			color: #fff; 			overflow: hidden; 			touch-action: none;">
+    <meta name="description" content="game5.0幻彩的喜马拉雅猫 	 	 	 	 	 	 	 	 	 	      	 		* { 			padding: 0; 			margin: 0; 		} 		html, body { 			background: #000; 			color: #fff; 			overflow: hidden; 			touch-action-delay: none; 			to">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Legend never dies">
 <meta property="og:url" content="http://ziquanzhang.ink/game/index.html">
 <meta property="og:site_name" content="Legend never dies">
-<meta property="og:description" content="game5.0幻彩的喜马拉雅猫 	 	 	 	 	 	 	 	 	 	 	 	 	 	       	 		* { 			padding: 0; 			margin: 0; 		} 		html, body { 			background: #000; 			color: #fff; 			overflow: hidden; 			touch-action: none;">
+<meta property="og:description" content="game5.0幻彩的喜马拉雅猫 	 	 	 	 	 	 	 	 	 	      	 		* { 			padding: 0; 			margin: 0; 		} 		html, body { 			background: #000; 			color: #fff; 			overflow: hidden; 			touch-action-delay: none; 			to">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-31T14:39:17.125Z">
+<meta property="og:updated_time" content="2018-05-16T14:32:12.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Legend never dies">
-<meta name="twitter:description" content="game5.0幻彩的喜马拉雅猫 	 	 	 	 	 	 	 	 	 	 	 	 	 	       	 		* { 			padding: 0; 			margin: 0; 		} 		html, body { 			background: #000; 			color: #fff; 			overflow: hidden; 			touch-action: none;">
+<meta name="twitter:description" content="game5.0幻彩的喜马拉雅猫 	 	 	 	 	 	 	 	 	 	      	 		* { 			padding: 0; 			margin: 0; 		} 		html, body { 			background: #000; 			color: #fff; 			overflow: hidden; 			touch-action-delay: none; 			to">
     
         <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
     
@@ -179,13 +179,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png">
 	<meta name="HandheldFriendly" content="true">
 	
-	<!-- Chrome for Android web app tags -->
-	<meta name="mobile-web-app-capable" content="yes">
-	<link rel="shortcut icon" sizes="256x256" href="icon-256.png">
-
     <!-- All margins and padding must be zero for the canvas to fill the screen. -->
 	<style type="text/css">
 		* {
@@ -196,6 +191,7 @@
 			background: #000;
 			color: #fff;
 			overflow: hidden;
+			touch-action-delay: none;
 			touch-action: none;
 			-ms-touch-action: none;
 		}
@@ -209,42 +205,30 @@
 
 </head> 
  
-<body> 
+<body>
 	<div id="fb-root"></div>
-	
-	<script>
-	// Issue a warning if trying to preview an exported project on disk.
-	(function(){
-		// Check for running exported on file protocol
-		if (window.location.protocol.substr(0, 4) === "file")
-		{
-			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
-		}
-	})();
-	</script>
 	
 	<!-- The canvas must be inside a div called c2canvasdiv -->
 	<div id="c2canvasdiv">
 	
 		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
-		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
+		ID the runtime looks for in the jQuery ready event (above). -->
 		<canvas id="c2canvas" width="854" height="480">
 			<!-- This text is displayed if the visitor's browser does not support HTML5.
 			You can change it, but it is a good idea to link to a description of a browser
 			and provide some links to download some popular HTML5-compatible browsers. -->
-			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org" target="_blank" rel="noopener">What is a browser?</a>
+			Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org" target="_blank" rel="noopener">What is a browser?</a>
 			<br><br><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx" target="_blank" rel="noopener">Microsoft Internet Explorer</a><br>
 			<a href="http://www.mozilla.com/firefox/" target="_blank" rel="noopener">Mozilla Firefox</a><br>
 			<a href="http://www.google.com/chrome/" target="_blank" rel="noopener">Google Chrome</a><br>
 			<a href="http://www.apple.com/safari/download/" target="_blank" rel="noopener">Apple Safari</a><br>
-			<a href="http://www.google.com/chromeframe" target="_blank" rel="noopener">Google Chrome Frame for Internet Explorer</a><br></h1>
+			<a href="http://www.google.com/chromeframe" target="_blank" rel="noopener">Google Chrome Frame for Internet Explorer</a><br>
 		</canvas>
 		
 	</div>
 	
 	<!-- Pages load faster with scripts at the bottom -->
 	
-	<!-- Construct 2 exported games require jQuery. -->
 	<script src="jquery-2.1.1.min.js"></script>
 
 
@@ -253,33 +237,7 @@
     This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
 	<script src="c2runtime.js"></script>
 
-    <script>
-		// Start the Construct 2 project running on window load.
-		jQuery(document).ready(function ()
-		{			
-			// Create new runtime using the c2canvas
-			cr_createRuntime("c2canvas");
-		});
-		
-		// Pause and resume on page becoming visible/invisible
-		function onVisibilityChanged() {
-			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
-				cr_setSuspended(true);
-			else
-				cr_setSuspended(false);
-		};
-		
-		document.addEventListener("visibilitychange", onVisibilityChanged, false);
-		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
-		
-		if (navigator.serviceWorker && navigator.serviceWorker.register)
-		{
-			// Register an empty service worker to trigger web app install banners.
-			navigator.serviceWorker.register("sw.js", { scope: "./" });
-		}
-    </script>
+    <script src="c2webappstart.js"></script>
 </body> 
 </html> 
         </div>
@@ -366,7 +324,7 @@
     <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
     <script>
         var gitment = new Gitment({
-			id: "Fri Aug 31 2018 22:41:13 GMT+0800",
+			id: "Wed May 16 2018 23:33:32 GMT+0800",
             owner: 'zhangziquan',
             repo: 'blog-comment',
             oauth: {

@@ -1,8 +1,9 @@
 ﻿CACHE MANIFEST
-#1526447104
+#1526481132
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
+c2webappstart.js
 images/tiledbackground.png
 images/tiledbackground2.png
 images/player-sheet0.png
