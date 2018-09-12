@@ -43,7 +43,7 @@
 <meta property="og:image" content="http://ziquanzhang.ink/2018/09/12/数值计算实验一/test2-8.png">
 <meta property="og:image" content="http://ziquanzhang.ink/2018/09/12/数值计算实验一/test3.png">
 <meta property="og:image" content="http://ziquanzhang.ink/2018/09/12/数值计算实验一/test3-1.png">
-<meta property="og:updated_time" content="2018-09-12T12:53:52.399Z">
+<meta property="og:updated_time" content="2018-09-12T12:56:32.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值计算实验一">
 <meta name="twitter:description" content="数值计算实验实验一1.问题描述求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。  （1）高斯消去法。 （2）列主元消去法。 2.算法设计高斯消去法（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的三">
@@ -328,7 +328,7 @@
 <li>而六种算法的计算时间中可以看出，当矩阵较小时，迭代法和消元法计算时间相差不大，矩阵较大时，共轭梯度法在计算时间中有着较大的优势，达到所需精度的迭代次数比其它迭代次数要少很多，并且每次迭代耗时较少。因为构造的矩阵并不是稀疏矩阵，所以在这种情况下，普通的消元法比其它迭代法所耗时间要少。</li>
 <li>在分析松弛因子对收敛速度影响中，松弛因子对算法的收敛速度影响很大，选择合适的松弛因子能够减少算法的迭代次数，在较少的迭代次数得到较为精确的结果，对于不同的矩阵有着不同的最佳松弛因子，对于本次模拟的矩阵w较大则最好，但是w超过2之后，算法则不再收敛。</li>
 </ol>
-<h2 id="实验三"><a href="#实验三" class="headerlink" title="实验三"></a>实验三</h2><h3 id="1-问题描述-2"><a href="#1-问题描述-2" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>在 Epinions 社交数据集（<a href="https://snap.stanford.edu/data/soc-Epinions1.html）中，每个网络节点可以选择信任其它节点。借鉴" target="_blank" rel="noopener">https://snap.stanford.edu/data/soc-Epinions1.html）中，每个网络节点可以选择信任其它节点。借鉴</a> Pagerank 的思想编写程序，对网络节点的受信任程度进行评分。在实验报告中，请给出伪代码。 </p>
+<h2 id="实验三"><a href="#实验三" class="headerlink" title="实验三"></a>实验三</h2><h3 id="1-问题描述-2"><a href="#1-问题描述-2" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>在 <a href="https://snap.stanford.edu/data/soc-Epinions1.html" target="_blank" rel="noopener">Epinions 社交数据集</a>中，每个网络节点可以选择信任其它节点。借鉴 Pagerank 的思想编写程序，对网络节点的受信任程度进行评分。在实验报告中，请给出伪代码。 </p>
 <h3 id="2-算法设计-2"><a href="#2-算法设计-2" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><p>和pagerank相类似，预先给每个网络节点一个信任值Trust值为1/N，N为节点的数量，这样就能得到一个向量v代表每个节点的信任评分rank<br>$$<br>v = [1/n,1/n,1/n,……]<br>$$<br>假定每个节点的对其他节点的总的信任程度为1，而且对每个其信任的节点都给予相同的信任程度，这样就可以得到一个信任转移矩阵A。<br>$$<br>A（i，j）= 节点i对节点j的信任程度<br>$$<br>每个节点的信任评分rank由信任它的节点决定，如果信任评分的节点本身的信任评分高，则给予的评分权重也高，反之给予评分权重较低。</p>
 <p>所以通过计算<br>$$<br>v‘ = Mv<br>$$<br>即<br>$$<br>v(i) = ∑其它节点信任评分v(j)*信任程度A(i,j)<br>$$<br>可以得到新的一个信任评分，经过有限次的迭代，v’将会收敛稳定下来，得到的即是各个节点的信任评分。</p>
 <p><strong>改进</strong></p>
@@ -373,7 +373,7 @@ disp(v');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-12T12:53:52.399Z" itemprop="dateUpdated">2018-09-12 20:53:52</time>
+    最后更新时间：<time datetime="2018-09-12T12:56:32.944Z" itemprop="dateUpdated">2018-09-12 20:56:32</time>
 </span><br>
 
 
