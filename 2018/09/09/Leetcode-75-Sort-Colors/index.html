@@ -16,25 +16,25 @@
     <link rel="canonical" href="http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/">
     
     
-    <title>[Leetcode] 75.Sort Colors | Legend never dies | zhangzq&#39;s index</title>
+    <title>[LeetCode] 75. Sort Colors | Legend never dies | zhangzq&#39;s index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Algorithms,Leetcode">
-    <meta name="description" content="Sort Colors题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue. Here">
+    <meta name="description" content="Sort Colorsweek1 题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue">
 <meta name="keywords" content="Algorithms,Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Leetcode] 75.Sort Colors">
+<meta property="og:title" content="[LeetCode] 75. Sort Colors">
 <meta property="og:url" content="http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/index.html">
 <meta property="og:site_name" content="Legend never dies">
-<meta property="og:description" content="Sort Colors题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue. Here">
+<meta property="og:description" content="Sort Colorsweek1 题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-09T04:51:47.040Z">
+<meta property="og:updated_time" content="2018-09-15T09:13:15.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Leetcode] 75.Sort Colors">
-<meta name="twitter:description" content="Sort Colors题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue. Here">
+<meta name="twitter:title" content="[LeetCode] 75. Sort Colors">
+<meta name="twitter:description" content="Sort Colorsweek1 题目链接  题目描述Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue">
     
         <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
     
@@ -129,7 +129,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">[Leetcode] 75.Sort Colors</div>
+        <div class="flex-col header-title ellipsis">[LeetCode] 75. Sort Colors</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -151,7 +151,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">[Leetcode] 75.Sort Colors</h1>
+        <h1 class="title">[LeetCode] 75. Sort Colors</h1>
         <h5 class="subtitle">
             
                 <time datetime="2018-09-09T02:46:00.000Z" itemprop="datePublished" class="page-time">
@@ -185,7 +185,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">[Leetcode] 75.Sort Colors</h1>
+        <h1 class="post-card-title">[LeetCode] 75. Sort Colors</h1>
         <div class="post-meta">
             <time class="post-time" title="2018-09-09 10:46:00" datetime="2018-09-09T02:46:00.000Z"  itemprop="datePublished">2018-09-09</time>
 
@@ -202,7 +202,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Sort-Colors"><a href="#Sort-Colors" class="headerlink" title="Sort Colors"></a>Sort Colors</h1><p><a href="https://leetcode.com/problems/sort-colors/description/&quot;" target="_blank" rel="noopener">题目链接</a></p>
+            <h1 id="Sort-Colors"><a href="#Sort-Colors" class="headerlink" title="Sort Colors"></a>Sort Colors</h1><p>week1</p>
+<p><a href="https://leetcode.com/problems/sort-colors/description/&quot;" target="_blank" rel="noopener">题目链接</a></p>
 <hr>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given an array with n objects colored red, white or blue, sort them <a href="&quot;https://en.wikipedia.org/wiki/In-place_algorithm&quot;">in-place</a> so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
 <p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
@@ -219,39 +220,7 @@ Output: [0,0,1,1,2,2]</pre>
 <p>先使用普通的插排发现时间会很慢，而在这个过程中发现一般的插排都是逐个比较的，而这道题目的特殊点在于数的种类较少只有3个，而且是已知的，那么我们可以记录下每个数应插到的位置，就节省了比较的过程。</p>
 <p>记录下0，1，2的可插入点的前一位，比如插入1后，1可插点向后移，而2因为只能在1后，所以也向后移，而0不受1影响，插入点不变。最重要的一点是当插入0/1时，会替换掉原本的数，因为后面的数向后移动，可以当作(1，2)/2也插入到数组中（后移替换掉原本的数）。</p>
 <hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>
-class Solution {
-public:
-    void sortColors(vector<int>& nums) {
-        int red = -1, white = -1, blue = -1;
-        for(int i = 0; i < nums.size(); i ++)
-        {
-            if(nums[i] == 0)
-            {
-                red++;
-                white++;
-                blue++;
-                nums[blue] = 2;
-                nums[white] = 1;
-                nums[red] = 0;
-            }
-            else if(nums[i] == 1)
-            {
-                white++;
-                blue++;
-                nums[blue] = 2;
-                nums[white] = 1;
-            }
-            else
-            {
-                blue++;
-                nums[blue] = 2;
-            }
-        }
-    }
-};
-</int></code></pre>
-
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> red = <span class="number">-1</span>, white = <span class="number">-1</span>, blue = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                red++;</span><br><span class="line">                white++;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = <span class="number">2</span>;</span><br><span class="line">                nums[white] = <span class="number">1</span>;</span><br><span class="line">                nums[red] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                white++;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = <span class="number">2</span>;</span><br><span class="line">                nums[white] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>值得注意的是我们在写的时候，要把要插入的步骤写在其它数做完后移操作之后，因为存在一种可能假设现在整个数组中还不存在1，当你要插入0时，此时0和1的插入点是相同的，假设你先插入再后移，会使得插入的0被1替换掉（因为我们的后移操作是假设1的插入点前是1，0的插入点前是0），反之1被0替换则正确。</p>
 <p>这种算法适合于已知数且不同数较少的排序，用替换取代后移，节省时间和空间。<br>时间复杂度和空间复杂度均为常数。</p>
@@ -263,7 +232,7 @@ public:
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-09-09T04:51:47.040Z" itemprop="dateUpdated">2018-09-09 12:51:47</time>
+    最后更新时间：<time datetime="2018-09-15T09:13:15.512Z" itemprop="dateUpdated">2018-09-15 17:13:15</time>
 </span><br>
 
 
@@ -299,7 +268,7 @@ public:
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[Leetcode] 75.Sort Colors》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[LeetCode] 75. Sort Colors》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -309,7 +278,7 @@ public:
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[Leetcode] 75.Sort Colors》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[LeetCode] 75. Sort Colors》 — Legend never dies&source=张子权的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -319,7 +288,7 @@ public:
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[Leetcode] 75.Sort Colors》 — Legend never dies&url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&via=http://ziquanzhang.ink" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 75. Sort Colors》 — Legend never dies&url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&via=http://ziquanzhang.ink" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -475,7 +444,7 @@ public:
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[Leetcode] 75.Sort Colors》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[LeetCode] 75. Sort Colors》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -485,7 +454,7 @@ public:
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[Leetcode] 75.Sort Colors》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&title=《[LeetCode] 75. Sort Colors》 — Legend never dies&source=张子权的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -495,7 +464,7 @@ public:
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[Leetcode] 75.Sort Colors》 — Legend never dies&url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&via=http://ziquanzhang.ink" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 75. Sort Colors》 — Legend never dies&url=http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/&via=http://ziquanzhang.ink" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

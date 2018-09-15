@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2018/09/15/LeetCode/">
+    
+    
+    <title>[LeetCode] 765. Couples Holding Hands | Legend never dies | zhangzq&#39;s index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="LeetCode,Algorithms">
+    <meta name="description" content="Couples Holding Handsweek 2 题目链接  题目描述N couples sit in 2N seats arranged in a row and want to hold hands. We want to know the minimum number of swaps so that every couple is sitting side by side. A sw">
+<meta name="keywords" content="LeetCode,Algorithms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[LeetCode] 765. Couples Holding Hands">
+<meta property="og:url" content="http://ziquanzhang.ink/2018/09/15/LeetCode/index.html">
+<meta property="og:site_name" content="Legend never dies">
+<meta property="og:description" content="Couples Holding Handsweek 2 题目链接  题目描述N couples sit in 2N seats arranged in a row and want to hold hands. We want to know the minimum number of swaps so that every couple is sitting side by side. A sw">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-15T09:14:56.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[LeetCode] 765. Couples Holding Hands">
+<meta name="twitter:description" content="Couples Holding Handsweek 2 题目链接  题目描述N couples sit in 2N seats arranged in a row and want to hold hands. We want to know the minimum number of swaps so that every couple is sitting side by side. A sw">
+    
+        <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Linken's Sphere.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">[LeetCode] 765. Couples Holding Hands</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">[LeetCode] 765. Couples Holding Hands</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-15T09:11:00.000Z" itemprop="datePublished" class="page-time">
+  2018-09-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/The-Design-and-Analysis-of-Computer-Algorithms/">The Design and Analysis of Computer Algorithms</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Couples-Holding-Hands"><span class="post-toc-number">1.</span> <span class="post-toc-text">Couples Holding Hands</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">解题思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其它解法"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">其它解法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-LeetCode"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">[LeetCode] 765. Couples Holding Hands</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-15 17:11:00" datetime="2018-09-15T09:11:00.000Z"  itemprop="datePublished">2018-09-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/The-Design-and-Analysis-of-Computer-Algorithms/">The Design and Analysis of Computer Algorithms</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Couples-Holding-Hands"><a href="#Couples-Holding-Hands" class="headerlink" title="Couples Holding Hands"></a>Couples Holding Hands</h1><p>week 2</p>
+<p><a href="https://leetcode.com/problems/couples-holding-hands/description/&quot;" target="_blank" rel="noopener">题目链接</a></p>
+<hr>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>N couples sit in 2N seats arranged in a row and want to hold hands. We want to know the minimum number of swaps so that every couple is sitting side by side. A swap consists of choosing any two people, then they stand up and switch seats.</p>
+<p>The people and seats are represented by an integer from 0 to 2N-1, the couples are numbered in order, the first couple being (0, 1), the second couple being (2, 3), and so on with the last couple being (2N-2, 2N-1).</p>
+<p>The couples’ initial seating is given by row[i] being the value of the person who is initially sitting in the i-th seat.</p>
+<p><strong>Example 1:</strong></p>
+<pre>Input: row = [0, 2, 1, 3]
+Output: 1
+Explanation: We only need to swap the second (row[1]) and third (row[2]) person.</pre>
+
+
+<p><strong>Example 2:</strong></p>
+<pre>Input: row = [3, 2, 0, 1]
+Output: 0
+Explanation: All couples are already seated side by side.</pre>
+
+<p><strong>Note:</strong> <ol><li>len(row) is even and in the range of [4, 60].</li><li>row is guaranteed to be a permutation of 0…len(row)-1.</li></ol></p>
+<hr>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>这个题意为有N对情侣坐在2N个座位上，但是他们并不是坐在一起的，要使得每一对都能并肩坐在一起，计算最少的交换次数，一次交换可以选择任意的两个人。</p>
+<p>情侣按照顺序编号，并不是相连的都是情侣，（0，1），（2，3）等等。由此可知一个偶数的下一个奇数必定是它的另一半。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这里的交换有两种可能：</p>
+<ol>
+<li>交换一次后，有两组情侣完成配对。</li>
+<li>交换一次后，仅有一组情侣完成配对，而另一个等待继续交换。</li>
+</ol>
+<p>可知如果每一次都是第一种交换的话，则交换次数会比第二种要少，第一种为最佳交换，因此怎么样才能让其先完成第一种匹配呢，我的想法是，既然是第一种，则他们的情侣是交叉坐的，因此若这4个人中有2组情侣，则其和其他组的情侣就没有交集，所以无论如何其它组的情侣如何交换都不会影响到他们。（这里指交换都要匹配成功，如果试图以一次不成功的匹配凑出第一种情况，那么要匹配成功还要交换一次，那么使用第二种也是2次，在次数上是没有任何不同的）</p>
+<p>所以我们可以采用贪心算法，遍历每一组，当它的旁边不是它的情侣时，就向后遍历寻找其情侣，进行交换然后匹配成功，这里因为我们发现他们的id的特殊性，可以判断奇偶，快速找到其另一半。</p>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minSwapsCouples</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.size(); i +=<span class="number">2</span> )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> cp;</span><br><span class="line">            <span class="keyword">if</span> (row[i] % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                cp = row[i] + <span class="number">1</span>;<span class="comment">//若为偶数则情侣为下一个奇数</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                cp = row[i] - <span class="number">1</span>;<span class="comment">//若为奇数则情侣为上一个偶数</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (row[i + <span class="number">1</span>] == cp)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">2</span>; j&lt; row.size(); j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (row[j] == cp)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = row[i+<span class="number">1</span>];</span><br><span class="line">                    row[i+<span class="number">1</span>] = row[j];</span><br><span class="line">                    row[j] = temp;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>当做到这道题目的时候，便想使用贪心算法，但一直都想不清楚如何去证明，后来发现其实他们的交换先后是无关的。<br>根据网上严谨的证明应该是把row抽象成为一个n个顶点的无向图，每个顶点中为两个人，两个顶点存在边时当且仅当两个顶点中能构成一对情侣，若是第一种情况，则构成重边。<br>相连的顶点构成圈，圈里面的若为第二种情况，所以对每一个圈来说有n个顶点就至少需要n-1次交换，若为第一种情况，即有重边，只需一次交换，也是n-1（两个顶点，2-1）。<br>因此若row有n组，m个圈，则至少需要n-m次。这和以上的结论是一样的，因为不同圈之间并不会发生交换。</p>
+<hr>
+<h2 id="其它解法"><a href="#其它解法" class="headerlink" title="其它解法"></a>其它解法</h2><p>使用哈希配对的方法，两个数均除以2，若相等，则为同一组，若否，则区分出较大和较小的数，若两个数存在联系，则返回，若不存在，则建立这两个数的联系。最后根据哈希表中联系的个数来得到最小交换次数，原理同上面的一样，这里的联系就是指的是顶点之间的边，每个边需要一次交换，重边算作一次，所以每次要判断两个数是否存在联系。</p>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minSwapsCouples</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.size(); i += <span class="number">2</span>) &#123;</span><br><span class="line">            helper(m, row[i] / <span class="number">2</span>, row[i + <span class="number">1</span>] / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m.size();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&amp; m, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> c1 = min(x, y), c2 = max(x, y);</span><br><span class="line">        <span class="keyword">if</span> (c1 == c2) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (m.count(c1)) helper(m, m[c1], c2);</span><br><span class="line">        <span class="keyword">else</span> m[c1] = c2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-09-15T09:14:56.496Z" itemprop="dateUpdated">2018-09-15 17:14:56</time>
+</span><br>
+
+
+        
+        <a href="/2018/09/15/LeetCode/" target="_blank" rel="external">http://ziquanzhang.ink/2018/09/15/LeetCode/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/09/15/LeetCode/&title=《[LeetCode] 765. Couples Holding Hands》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/09/15/LeetCode/&title=《[LeetCode] 765. Couples Holding Hands》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/09/15/LeetCode/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 765. Couples Holding Hands》 — Legend never dies&url=http://ziquanzhang.ink/2018/09/15/LeetCode/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/09/15/LeetCode/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/12/数值计算实验一/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数值计算实验一</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Sat Sep 15 2018 17:11:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备17120669号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/09/15/LeetCode/&title=《[LeetCode] 765. Couples Holding Hands》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/09/15/LeetCode/&title=《[LeetCode] 765. Couples Holding Hands》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/09/15/LeetCode/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 765. Couples Holding Hands》 — Legend never dies&url=http://ziquanzhang.ink/2018/09/15/LeetCode/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/09/15/LeetCode/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3aS3KDQAxFUfa/aVyVUQYG7pMglRa3R1QCMccDRb9tw2f/Ob+vj87RPfxT+P3xkSFDxrIM/lrkqaMX6v/k4quRIUPGCxhpkE2fPf+b5NmLd5YhQ4aM03t42CV/WYYMGTL6Aff82fOgTMpUGTJkyOgUsTzhI6GZtNseqcVlyJCxIKM2GPib68fnGzJkyPj3jD08dw0g0/HnxVvJkCFjNIM0vGqRrTZaSFPSjdTTMmTIWJzRGSLyJQweoEnz7sudMmTIGM3gY4Daulh/MBAnoDJkyBjK4E3//vCyFqbJFypDhozZjFrS9nSQvWGEIEOGjBGMNLByHh8w8AT08FkZMmSMZqQBlAfBNMjyBDQYl8qQIWMEg78uT/X42kRthClDhgwZPDgSDF8v48nfxXabDBkyxjF4OsjHALXGWW2ZI85qZciQsSCjUzp2Fi/SL+siiZQhQ8YLGLUiNviYUs8v+I8hQ4aMFzDS0rRfdpKwG4wNZMiQMZrB0zVecMYNstJ6R7HRJkOGjAUZvIBM1zJqDbs0GZUhQ8Z7GDyNq5W4PB0sFsAyZMgYzeg39Mlv0zBNnpIhQ8Z7GHt4Oo22lBQMNWXIkDGawU8nHawtfvXDugwZMiYxeJDlC2S1BJEUt0HmKEOGjHEMHmR5whfX043QLEOGDBm1dn+amXZCvwwZMmT0xwD8mofa2wKuDBkyFmGkixHpSkS6VBE38mTIkDGacddggKd0/Lq2OiZDhoxBjA8Pd6h24Bd7sgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
