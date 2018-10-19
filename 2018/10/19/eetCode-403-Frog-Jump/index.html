@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/">
+    
+    
+    <title>[LeetCode] 403. Frog Jump | Legend never dies | zhangzq index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Algorithms,LeetCode">
+    <meta name="description" content="403. Frog Jumpweek7 难度：Hard 题目链接  题目描述A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not j">
+<meta name="keywords" content="Algorithms,LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[LeetCode] 403. Frog Jump">
+<meta property="og:url" content="http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/index.html">
+<meta property="og:site_name" content="Legend never dies">
+<meta property="og:description" content="403. Frog Jumpweek7 难度：Hard 题目链接  题目描述A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not j">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Frog%20Jump_test.PNG">
+<meta property="og:updated_time" content="2018-10-19T08:16:22.543Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[LeetCode] 403. Frog Jump">
+<meta name="twitter:description" content="403. Frog Jumpweek7 难度：Hard 题目链接  题目描述A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not j">
+<meta name="twitter:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Frog%20Jump_test.PNG">
+    
+        <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Linken's Sphere.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">[LeetCode] 403. Frog Jump</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">[LeetCode] 403. Frog Jump</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-19T08:13:00.000Z" itemprop="datePublished" class="page-time">
+  2018-10-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/The-Design-and-Analysis-of-Computer-Algorithms/">The Design and Analysis of Computer Algorithms</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#403-Frog-Jump"><span class="post-toc-number">1.</span> <span class="post-toc-text">403. Frog Jump</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一次解题思路"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">第一次解题思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果与反思"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">结果与反思</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二次解题思路"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">第二次解题思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#改进代码"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">改进代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Note"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Note</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-eetCode-403-Frog-Jump"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">[LeetCode] 403. Frog Jump</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-19 16:13:00" datetime="2018-10-19T08:13:00.000Z"  itemprop="datePublished">2018-10-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/The-Design-and-Analysis-of-Computer-Algorithms/">The Design and Analysis of Computer Algorithms</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="403-Frog-Jump"><a href="#403-Frog-Jump" class="headerlink" title="403. Frog Jump"></a>403. Frog Jump</h1><p>week7</p>
+<p>难度：Hard</p>
+<p><a href="https://leetcode.com/problems/frog-jump/" target="_blank" rel="noopener">题目链接</a></p>
+<hr>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.</p>
+<p>Given a list of stones’ positions (in units) in sorted ascending order, determine if the frog is able to cross the river by landing on the last stone. Initially, the frog is on the first stone and assume the first jump must be 1 unit.</p>
+<p>If the frog’s last jump was k units, then its next jump must be either k - 1, k, or k + 1 units. Note that the frog can only jump in the forward direction.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The number of stones is ≥ 2 and is &lt; 1,100.</li>
+<li>Each stone’s position will be a non-negative integer &lt; 231.</li>
+<li>The first stone’s position is always 0.</li>
+</ul>
+<p><strong>Example1:</strong></p>
+<pre><code>[0,1,3,5,6,8,12,17]
+
+There are a total of 8 stones.
+The first stone at the 0th unit, second stone at the 1st unit,
+third stone at the 3rd unit, and so on...
+The last stone at the 17th unit.
+
+Return true. The frog can jump to the last stone by jumping
+1 unit to the 2nd stone, then 2 units to the 3rd stone, then
+2 units to the 4th stone, then 3 units to the 6th stone,
+4 units to the 7th stone, and 5 units to the 8th stone.
+</code></pre><p><strong>Example2:</strong></p>
+<pre><code>[0,1,2,3,4,8,9,11]
+
+Return false. There is no way to jump to the last stone as
+the gap between the 5th and 6th stone is too large.
+</code></pre><hr>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;著名的青蛙跳石头问题，在大一的时候一次ACM比赛中碰到一次，貌似是原题，结果很显然扑街了，现在看到题目才算正式理解了题目。。。想来当时没有学习什么数据结构也是做不出的了，暴力AK明显会timelimit。<br>&emsp;&emsp;青蛙跳石头的题意是有一只青蛙要过河，河流分成X个部分，有的地方有石头，有的没有。而这只青蛙要连续跳过去，可能这只青蛙的手刹有点毛病，每当跳过K个单位时，下一次跳越要是K-1、K或者K+1个单位，并且只能向前。<br>&emsp;&emsp;一开始的理解是只要判断下一块石头是否在跳越范围内就行了，但注意的是青蛙可以飞过某一块石头，所以就有很多种跳越方式，假设有两条路径能到达点A，通过不同路径后到达点A后，其下一步的跳越范围（能力）也会不一样，所以情况会很复杂。</p>
+<hr>
+<h2 id="第一次解题思路"><a href="#第一次解题思路" class="headerlink" title="第一次解题思路"></a>第一次解题思路</h2><p>&emsp;&emsp;由于青蛙的选择路径的多变，会引起后续的跳越，因此它的选择分支是从第一次就开始了，试想一下每个分支又会衍生不同的分支，那不就是一颗路径树了吗，只要遍历这一棵树，找到某一路径可以到达终点即可，因为只需要得出青蛙是否能过河的结论，所以无需遍历所有路径（除非所有路径都不能到达）。<br>&emsp;&emsp;为了尽快地解决问题，很明显是用深度遍历的，当得到一条路径后，马上返回true节省时间。所以使用递归的方式，遍历所有状态。</p>
+<hr>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        stoness = stones;</span><br><span class="line">        <span class="keyword">return</span> cross(stoness.begin(),<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">cross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator start, <span class="keyword">int</span> dis)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start == stoness.end()<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = dis - <span class="number">1</span>; i &lt;= dis+<span class="number">1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = find(start+<span class="number">1</span>,stoness.end(),i+*start);</span><br><span class="line">            <span class="keyword">if</span>(it != stoness.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(cross(it,i)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;stoness;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="结果与反思"><a href="#结果与反思" class="headerlink" title="结果与反思"></a>结果与反思</h3><p>&emsp;&emsp;在过了example后，提交的检测超时了，例子是[1..998,99999999],这个极端的例子展示了这个算法的弱点，没有根据搜索得的信息加快速度，每次都搜索到了998这个节点，但由于最后一个点不可到达，所以都在最后一步终止，浪费了大量的时间，所以我们要采取一种措施及时止损。</p>
+<h2 id="第二次解题思路"><a href="#第二次解题思路" class="headerlink" title="第二次解题思路"></a>第二次解题思路</h2><p>&emsp;&emsp;采用遍历路径树是没有错的，因为我们需要验证每一条路径是否能通往最后一个节点，但我们不能重复判断同一个状态多次，因为每条路径中有着许多相同的状态，即达到点相同，且下一步的跳越范围相同，如果我们在一条路径中已经得知该状态是否能达到终点，就可以在其它路径中引用进行快速判断。就是如一个节点不通，则经过该节点的所有路径都不通。</p>
+<p>&emsp;&emsp;具体方法是维护一个哈希表保存状态的可行性，因为一个状态有两个属性，一是点的位置，二是上一步跳越距离，因为石头数量有限，可以通过左移取或，将两个值合并起来得到一个唯一的值，从而确定一个唯一的状态，保存该状态是否能达到终点。</p>
+<h3 id="改进代码"><a href="#改进代码" class="headerlink" title="改进代码"></a>改进代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        stoness = stones;</span><br><span class="line">        <span class="keyword">return</span> cross(stoness.begin(),<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">cross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator start, <span class="keyword">int</span> dis)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start == stoness.end()<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> key = *start | dis&lt;&lt;<span class="number">11</span>;</span><br><span class="line">        <span class="keyword">if</span> (status.count(key)) &#123;</span><br><span class="line">            <span class="keyword">return</span> status[key];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = dis + <span class="number">1</span>; i &gt;= dis<span class="number">-1</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = find(start+<span class="number">1</span>,stoness.end(),i+*start);</span><br><span class="line">            <span class="keyword">if</span>(it != stoness.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(cross(it,i)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> status[key] = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> status[key] = <span class="literal">false</span>;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;stoness;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">bool</span>&gt; status;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ol>
+<li><p>在查询下一个跳越点时，可以使用循环来寻找，但我觉得如果跳越距离很大，那么就要遍历很多个位置，因此使用find直接在vector中寻找对应k-1，k，k+1距离的点会更加快。</p>
+</li>
+<li><p>在看了一下别人的做法中，发现可以先在两个点之后，判断是否后一个点是前一个点的两倍还多，即stone[i]&gt;2*stone[i-1]，若存在这一情况，那么必定不能到达，因为青蛙在2次跳越后，不可能跳越2倍的距离，而且这个数组又是升序的，所以不可逾越。可以去掉很多极端情况。</p>
+</li>
+<li><p>看了一下题目的评论，有一个评论说从步数大的开始遍历会更快得到答案，想了一下似乎是这样的，因位较小的步数最终很有可能走到大步数的状态，中间多出了很多不必要的状态，改成i–后，从24ms提升到了16ms，感觉改善很客观。居然能到95.46%了。</p>
+</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Frog%20Jump_test.PNG" alt="Frog Jump_test" title="">
+                </div>
+                <div class="image-caption">Frog Jump_test</div>
+            </figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;这个题目的关键之处在于如何利用已知的信息进行搜索，而不是采用盲目搜索的方式，在搜索过程中，发现一个点不通则将之后的路径封掉，对信息的复用，极大加快算法的速度，另外一些顺序的选择也很有可能影响速度。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-10-19T08:16:22.543Z" itemprop="dateUpdated">2018-10-19 16:16:22</time>
+</span><br>
+
+
+        
+        <a href="/2018/10/19/eetCode-403-Frog-Jump/" target="_blank" rel="external">http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/&title=《[LeetCode] 403. Frog Jump》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/&title=《[LeetCode] 403. Frog Jump》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 403. Frog Jump》 — Legend never dies&url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/14/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[LeetCode] 297. Serialize and Deserialize Binary Tree</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Fri Oct 19 2018 16:13:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备17120669号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/&title=《[LeetCode] 403. Frog Jump》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/&title=《[LeetCode] 403. Frog Jump》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 403. Frog Jump》 — Legend never dies&url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/10/19/eetCode-403-Frog-Jump/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3ay27DMAxEUf//TzvbAoHkmaEcVNTVKqhdWycFWD50XfK6/6zRT0b3j+5R3rJ4wYABY1vGPV3ze+rPH71L3xsMGDDOYYxerz9auTML6/O9wYABA4a+uflGv68q6SYMGDBgrA24GWzEgwEDBoysiK03y/5FLQ4DBowNGXrL7PefX5lvwIABYyvGba6s9aY/IdwVDBgwWjPqad+qJHJBGgoDBoymjEqwc0vTbGCptORgwIDRm1Fpgc2foF/NhgTD/xswYMBox3Bb8G4hqhS69qjy+yoMGDBaM/QLLqYSspWdPBS6MGDAaMdwW2lu0FSeNv/KpGYcDBgwjmG4IdJ9vRtq9bIWBgwYvRn6gTCFkYVpN5RLeS4MGDDaMdzwWhlh6sNLd8AAAwaMfoxsMOk2xRSSfbTC/QvAgAFjc0alcHUbakr66I5FYcCA0ZuRNc6yoWaWVhqHLWDAgNGU4ba33M3VQ7NypAMGDBi9GZUjEfrwIEsxXylrYcCAsS0jC7jZXHTVCNPOcGHAgNGCMU+/5i9zA64b6KUvDgYMGAcw9JRu7bGMS14PvwsDBoymjNtclZacOyjVwzoMGDB6MyrB7o2jGGuHozBgwOjEcMvUrDSVWmaVgAsDBowDGMooUQm+SoJYSfse8lwYMGDAkEvfylGMsGSFAQMGjOhoaaXpZo8uYMCAcQBDeX0lHXQLXbd5BwMGjN4MN+/KDmGsOrRRGmrCgAFjP8YHR/JqmGFnG8QAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
