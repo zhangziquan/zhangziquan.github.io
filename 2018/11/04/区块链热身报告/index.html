@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?905249609e5774f6b20d26393024eec4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2018/11/04/区块链热身报告/">
+    
+    
+    <title>区块链热身报告 | Legend never dies | zhangzq index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ethereum">
+    <meta name="description" content="区块链热身报告 16340296  张子权  以太坊的安装、私有链创世区块搭建、私有链节点的加入(选做)   安装以太坊 从http://ethereum.github.io/go-ethereum/downloads/ 下载安装Geth，可能需要在windows下添加环境变量。    私有链创世区块搭建 新建一个genesis.json，设置创世区块的难度,id等参数。新建文件夹data。 初">
+<meta name="keywords" content="ethereum">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链热身报告">
+<meta property="og:url" content="http://ziquanzhang.ink/2018/11/04/区块链热身报告/index.html">
+<meta property="og:site_name" content="Legend never dies">
+<meta property="og:description" content="区块链热身报告 16340296  张子权  以太坊的安装、私有链创世区块搭建、私有链节点的加入(选做)   安装以太坊 从http://ethereum.github.io/go-ethereum/downloads/ 下载安装Geth，可能需要在windows下添加环境变量。    私有链创世区块搭建 新建一个genesis.json，设置创世区块的难度,id等参数。新建文件夹data。 初">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E5%AE%89%E8%A3%85%E4%BB%A5%E5%A4%AA%E5%9D%8A.png">
+<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E9%83%A8%E7%BD%B2%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.png">
+<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/greet.png">
+<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E5%8F%91%E9%80%81string.png">
+<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/receive.png">
+<meta property="og:updated_time" content="2018-11-04T13:19:28.296Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="区块链热身报告">
+<meta name="twitter:description" content="区块链热身报告 16340296  张子权  以太坊的安装、私有链创世区块搭建、私有链节点的加入(选做)   安装以太坊 从http://ethereum.github.io/go-ethereum/downloads/ 下载安装Geth，可能需要在windows下添加环境变量。    私有链创世区块搭建 新建一个genesis.json，设置创世区块的难度,id等参数。新建文件夹data。 初">
+<meta name="twitter:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E5%AE%89%E8%A3%85%E4%BB%A5%E5%A4%AA%E5%9D%8A.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Linken's Sphere.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">区块链热身报告</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">区块链热身报告</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-04T13:17:00.000Z" itemprop="datePublished" class="page-time">
+  2018-11-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Block-Chain/">Block-Chain</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#区块链热身报告"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 区块链热身报告</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以太坊的安装-私有链创世区块搭建-私有链节点的加入选做"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 以太坊的安装、私有链创世区块搭建、私有链节点的加入(选做)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对-getblock-中所得区块的各个字段进行解释"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> 对 getBlock 中所得区块的各个字段进行解释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对日志输出进行解释"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 对日志输出进行解释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编写简单的智能合约在-remix-下进行调试并部署在链上进行调用"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> 编写简单的智能合约，在 remix 下进行调试，并部署在链上进行调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写简单的智能合约"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text"> 编写简单的智能合约</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进行调试部署调用"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text"> 进行调试部署调用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对交易的字段进行解释"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"> 对交易的字段进行解释</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-区块链热身报告"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">区块链热身报告</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-11-04 21:17:00" datetime="2018-11-04T13:17:00.000Z"  itemprop="datePublished">2018-11-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Block-Chain/">Block-Chain</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="区块链热身报告"><a class="markdownIt-Anchor" href="#区块链热身报告"></a> 区块链热身报告</h1>
+<p>16340296  张子权</p>
+<h2 id="以太坊的安装-私有链创世区块搭建-私有链节点的加入选做"><a class="markdownIt-Anchor" href="#以太坊的安装-私有链创世区块搭建-私有链节点的加入选做"></a> 以太坊的安装、私有链创世区块搭建、私有链节点的加入(选做)</h2>
+<ol>
+<li>
+<p>安装以太坊<br>
+从<a href="http://ethereum.github.io/go-ethereum/downloads/" target="_blank" rel="noopener">http://ethereum.github.io/go-ethereum/downloads/</a> 下载安装Geth，可能需要在windows下添加环境变量。<br>
+<img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E5%AE%89%E8%A3%85%E4%BB%A5%E5%A4%AA%E5%9D%8A.png" alt="安装以太坊"></p>
+</li>
+<li>
+<p>私有链创世区块搭建<br>
+新建一个genesis.json，设置创世区块的难度,id等参数。新建文件夹data。<br>
+初始化创世区块：</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth --datadir data/ init genesis.json</span><br></pre></td></tr></table></figure>
+<p>启动节点并进入交互式控制台：</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">geth --datadir data --networkid 1008 --ipcdisable --port 1001 --rpcport 8001 --verbosity=4 console 2&gt;&gt;output.log</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>私有链节点的加入<br>
+再新建一个节点为data0。<br>
+启动节点并进入交互式控制台：</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">geth</span> <span class="selector-tag">--datadir</span> <span class="selector-tag">data0</span> <span class="selector-tag">--networkid</span> 1008 <span class="selector-tag">--ipcdisable</span> <span class="selector-tag">--port</span> 1003 <span class="selector-tag">--rpcport</span> 80222  <span class="selector-tag">console</span></span><br></pre></td></tr></table></figure>
+<p>在第一个节点中使用<code>admin.nodeInfo.enode</code>获取enode。<br>
+在第二个节点中添加第一个节点。</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin.addPeer("enode://e9e7ad186217fbf7b7d7185695dcd17afa73d23e1a1365dd96d01327aee87b2b95af8ca3857ce6b1f6a7d26c58abc19f5e0846787a1d35e21cab7c5fea0cee2a@[::]:1001")</span><br></pre></td></tr></table></figure>
+<p>再使用admin.peers可得到加入节点的信息。</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">    caps: ["eth/62", "eth/63"],</span><br><span class="line">    enode: "enode://e9e7ad186217fbf7b7d7185695dcd17afa73d23e1a1365dd96d01327aee87b2b95af8ca3857ce6b1f6a7d26c58abc19f5e0846787a1d35e21cab7c5fea0cee2a@[::]:1001",</span><br><span class="line">    id: "e4a6cb32cfb6b641dd2606bdb67571f63ff80ff1fe4883c1aa46cd5b89e110eb",</span><br><span class="line">    name: "Geth/v1.8.17-stable-8bbe7207/windows-amd64/go1.11.1",</span><br><span class="line">    network: &#123;</span><br><span class="line">    inbound: false,</span><br><span class="line">    localAddress: "127.0.0.1:18752",</span><br><span class="line">    remoteAddress: "127.0.0.1:1001",</span><br><span class="line">    static: true,</span><br><span class="line">    trusted: false</span><br><span class="line">    &#125;,</span><br><span class="line">    protocols: &#123;</span><br><span class="line">    eth: &#123;</span><br><span class="line">        difficulty: 85380105,</span><br><span class="line">        head: "0xd2c073c35fb027d8dd8fe4d95174bc82ca93d96599dfb05e8deee320631621f0",</span><br><span class="line">        version: 63</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="对-getblock-中所得区块的各个字段进行解释"><a class="markdownIt-Anchor" href="#对-getblock-中所得区块的各个字段进行解释"></a> 对 getBlock 中所得区块的各个字段进行解释</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">类型</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">difficulty</td>
+<td style="text-align:left">BigNumber</td>
+<td>表示当前区块的难度，根据前一个区块的难度和时间戳计算得到，可知当前区块1难度为131072</td>
+</tr>
+<tr>
+<td style="text-align:left">extraData</td>
+<td style="text-align:left">String</td>
+<td>指的是附加信息，可以根据自己的需要填写信息。32字节以内的字节数组。</td>
+</tr>
+<tr>
+<td style="text-align:left">gasLimit</td>
+<td style="text-align:left">Number</td>
+<td>表示当前区块允许使用的最大gas，指这笔交易最多只能给矿工这么多gas，若用不完则返回多出的gas返回，但如果gaslimit不足以支付交易，那么不会退回，因为以太坊规定每笔交易gas最少为21000，所以一定要大于21000。同理若合约的gaslimit小于区块的gaslimit则部署不了。</td>
+</tr>
+<tr>
+<td style="text-align:left">gasUsed</td>
+<td style="text-align:left">Number</td>
+<td>和gasLimit相对，为当前区块所累积使用的gas值。</td>
+</tr>
+<tr>
+<td style="text-align:left">hash</td>
+<td style="text-align:left">String</td>
+<td>指该区块的哈希值，当区块等待被区块链确认时，则为null，可以认为是区块在整个区块链的索引。</td>
+</tr>
+<tr>
+<td style="text-align:left">logsBloom</td>
+<td style="text-align:left">String</td>
+<td>日志Bloom过滤器，信息包含在每个日志入口, 来自交易列表中每个交易的接受者。</td>
+</tr>
+<tr>
+<td style="text-align:left">miner</td>
+<td style="text-align:left">String</td>
+<td>表示打包这一区块的矿工的地址。</td>
+</tr>
+<tr>
+<td style="text-align:left">mixHash</td>
+<td style="text-align:left">String</td>
+<td>混合哈希，与nonce进行哈希运算，证明已经付出了足够的工作量。</td>
+</tr>
+<tr>
+<td style="text-align:left">nonce</td>
+<td style="text-align:left">String</td>
+<td>一个随机数64位哈希，表示该矿工找到的符合条件的nonce值。</td>
+</tr>
+<tr>
+<td style="text-align:left">number</td>
+<td style="text-align:left">Number</td>
+<td>为区块编号，指该区块为第几个区块。</td>
+</tr>
+<tr>
+<td style="text-align:left">parentHash</td>
+<td style="text-align:left">String</td>
+<td>父哈希，指上一个区块的哈希值。因为创世区块没父区块，所以这个值为0。</td>
+</tr>
+<tr>
+<td style="text-align:left">receiptsRoot</td>
+<td style="text-align:left">String</td>
+<td>交易完成后，由交易收据，日志内容构成的数据的字典树根节点哈希。</td>
+</tr>
+<tr>
+<td style="text-align:left">sha3Uncles</td>
+<td style="text-align:left">String</td>
+<td>类似上一个，指由叔区块哈希构成的字典树的根节点哈希。</td>
+</tr>
+<tr>
+<td style="text-align:left">size</td>
+<td style="text-align:left">Number</td>
+<td>当前这个区块的字节大小。</td>
+</tr>
+<tr>
+<td style="text-align:left">stateRoot</td>
+<td style="text-align:left">String</td>
+<td>状态字典树根节点的哈希。</td>
+</tr>
+<tr>
+<td style="text-align:left">timestamp</td>
+<td style="text-align:left">Number</td>
+<td>指当前该区块初始化时的Unix时间戳。</td>
+</tr>
+<tr>
+<td style="text-align:left">totalDifficulty</td>
+<td style="text-align:left">Number</td>
+<td>到当前区块为止，所积累的所有区块难度之和。</td>
+</tr>
+<tr>
+<td style="text-align:left">transactions</td>
+<td style="text-align:left">数组</td>
+<td>当前区块所包含的交易。</td>
+</tr>
+<tr>
+<td style="text-align:left">transactionsRoot</td>
+<td style="text-align:left">String</td>
+<td>包含所有交易的交易字典树的根节点哈希值。</td>
+</tr>
+<tr>
+<td style="text-align:left">Uncles</td>
+<td style="text-align:left">数组</td>
+<td>包含当前区块的所以叔区块。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="对日志输出进行解释"><a class="markdownIt-Anchor" href="#对日志输出进行解释"></a> 对日志输出进行解释</h2>
+<ul>
+<li>
+<p>初始化区块链，分配文件夹和空间，写入创世块，持久化字典树。</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|15:30:01.915] Allocated cache and file handles         database="D:\\Program Files\\Geth\\data\\geth\\chaindata" cache=16 handles=16</span><br><span class="line"></span><br><span class="line">INFO [11-04|15:30:01.940] Writing custom genesis block</span><br><span class="line"></span><br><span class="line">INFO [11-04|15:30:01.941] Persisted trie from memory database      nodes=0 size=0.00B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</span><br><span class="line"></span><br><span class="line">INFO [11-04|15:30:01.941] Successfully wrote genesis state         database=chaindata hash=5e1fc7…790e0</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>开始连接时，初始化以太坊协议，载入最近的区块，重新加载交易和生成交易日志。</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|15:31:05.759] Initialising Ethereum protocol           versions="[63 62]" network=1008</span><br><span class="line"></span><br><span class="line">INFO [11-04|15:31:05.759] Loaded most recent local header          number=0 hash=5e1fc7…790e0 td=131072 age=49y6mo2w</span><br><span class="line"></span><br><span class="line">INFO [11-04|15:31:05.760] Loaded most recent local full block      number=0 hash=5e1fc7…790e0 td=131072 age=49y6mo2w</span><br><span class="line">INFO [11-04|15:31:05.760] Loaded most recent local fast block      number=0 hash=5e1fc7…790e0 td=131072 age=49y6mo2w</span><br><span class="line"></span><br><span class="line">DEBUG[11-04|15:31:05.760] Reinjecting stale transactions           count=0</span><br><span class="line"></span><br><span class="line">INFO [11-04|15:31:05.762] Regenerated local transaction journal    transactions=0 accounts=0</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>输入exit关闭连接，之后将缓存中的状态写入磁盘持久化数据，关闭区块链，关闭协议和交易池，最后关闭数据库。</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|17:11:41.533] Writing cached state to disk             block=454 hash=4713ec鈥?7d4ca root=a006ff鈥e94ea</span><br><span class="line"></span><br><span class="line">INFO [11-04|17:11:41.533] Persisted trie from memory database      nodes=0 size=0.00B time=0s gcnodes=0 gcsize=0.00B gc</span><br><span class="line">    time=0s livenodes=1 livesize=0.00B</span><br><span class="line"></span><br><span class="line">INFO [11-04|17:11:41.533] Blockchain manager stopped</span><br><span class="line"></span><br><span class="line">INFO [11-04|17:11:41.533] Stopping Ethereum protocol</span><br><span class="line"></span><br><span class="line">INFO [11-04|17:11:41.533] Ethereum protocol stopped</span><br><span class="line"></span><br><span class="line">INFO [11-04|17:11:41.533] Transaction pool stopped</span><br><span class="line"></span><br><span class="line">INFO [11-04|17:11:41.533] Database closed                          database="D:\\Program Files\\Geth\\data\\geth\\chain</span><br><span class="line">data"</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>矿工挖矿，打包新区块，开采潜在的区块。</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|17:30:48.082] Commit new mining work                   number=593 sealhash=108a77…bbb5d6 uncles=0 txs=0 gas=0 fees=0 elapsed=35.904ms</span><br><span class="line">INFO [11-04|17:30:49.212] Successfully sealed new block            number=593 sealhash=108a77…bbb5d6 hash=c52790…332920 elapsed=1.166s</span><br><span class="line">INFO [11-04|17:30:49.217] 🔨 mined potential block                  number=593 hash=c52790…332920</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>提交交易。</p>
+  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|18:25:09.342] Setting new local account                address=0x15b97213fB8ee04D2ed53113E41035FEaE88461e</span><br><span class="line">INFO [11-04|18:25:09.346] Submitted transaction                    fullhash=0x889aa5bb7bc45463a5f59012b2ac15abdce71542a48bc6a6be91969c48eac6a5 recipient=0x6a949Cd94E739d035d13c2242B32093553567361</span><br><span class="line"><span class="string">"0x889aa5bb7bc45463a5f59012b2ac15abdce71542a48bc6a6be91969c48eac6a5"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>随后通过挖矿发现有一gas=420000的区块。</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|18:32:42.760] Commit new mining work                   number=607 sealhash=916dea…38331b uncles=0 txs=2 gas=42000 fees=4.2e-05 elapsed=8.943ms</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>添加节点。</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO [11-04|18:39:56.578] Block synchronisation started</span><br><span class="line">INFO [11-04|18:39:56.709] Imported new chain segment               blocks=26 txs=7 mgas=0.126 elapsed=111.730ms mgasps=1.128 number=607 hash=d2c073…1621f0 age=7m14s   cache=17.84kB ignored=2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="编写简单的智能合约在-remix-下进行调试并部署在链上进行调用"><a class="markdownIt-Anchor" href="#编写简单的智能合约在-remix-下进行调试并部署在链上进行调用"></a> 编写简单的智能合约，在 remix 下进行调试，并部署在链上进行调用</h2>
+<h3 id="编写简单的智能合约"><a class="markdownIt-Anchor" href="#编写简单的智能合约"></a> 编写简单的智能合约</h3>
+<p>编写一个类似与复读机的东西，发送字符串保存，之后复读发送的话。</p>
+<p>solidity代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">contract AI &#123;</span><br><span class="line">    string box;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">send</span><span class="params">(string s)</span> <span class="keyword">public</span> </span>&#123;</span><br><span class="line">        box = s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">clear</span><span class="params">()</span> <span class="keyword">public</span></span>&#123;</span><br><span class="line">        box = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">receive</span><span class="params">()</span> <span class="keyword">public</span> constant <span class="title">returns</span> <span class="params">(string)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> box;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">function <span class="title">greet</span><span class="params">()</span> <span class="keyword">public</span> constant <span class="title">returns</span> <span class="params">(string)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="进行调试部署调用"><a class="markdownIt-Anchor" href="#进行调试部署调用"></a> 进行调试部署调用</h3>
+<ol>
+<li>
+<p>部署合约<br>
+<img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E9%83%A8%E7%BD%B2%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.png" alt="部署合约"><br>
+进行挖矿后成功部署。</p>
+</li>
+<li>
+<p>greet<br>
+<img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/greet.png" alt="greet"></p>
+</li>
+<li>
+<p>发送信息，产生交易，挖矿后交易成功。<br>
+<img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/%E5%8F%91%E9%80%81string.png" alt="send"></p>
+</li>
+<li>
+<p>交易成功后更新里面的string，再用receive得到刚刚的消息。<br>
+<img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/Block-chain/%E9%98%B6%E6%AE%B51.%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/receive.png" alt="receive"></p>
+</li>
+<li>
+<p>清除消息，也需要产生交易，然后挖矿使交易成功。</p>
+</li>
+</ol>
+<h2 id="对交易的字段进行解释"><a class="markdownIt-Anchor" href="#对交易的字段进行解释"></a> 对交易的字段进行解释</h2>
+<p>根据以上3的发送消息的交易进行解释。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">eth.getTransaction("0xeb7a55e1760ecc986f813c881b76ab12b812bc611f8f6b9cacb69248438b50ec")</span><br><span class="line">&#123;</span><br><span class="line">    blockHash: "0x06258165d31d4ea7ed945fa430d8e25f75690c0ae20ca4d2ae8f6de40576d261",</span><br><span class="line">    blockNumber: 642,</span><br><span class="line">    from: "0x15b97213fb8ee04d2ed53113e41035feae88461e",</span><br><span class="line">    gas: 43406,</span><br><span class="line">    gasPrice: 1000000000,</span><br><span class="line">    hash: "0xeb7a55e1760ecc986f813c881b76ab12b812bc611f8f6b9cacb69248438b50ec",</span><br><span class="line">    input: "0x66792ba10000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000ce5bc80e5a78be5a48de8afbb0000000000000000000000000000000000000000",</span><br><span class="line">    nonce: 14,</span><br><span class="line">    r: "0x3892abe334fbe797ce57155373c9c36860121d143950f873e554dc37321847d",</span><br><span class="line">    s: "0x55eea1e92c492bd89f7db381fda08ae795fdc7abdbcff4c98f897cae94edae7c",</span><br><span class="line">    to: "0x2eb0f4a6c064c51033dbc5977973bcb6702a9cdd",</span><br><span class="line">    transactionIndex: 0,</span><br><span class="line">    v: "0x37",</span><br><span class="line">    value: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段名称</th>
+<th style="text-align:left">类型</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">blockHash</td>
+<td style="text-align:left">String</td>
+<td>交易所处区块的哈希值</td>
+</tr>
+<tr>
+<td style="text-align:left">blockNumber</td>
+<td style="text-align:left">Number</td>
+<td>当前交易所处在区块的编号</td>
+</tr>
+<tr>
+<td style="text-align:left">from</td>
+<td style="text-align:left">String</td>
+<td>发起交易的账户（地址）</td>
+</tr>
+<tr>
+<td style="text-align:left">gas</td>
+<td style="text-align:left">Number</td>
+<td>完成这笔交易所需要的gas</td>
+</tr>
+<tr>
+<td style="text-align:left">gasPrice</td>
+<td style="text-align:left">Number</td>
+<td>当前每个gas所需的花费</td>
+</tr>
+<tr>
+<td style="text-align:left">hash</td>
+<td style="text-align:left">String</td>
+<td>当前交易的哈希值</td>
+</tr>
+<tr>
+<td style="text-align:left">input</td>
+<td style="text-align:left">String</td>
+<td>部署智能合约交易的16进制代码，合约调用相关的二进制信息</td>
+</tr>
+<tr>
+<td style="text-align:left">nonce</td>
+<td style="text-align:left">Number</td>
+<td>相当于发起人的交易序号，每发送一笔交易，nonce+1，放置交易重复进行</td>
+</tr>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">String</td>
+<td>发起人EOA的ECDSA签名的三个组成部分</td>
+</tr>
+<tr>
+<td style="text-align:left">s</td>
+<td style="text-align:left">String</td>
+<td>发起人EOA的ECDSA签名的三个组成部分</td>
+</tr>
+<tr>
+<td style="text-align:left">to</td>
+<td style="text-align:left">String</td>
+<td>目标以太坊地址</td>
+</tr>
+<tr>
+<td style="text-align:left">transactionIndex</td>
+<td style="text-align:left">Number</td>
+<td>交易索引</td>
+</tr>
+<tr>
+<td style="text-align:left">v</td>
+<td style="text-align:left">String</td>
+<td>发起人EOA的ECDSA签名的三个组成部分</td>
+</tr>
+<tr>
+<td style="text-align:left">values</td>
+<td style="text-align:left">Number</td>
+<td>要发送到目的地址的以太币数</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-11-04T13:19:28.296Z" itemprop="dateUpdated">2018-11-04 21:19:28</time>
+</span><br>
+
+
+        
+        <a href="/2018/11/04/区块链热身报告/" target="_blank" rel="external">http://ziquanzhang.ink/2018/11/04/区块链热身报告/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ethereum/">ethereum</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/&title=《区块链热身报告》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/&title=《区块链热身报告》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/11/04/区块链热身报告/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《区块链热身报告》 — Legend never dies&url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/28/LeetCode-45-Jump-Game-II/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[LeetCode] 45. Jump Game II</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Sun Nov 04 2018 21:17:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备17120669号-1</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/&title=《区块链热身报告》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/&title=《区块链热身报告》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/11/04/区块链热身报告/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《区块链热身报告》 — Legend never dies&url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/11/04/区块链热身报告/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS27DMAxF0ex/0+qkgwCp7ftIp4Cp61HR+qOjAUtSfL3wtd6uz9+8/578lX/l5kuGDBmPZazT63xZ5JMLX5/vJPfLkCFjH8bR54/uSZ8ib+DbJEOGDBlkEejVYLnnPBkyZMjoM47SOB5w06dkyJCxM+OuwrLTXCPF8w21uAwZMh7I4J/8/5+/cr4hQ4aMRzFWeKVBkN9TW8/vszJkyBjNqB1D1lr5/cL1Yj0yZMgYzUjbZ62wGG4BCdMyZMjYh8Fb/CSlqx0w8GfRcJgMGTIGMUix2jmGJAUtD7UyZMjYmZEGuE5qyIvYoNyVIUPGUEYtIYubX7c23S6mRWTIkDGOURu5qB1q8uUW/2/IkCFjNIOUi2mjrbYUXkhf1OIyZMjYgNEfrYibZXj7Lk42ZMiQMY5BkjmeCPYHKVoTIjJkyBjKqDXUvrf0NKFE5xsyZMgYweAFahp8eYKYhloZMmTsw+BlZKsRhgEkBfzjfhkyZIxm1JbbaauljbZ4ckSGDBmjGbUQ2RkLi0vTc4wMGTK2YdRGK3hzLR1BC4peGTJkbMBIXxRMc4A7efmKMlwZMmQMYqzwIrvCn0o35eI0Q4YMGUMZaaJGAmu/9Ua2rJh0ypAh47GMWpDlC+JjZK2AK0OGjA0Yafu+dmDQGbNAea4MGTJklPp5nUENGTJkyOgweGJ31zahIlaGDBmjGTzJ4ykgCcG1AC1DhozdGGnpSMJoP4D2w7QMGTJGMH4AravRP6Mau8gAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq\'s blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
