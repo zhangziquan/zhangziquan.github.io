@@ -25,30 +25,28 @@ var _hmt = _hmt || [];
     
     
     
-    <link rel="canonical" href="http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/">
+    <link rel="canonical" href="http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/">
     
     
-    <title>[LeetCode] 312. Burst Balloons | Legend never dies | zhangzq index</title>
+    <title>[LeetCode] 732. My Calendar III | Legend never dies | zhangzq index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="Algorithms,LeetCode,Dynamic Programming">
-    <meta name="description" content="312. Burst Balloons week12 难度：Hard 题目链接   题目描述 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons.">
-<meta name="keywords" content="Algorithms,LeetCode,Dynamic Programming">
+    <meta name="keywords" content="Algorithms,LeetCode,Graph">
+    <meta name="description" content="732. My Calendar III week13 难度：Hard 题目链接   题目描述 Implement a MyCalendarThree class to store your events. A new event can always be added. Your class will have one method, book(int start, int end). For">
+<meta name="keywords" content="Algorithms,LeetCode,Graph">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 312. Burst Balloons">
-<meta property="og:url" content="http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/index.html">
+<meta property="og:title" content="[LeetCode] 732. My Calendar III">
+<meta property="og:url" content="http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/index.html">
 <meta property="og:site_name" content="Legend never dies">
-<meta property="og:description" content="312. Burst Balloons week12 难度：Hard 题目链接   题目描述 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons.">
+<meta property="og:description" content="732. My Calendar III week13 难度：Hard 题目链接   题目描述 Implement a MyCalendarThree class to store your events. A new event can always be added. Your class will have one method, book(int start, int end). For">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Burst%20Balloons_test.png?x-oss-process=style/Blog-Normal">
-<meta property="og:updated_time" content="2018-11-27T15:23:40.513Z">
+<meta property="og:updated_time" content="2018-12-06T13:03:49.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 312. Burst Balloons">
-<meta name="twitter:description" content="312. Burst Balloons week12 难度：Hard 题目链接   题目描述 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons.">
-<meta name="twitter:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Burst%20Balloons_test.png?x-oss-process=style/Blog-Normal">
+<meta name="twitter:title" content="[LeetCode] 732. My Calendar III">
+<meta name="twitter:description" content="732. My Calendar III week13 难度：Hard 题目链接   题目描述 Implement a MyCalendarThree class to store your events. A new event can always be added. Your class will have one method, book(int start, int end). For">
     
         <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
     
@@ -143,7 +141,7 @@ var _hmt = _hmt || [];
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">[LeetCode] 312. Burst Balloons</div>
+        <div class="flex-col header-title ellipsis">[LeetCode] 732. My Calendar III</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -165,11 +163,11 @@ var _hmt = _hmt || [];
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">[LeetCode] 312. Burst Balloons</h1>
+        <h1 class="title">[LeetCode] 732. My Calendar III</h1>
         <h5 class="subtitle">
             
-                <time datetime="2018-11-27T15:20:00.000Z" itemprop="datePublished" class="page-time">
-  2018-11-27
+                <time datetime="2018-12-06T13:01:00.000Z" itemprop="datePublished" class="page-time">
+  2018-12-06
 </time>
 
 
@@ -190,18 +188,18 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#312-burst-balloons"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 312. Burst Balloons</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> 题目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 解题思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text"> 代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果反思"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text"> 结果反思</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码分析"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text"> 代码分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> 总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#732-my-calendar-iii"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 732. My Calendar III</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> 题目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 解题思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text"> 代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果反思"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text"> 结果反思</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> 总结</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-LeetCode-312-Burst-Balloons"
+<article id="post-LeetCode-732-My-Calendar-III"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">[LeetCode] 312. Burst Balloons</h1>
+        <h1 class="post-card-title">[LeetCode] 732. My Calendar III</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-11-27 23:20:00" datetime="2018-11-27T15:20:00.000Z"  itemprop="datePublished">2018-11-27</time>
+            <time class="post-time" title="2018-12-06 21:01:00" datetime="2018-12-06T13:01:00.000Z"  itemprop="datePublished">2018-12-06</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/The-Design-and-Analysis-of-Computer-Algorithms/">The Design and Analysis of Computer Algorithms</a></li></ul>
@@ -216,49 +214,53 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="312-burst-balloons"><a class="markdownIt-Anchor" href="#312-burst-balloons"></a> 312. Burst Balloons</h1>
-<p>week12</p>
+            <h1 id="732-my-calendar-iii"><a class="markdownIt-Anchor" href="#732-my-calendar-iii"></a> 732. My Calendar III</h1>
+<p>week13</p>
 <p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/burst-balloons/" target="_blank" rel="noopener">题目链接</a></p>
+<p><a href="https://leetcode.com/problems/my-calendar-iii/" target="_blank" rel="noopener">题目链接</a></p>
 <hr>
 <h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
-<p>Given n balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon <code>i</code> you will get <code>nums[left] * nums[i] * nums[right]</code> coins. Here <code>left</code> and <code>right</code> are adjacent indices of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
-<p>Find the maximum coins you can collect by bursting the balloons wisely.</p>
+<p>Implement a MyCalendarThree class to store your events. A new event can always be added.</p>
+<p>Your class will have one method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that start &lt;= x &lt; end.</p>
+<p>A K-booking happens when K events have some non-empty intersection (ie., there is some time that is common to all K events.)</p>
+<p>For each call to the method MyCalendar.book, return an integer K representing the largest integer such that there exists a K-booking in the calendar.</p>
+<p>Your class will be called like this: MyCalendarThree cal = new MyCalendarThree(); MyCalendarThree.book(start, end)</p>
+<p><strong>Example1:</strong></p>
+<pre><code>MyCalendarThree();
+MyCalendarThree.book(10, 20); // returns 1
+MyCalendarThree.book(50, 60); // returns 1
+MyCalendarThree.book(10, 40); // returns 2
+MyCalendarThree.book(5, 15); // returns 3
+MyCalendarThree.book(5, 10); // returns 3
+MyCalendarThree.book(25, 55); // returns 3
+Explanation: 
+The first two events can be booked and are disjoint, so the maximum K-booking is a 1-booking.
+The third event [10, 40) intersects the first event, and the maximum K-booking is a 2-booking.
+The remaining events cause the maximum K-booking to be only a 3-booking.
+Note that the last event locally causes a 2-booking, but the answer is still 3 because
+eg. [10, 20), [10, 40), and [5, 15) are still triple booked.
+</code></pre>
 <p><strong>Note:</strong></p>
 <ul>
-<li>You may imagine nums[-1] = nums[n] = 1. They are not real therefore you can not burst them.</li>
-<li>0 ≤ n ≤ 500, 0 ≤ nums[i] ≤ 100</li>
+<li>The number of calls to MyCalendarThree.book per test case will be at most 400.</li>
+<li>In calls to MyCalendarThree.book(start, end), start and end are integers in the range [0, 10^9].</li>
 </ul>
-<p><strong>Example:</strong></p>
-<pre><code>Input: [3,1,5,8]
-Output: 167
-Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []
-            coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
-</code></pre>
 <hr>
 <h2 id="题目分析"><a class="markdownIt-Anchor" href="#题目分析"></a> 题目分析</h2>
-<p>  题意就是给予一连串的气球，每个气球上都有分数，当点击气球后，气球消失，获得的分数即是被点击的气球*两边的气球。找出可获得的最大分数。</p>
+<p>  题目简单来说，就是寻找最大的重合数量，可以看作为有许多条线段在一个区间上，每加入一条线段则要得出最大的重叠数量，重叠就是指线段有一段重合的区间则这两条线段重叠。</p>
 <hr>
 <h2 id="解题思路"><a class="markdownIt-Anchor" href="#解题思路"></a> 解题思路</h2>
-<p>  这道题明示使用动态规划，考虑将问题分为多个子问题解决，假设按点击的顺序计算，每次点击都会使被点击的气球消失，再根据剩下的元素来构造新的数组，那么这个问题又变成了新的环境，难以简单地复用解决。假设按倒推的方式思考，假设最后一个气球被戳破，那么它左边或者右边的气球不会受到对方的影响，因为隔着一个气球始终在它们的中间，所以左边和右边的气球戳破顺序就可以分开计算，化简成多个小问题。</p>
-<p>  假设第i个气球为最后戳破的气球，max[a][b]为第a到第b个气球获得的最大分数，那么问题的解就变为：$$maxCoins[0][n - 1] = maxCoins[0][i - 1] + maxCoins[i + 1][n - 1] + nums[left] * nums[i] * nums[right]$$</p>
+<p>  这道题我想的是如果要求最大重叠数量，假如对每条线段都去遍历一遍得出重合的线段再统计的话就很麻烦，即使维护一个最大数量每次插入后比较，也并不会很好做。</p>
+<p>  对于这个题目可以想到这么一种做法，记录下每一条线段的起点与终点，然后在这一个区间上遍历，如果遇到起点，那么此时有一条线段加入，如果遇到终点，即意味着有一条线段结束了，通过这种做法可以得出在某个点上线段有多少条，求出最大的即可。</p>
+<p>  在数据结构上选择map可以不用考虑排序的问题，而且键值对便于修改。加入线段，线段的起点数值+1，终点-1，这样在遍历这整个区间时，直接加上该点的数值即可方便统计线段数量。</p>
 <h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">maxCoins</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums.size();</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; n - i; l++)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">int</span> r = l + i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = l + <span class="number">1</span>; j &lt; r; j++)</span><br><span class="line">        &#123;</span><br><span class="line">          dp[l][r] = max(dp[l][r], dp[l][j] + dp[j][r] + nums[l] * nums[r] * nums[j]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][n - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCalendarThree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">    <span class="keyword">int</span> maximum;</span><br><span class="line">    MyCalendarThree()</span><br><span class="line">    &#123;</span><br><span class="line">        maximum = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">book</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        m[start]++;</span><br><span class="line">        m[end]--;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> i = m.begin(); i != m.end(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            num += i-&gt;second;</span><br><span class="line">            <span class="keyword">if</span> (maximum &lt; num)</span><br><span class="line">                maximum = num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maximum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCalendarThree object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCalendarThree obj = new MyCalendarThree();</span></span><br><span class="line"><span class="comment"> * int param_1 = obj.book(start,end);</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <h3 id="结果反思"><a class="markdownIt-Anchor" href="#结果反思"></a> 结果反思</h3>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Burst%20Balloons_test.png?x-oss-process=style/Blog-Normal" alt="测试" title="">
-                </div>
-                <div class="image-caption">测试</div>
-            </figure>
-<p>  这个算法还是比较简洁的，没有什么多余的东西，就是纯dp。</p>
-<hr>
-<h3 id="代码分析"><a class="markdownIt-Anchor" href="#代码分析"></a> 代码分析</h3>
-<p>  因为要考虑到戳破气球时，有边界的问题，所以在两边加上两个无法被戳破的分数为1的气球，构成n+2的新数组，最后的状态转移为：$$Coins[left][right] = max(Coins[left][right], Coins[left][i] + Coins[i][right] + nums[left] * nums[right] * nums[i]);$$</p>
+<p>![upload successful](\images\pasted-15.png)</p>
+<p>  这个算法虽然运行速度不快，但是胜于非常简单。。很容易理解。代码也非常简洁，就那么几行搞定，主要是要选择适合的数据结构存储。</p>
 <hr>
 <h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>  这个题目说明了动态规划有时候按正向推导分解问题可能会分解不了多个较小的子问题，在这种时候要尝试逆向思维，反过来思考到达最后的状态时，要经过哪些状态。这道题有点和上两周那道Freedom Trail即辐射4旋转字符串一样，都是从最后的状态开始，从而分解成多个子问题。</p>
+<p>  这个方法其实是有向图的一个变形，用到了出度和入度的方法，就和我说的初始和闭合一样，到初始点数量++，到了终点数量–。所以最大数量总是在某个线段开始的地方的，因此就转变为了寻找最大的出度。</p>
 
         </div>
 
@@ -267,12 +269,12 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-11-27T15:23:40.513Z" itemprop="dateUpdated">2018-11-27 23:23:40</time>
+    最后更新时间：<time datetime="2018-12-06T13:03:49.542Z" itemprop="dateUpdated">2018-12-06 21:03:49</time>
 </span><br>
 
 
         
-        <a href="/2018/11/27/LeetCode-312-Burst-Balloons/" target="_blank" rel="external">http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/</a>
+        <a href="/2018/12/06/LeetCode-732-My-Calendar-III/" target="_blank" rel="external">http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/</a>
         
     </div>
     
@@ -293,7 +295,7 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graph/">Graph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
 
 
             
@@ -303,7 +305,7 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/&title=《[LeetCode] 312. Burst Balloons》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/&title=《[LeetCode] 732. My Calendar III》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -313,22 +315,22 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/&title=《[LeetCode] 312. Burst Balloons》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/&title=《[LeetCode] 732. My Calendar III》 — Legend never dies&source=张子权的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 312. Burst Balloons》 — Legend never dies&url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/&via=http://ziquanzhang.ink" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 732. My Calendar III》 — Legend never dies&url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/&via=http://ziquanzhang.ink" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -348,21 +350,14 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/12/06/LeetCode-732-My-Calendar-III/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">[LeetCode] 732. My Calendar III</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/11/17/LeetCode-354-Russian-Doll-Envelopes/" id="post-next" class="post-nav-link">
+      <a href="/2018/11/27/LeetCode-312-Burst-Balloons/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">[LeetCode] 354. Russian Doll Envelopes</h4>
+        <h4 class="title">[LeetCode] 312. Burst Balloons</h4>
       </a>
     </div>
   
@@ -385,7 +380,7 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
     <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
     <script>
         var gitment = new Gitment({
-			id: "Tue Nov 27 2018 23:20:00 GMT+0800",
+			id: "Thu Dec 06 2018 21:01:00 GMT+0800",
             owner: 'zhangziquan',
             repo: 'blog-comment',
             oauth: {
@@ -497,7 +492,7 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/&title=《[LeetCode] 312. Burst Balloons》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/&title=《[LeetCode] 732. My Calendar III》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -507,22 +502,22 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/&title=《[LeetCode] 312. Burst Balloons》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/&title=《[LeetCode] 732. My Calendar III》 — Legend never dies&source=张子权的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 312. Burst Balloons》 — Legend never dies&url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/&via=http://ziquanzhang.ink" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[LeetCode] 732. My Calendar III》 — Legend never dies&url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/&via=http://ziquanzhang.ink" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -533,7 +528,7 @@ Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aS3KDQAxFUfa/aWcBDs19EriqxWXkcojpw0Cl33Hg63Nyff/17Jv0KccTlwwZMrZlfJbX+qBnv9Z/BfxsMmTIeA9jfSASBAkgDbj8ZcmQIUMGT/vWmDVPhgwZMu4NuCSBqxWrMmTIkNEpYskjCZ5cD9biMmTI2JDBu+6///zIfEOGDBlbMT7hVQu1/HeKp5IhQ8ZoRtr057x1KknY8VqGDBkyhjJ40VhbnuCtNz5U+OdOGTJkjGZ0fq5WdvJWGk83ZciQMZuRFpAkTKeLGunqRnEfTYYMGZszWkPBMGWs3X/xWYYMGaMZpFAkj6/Fvf7I4UiPK0OGjG0ZnSL2rkOn49JTkgwZMoYy0qFj7WF8FYOUuKeTWBkyZAxl8DZcJ3FMwzR/TTJkyJjNqM080//iQTNerZAhQ8ZrGJ2mf3/Ymbbe0LKFDBkyxjHSZC4dPfJEkIfai9RQhgwZQxnpikN6rFrJispgGTJkjGbwBhlfhkg7fLVli9MZrAwZMkYzDnyRhDINxKQMvnjFMmTIeA2jFv74wOCutbOLgCtDhoyhjA6ATxU5lbfkZMiQMZvRH0ymSR4P8QFVhgwZoxm1wrXWeksXL/rDCRkyZExi1FYoWk18XNAGAVeGDBkvYKy/r92Ttup46JchQ4aM3xyx1rC7OeDKkCFjKIMnbZ2mWzrylCFDxhsYfBiQ9u2eGAPIkCHjbYw07+oXvetDkAHDDemjDBky9mD8AV4oslB5fLsmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aMVLEQAwEQP//00cVKeAbSavDQTtyUWBvb+AVI11XfL2+r5/3+U/yn79ur2vjwsPDw2st/f5xyaPvl3j/3upzCluAh4eHt8brLTdnJPf3m5hsNx4eHt7TePcf5eSw6RXN+UGFh4eH9zReNYbIi/IHnXt4eHh4MS//lFdjhfvPenLAjKJePDw8vAXepAH2X/cf6u/h4eHhFbvq82bYfFBgcuHh4eFt8HojU71Iohr1JjFutOl4eHh4R3nVZU2K3erwQZX0yz0eHh7eAq86XFUtoPPDoBocJ8/Hw8PD2+ZVm1XVqjVveuVbFm0KHh4e3gJv0sKfvDg/fnrrwcPDw9vg9YalDpS5cdSbhMvRiYeHh4d3iDcJTPNQNW9oVVcVbRMeHh7eAi8ptZNy9tQw1pyEh4eHt8dLSur5R38S8o7Gs/Dw8PA+wqs2w5LjJF9QtfH2poDGw8PDW+b1lp4X5dVoozfUhYeHh7fN633iJyMIeTHdK7V/WSceHh7eAi9ZVh6k5mHE/dvnSDw8PLwNXvWPey2rfKirN6r15z0eHh7eGq8axeaf7yqpGlW8eTseHh7eGi9f1qkhgGri2ttKPDw8vA1e70M8WUreMOsV1nh4eHjbvOqDynFA8Omv4ptDA3h4eHgLvElxXG2e5Vs8iYDx8PDwNnjVuLY6RtAbLKgCCjNleHh4eGNeHhYk8e7ZMYK81C4MXeHh4eEd5eVjAclnOsf0yvqooMfDw8Nb4M1j0zx6qMYcSfzRjHfx8PDwxrxqAJG/uDeIMD8wCqcfHh4e3oDXi0p7ZW4OyIOSKKXGw8PD+ziv+s9/Hs5WRwTyhhweHh7ec3i9SCI/HvLfebNCPDw8vDVetUQ+27iqHi1JWIyHh4e3x+s1wJLCuhdJ9H7nmlx4eHh4Ke8Lax9K3/WoYTMAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
