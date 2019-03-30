@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?905249609e5774f6b20d26393024eec4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/">
+    
+    
+    <title>系统分析与设计作业（二） | Legend never dies | zhangzq index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="SSAD">
+    <meta name="description" content="系统分析与设计作业（二）1、简答题用简短的语言给出对分析、设计的理解。分析和设计都是用于工程上的建模，而分析主要是对整个工程进行整体的描述，评价，即强调调查，分析整个模型的优劣，各种模型定义，而设计则是在局部上在分析的基础上不断完善其结构，如各种接口等等，主要是完善模型的设计。 用一句话描述面向对象的分析与设计的优势。作为分析者不需要有很多问题域的专业知识，只需找出描述问题域及系统责任所需的对象，">
+<meta name="keywords" content="SSAD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计作业（二）">
+<meta property="og:url" content="http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/index.html">
+<meta property="og:site_name" content="Legend never dies">
+<meta property="og:description" content="系统分析与设计作业（二）1、简答题用简短的语言给出对分析、设计的理解。分析和设计都是用于工程上的建模，而分析主要是对整个工程进行整体的描述，评价，即强调调查，分析整个模型的优劣，各种模型定义，而设计则是在局部上在分析的基础上不断完善其结构，如各种接口等等，主要是完善模型的设计。 用一句话描述面向对象的分析与设计的优势。作为分析者不需要有很多问题域的专业知识，只需找出描述问题域及系统责任所需的对象，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/kanban.PNG">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/umltest.png">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/umlexample.PNG">
+<meta property="og:updated_time" content="2019-03-30T07:36:43.440Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计作业（二）">
+<meta name="twitter:description" content="系统分析与设计作业（二）1、简答题用简短的语言给出对分析、设计的理解。分析和设计都是用于工程上的建模，而分析主要是对整个工程进行整体的描述，评价，即强调调查，分析整个模型的优劣，各种模型定义，而设计则是在局部上在分析的基础上不断完善其结构，如各种接口等等，主要是完善模型的设计。 用一句话描述面向对象的分析与设计的优势。作为分析者不需要有很多问题域的专业知识，只需找出描述问题域及系统责任所需的对象，">
+<meta name="twitter:image" content="http://ziquanzhang.ink/images/SSAD/kanban.PNG">
+    
+        <link rel="alternate" type="application/atom+xml" title="Legend never dies" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Bonfire.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">系统分析与设计作业（二）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">系统分析与设计作业（二）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-30T07:35:00.000Z" itemprop="datePublished" class="page-time">
+  2019-03-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计作业（二）"><span class="post-toc-number">1.</span> <span class="post-toc-text">系统分析与设计作业（二）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、简答题"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、简答题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用简短的语言给出对分析、设计的理解。"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">用简短的语言给出对分析、设计的理解。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用一句话描述面向对象的分析与设计的优势。"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">用一句话描述面向对象的分析与设计的优势。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简述-UML（统一建模语言）的作用。考试考哪些图？"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">简述 UML（统一建模语言）的作用。考试考哪些图？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从软件本质的角度，解释软件范围（需求）控制的可行性"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">从软件本质的角度，解释软件范围（需求）控制的可行性</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、项目管理实践"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2、项目管理实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#看板使用练习"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">看板使用练习</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UML绘图工具练习（提交贴图，必须使用-UMLet）"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">UML绘图工具练习（提交贴图，必须使用 UMLet）</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-系统分析与设计作业（二）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">系统分析与设计作业（二）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-30 15:35:00" datetime="2019-03-30T07:35:00.000Z"  itemprop="datePublished">2019-03-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="系统分析与设计作业（二）"><a href="#系统分析与设计作业（二）" class="headerlink" title="系统分析与设计作业（二）"></a>系统分析与设计作业（二）</h1><h2 id="1、简答题"><a href="#1、简答题" class="headerlink" title="1、简答题"></a>1、简答题</h2><h3 id="用简短的语言给出对分析、设计的理解。"><a href="#用简短的语言给出对分析、设计的理解。" class="headerlink" title="用简短的语言给出对分析、设计的理解。"></a>用简短的语言给出对分析、设计的理解。</h3><p>分析和设计都是用于工程上的建模，而分析主要是对整个工程进行整体的描述，评价，即强调调查，分析整个模型的优劣，各种模型定义，而设计则是在局部上在分析的基础上不断完善其结构，如各种接口等等，主要是完善模型的设计。</p>
+<h3 id="用一句话描述面向对象的分析与设计的优势。"><a href="#用一句话描述面向对象的分析与设计的优势。" class="headerlink" title="用一句话描述面向对象的分析与设计的优势。"></a>用一句话描述面向对象的分析与设计的优势。</h3><p>作为分析者不需要有很多问题域的专业知识，只需找出描述问题域及系统责任所需的对象，定义对象的属性、操作以及它们之间的关系。</p>
+<h3 id="简述-UML（统一建模语言）的作用。考试考哪些图？"><a href="#简述-UML（统一建模语言）的作用。考试考哪些图？" class="headerlink" title="简述 UML（统一建模语言）的作用。考试考哪些图？"></a>简述 UML（统一建模语言）的作用。考试考哪些图？</h3><p>UML是统一建模语言，旨在提供一种可视化系统设计的标准方法。<br>作用是可以将分析结果和设计视觉化，简单又相对详细，可以用作简图、蓝图和编程语言。<br>考试：用例图，静态图，行为图，实现图</p>
+<h3 id="从软件本质的角度，解释软件范围（需求）控制的可行性"><a href="#从软件本质的角度，解释软件范围（需求）控制的可行性" class="headerlink" title="从软件本质的角度，解释软件范围（需求）控制的可行性"></a>从软件本质的角度，解释软件范围（需求）控制的可行性</h3><p>由于软件本身的复杂性、不可见性、不一致性、可变性，软件范围多数情况下对于客户和开发者都是模糊的，因此需要进行软件需求的控制来避免项目陷入混乱以及控制软件的复杂性。<br>所以通过软件范围（需求）控制对客户的各种需求进行可行性分析求精和细化，分析各种实现方式，从而进行软件各部分的设计。砍去一些客户不清晰的业务能够有效开发。</p>
+<h2 id="2、项目管理实践"><a href="#2、项目管理实践" class="headerlink" title="2、项目管理实践"></a>2、项目管理实践</h2><h3 id="看板使用练习"><a href="#看板使用练习" class="headerlink" title="看板使用练习"></a>看板使用练习</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\SSAD\kanban.PNG" alt="kanban" title="">
+                </div>
+                <div class="image-caption">kanban</div>
+            </figure>
+<h3 id="UML绘图工具练习（提交贴图，必须使用-UMLet）"><a href="#UML绘图工具练习（提交贴图，必须使用-UMLet）" class="headerlink" title="UML绘图工具练习（提交贴图，必须使用 UMLet）"></a>UML绘图工具练习（提交贴图，必须使用 UMLet）</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\SSAD\umltest.png" alt="UML" title="">
+                </div>
+                <div class="image-caption">UML</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\SSAD\umlexample.PNG" alt="UMLexample" title="">
+                </div>
+                <div class="image-caption">UMLexample</div>
+            </figure>
+<p>教材247页</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-30T07:36:43.440Z" itemprop="dateUpdated">2019-03-30 15:36:43</time>
+</span><br>
+
+
+        
+        <a href="/2019/03/30/系统分析与设计作业（二）/" target="_blank" rel="external">http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSAD/">SSAD</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/&title=《系统分析与设计作业（二）》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/&title=《系统分析与设计作业（二）》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计作业（二）》 — Legend never dies&url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/15/系统分析与设计作业（一）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">系统分析与设计作业（一）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Sat Mar 30 2019 15:35:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+	
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018 - 2019</span>
+			<span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("09/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+			setInterval("createtime()",250);
+			</script>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/&title=《系统分析与设计作业（二）》 — Legend never dies&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/&title=《系统分析与设计作业（二）》 — Legend never dies&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计作业（二）》 — Legend never dies&url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/03/30/系统分析与设计作业（二）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3a0W5iMQwEUP7/p3dfd1VBZ+yEUunwhChwc26lxIz9eMSPP8Hj33d+fZ68kn/z4QceHh7e0aU/e0+7oPYWtOv5+h48PDy827xnO2qyKb++fHKVb5YYrwcPDw/vM3nFphyXzvkhgYeHh/cbeTP864OkJeHh4eF9Aq+NUDcb+iz8vZ614OHh4U3q3kdeEP/s8yv9PTw8PLxDAwHtpjxraLXhRbQGPDw8vAu8fMPNY4W8DdYGFsN14uHh4R3lJUvJI9e2sk2i5PaW/fcKHh4e3gVefoGzv/H3sGEwgYeHh7fmJRdrj4c8kmjL9/qfhIeHh3eB1zaZ8rGn5BjIi+P2e/Dw8PDeyXu9xPwgSZ7Pjoe6yMbDw8M7yptFBrOIYVOU51d8OhmBh4eHd4g3/MA6PmgZsyEwPDw8vBu8dqRpxptt+geGsfDw8PCu8fbl7CyoncUNRdGPh4eHd4E32+L3bf625ZaEJsUYFh4eHt6CdzbAHW7WZfCRt9nw8PDw7vFm7aXk8NiQZuHIqr+Hh4eHF/PyonkWvyYtq7y4z9eAh4eH907enh2VvIvbFx1IeHh4eNd47UhTXi7vo95VgY6Hh4d3mdfGpqdii3bRw6ErPDw8vEO8WcM+aXftF3ojYsbDw8M7xWsDiKTwbUPY5EBq14aHh4f3Tl4bT+QDWDl7UzQXo1d4eHh4C96sOG4BdXXfYlZnCB4eHl5XbSaPfQmef0N7+7458fDw8PAO8faN/FnYmgcTs/evWmJ4eHh4AW8fLsyGBtriPi/ZD0wf4OHh4QW8dlOexbJ5RDsrjp8eDHh4eHg/ystr89kBMxtrePo6Hh4e3gfw2ku2scKpYQU8PDy827x20Ko9BpJP5YdN8Vc8PDy8C7z8R/5+cZte3JWhATw8PLyO9xdDCMU6cM+0AQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="https://www.ziquanzhang.ink/js/live2d/jquery.min.js"></script>
+
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq\'s blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script src="https://www.ziquanzhang.ink/js/live2d/autoload.js"></script>
+
+</body>
+</html>
