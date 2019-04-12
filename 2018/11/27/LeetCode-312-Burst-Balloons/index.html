@@ -35,19 +35,19 @@ var _hmt = _hmt || [];
     
     
     <meta name="keywords" content="Algorithms,LeetCode,Dynamic Programming">
-    <meta name="description" content="312. Burst Balloons week12 难度：Hard 题目链接   题目描述 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons.">
+    <meta name="description" content="312. Burst Balloonsweek12 难度：Hard 题目链接  题目描述Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If">
 <meta name="keywords" content="Algorithms,LeetCode,Dynamic Programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode] 312. Burst Balloons">
 <meta property="og:url" content="http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/index.html">
 <meta property="og:site_name" content="缘ね花落的博客">
-<meta property="og:description" content="312. Burst Balloons week12 难度：Hard 题目链接   题目描述 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons.">
+<meta property="og:description" content="312. Burst Balloonsweek12 难度：Hard 题目链接  题目描述Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Burst%20Balloons_test.png?x-oss-process=style/Blog-Normal">
 <meta property="og:updated_time" content="2018-11-27T15:23:40.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[LeetCode] 312. Burst Balloons">
-<meta name="twitter:description" content="312. Burst Balloons week12 难度：Hard 题目链接   题目描述 Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons.">
+<meta name="twitter:description" content="312. Burst Balloonsweek12 难度：Hard 题目链接  题目描述Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If">
 <meta name="twitter:image" content="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Burst%20Balloons_test.png?x-oss-process=style/Blog-Normal">
     
         <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
@@ -190,7 +190,7 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#312-burst-balloons"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 312. Burst Balloons</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> 题目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 解题思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text"> 代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果反思"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text"> 结果反思</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码分析"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text"> 代码分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> 总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#312-Burst-Balloons"><span class="post-toc-number">1.</span> <span class="post-toc-text">312. Burst Balloons</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解题思路"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">解题思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结果反思"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">结果反思</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码分析"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">代码分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -216,13 +216,11 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="312-burst-balloons"><a class="markdownIt-Anchor" href="#312-burst-balloons"></a> 312. Burst Balloons</h1>
-<p>week12</p>
+            <h1 id="312-Burst-Balloons"><a href="#312-Burst-Balloons" class="headerlink" title="312. Burst Balloons"></a>312. Burst Balloons</h1><p>week12</p>
 <p>难度：Hard</p>
 <p><a href="https://leetcode.com/problems/burst-balloons/" target="_blank" rel="noopener">题目链接</a></p>
 <hr>
-<h2 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h2>
-<p>Given n balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon <code>i</code> you will get <code>nums[left] * nums[i] * nums[right]</code> coins. Here <code>left</code> and <code>right</code> are adjacent indices of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given n balloons, indexed from <code>0</code> to <code>n-1</code>. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the balloons. If the you burst balloon <code>i</code> you will get <code>nums[left] * nums[i] * nums[right]</code> coins. Here <code>left</code> and <code>right</code> are adjacent indices of <code>i</code>. After the burst, the <code>left</code> and <code>right</code> then becomes adjacent.</p>
 <p>Find the maximum coins you can collect by bursting the balloons wisely.</p>
 <p><strong>Note:</strong></p>
 <ul>
@@ -234,31 +232,24 @@ var _hmt = _hmt || [];
 Output: 167
 Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []
             coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
-</code></pre>
+</code></pre><hr>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;题意就是给予一连串的气球，每个气球上都有分数，当点击气球后，气球消失，获得的分数即是被点击的气球*两边的气球。找出可获得的最大分数。</p>
 <hr>
-<h2 id="题目分析"><a class="markdownIt-Anchor" href="#题目分析"></a> 题目分析</h2>
-<p>  题意就是给予一连串的气球，每个气球上都有分数，当点击气球后，气球消失，获得的分数即是被点击的气球*两边的气球。找出可获得的最大分数。</p>
-<hr>
-<h2 id="解题思路"><a class="markdownIt-Anchor" href="#解题思路"></a> 解题思路</h2>
-<p>  这道题明示使用动态规划，考虑将问题分为多个子问题解决，假设按点击的顺序计算，每次点击都会使被点击的气球消失，再根据剩下的元素来构造新的数组，那么这个问题又变成了新的环境，难以简单地复用解决。假设按倒推的方式思考，假设最后一个气球被戳破，那么它左边或者右边的气球不会受到对方的影响，因为隔着一个气球始终在它们的中间，所以左边和右边的气球戳破顺序就可以分开计算，化简成多个小问题。</p>
-<p>  假设第i个气球为最后戳破的气球，max[a][b]为第a到第b个气球获得的最大分数，那么问题的解就变为：$$maxCoins[0][n - 1] = maxCoins[0][i - 1] + maxCoins[i + 1][n - 1] + nums[left] * nums[i] * nums[right]$$</p>
-<h3 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">maxCoins</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums.size();</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; n - i; l++)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">int</span> r = l + i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = l + <span class="number">1</span>; j &lt; r; j++)</span><br><span class="line">        &#123;</span><br><span class="line">          dp[l][r] = max(dp[l][r], dp[l][j] + dp[j][r] + nums[l] * nums[r] * nums[j]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][n - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="结果反思"><a class="markdownIt-Anchor" href="#结果反思"></a> 结果反思</h3>
-<figure class="image-bubble">
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>&emsp;&emsp;这道题明示使用动态规划，考虑将问题分为多个子问题解决，假设按点击的顺序计算，每次点击都会使被点击的气球消失，再根据剩下的元素来构造新的数组，那么这个问题又变成了新的环境，难以简单地复用解决。假设按倒推的方式思考，假设最后一个气球被戳破，那么它左边或者右边的气球不会受到对方的影响，因为隔着一个气球始终在它们的中间，所以左边和右边的气球戳破顺序就可以分开计算，化简成多个小问题。</p>
+<p>&emsp;&emsp;假设第i个气球为最后戳破的气球，max[a][b]为第a到第b个气球获得的最大分数，那么问题的解就变为：<script type="math/tex">maxCoins[0][n - 1] = maxCoins[0][i - 1] + maxCoins[i + 1][n - 1] + nums[left] * nums[i] * nums[right]</script></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">maxCoins</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums.size();</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp(n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; n - i; l++)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">int</span> r = l + i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = l + <span class="number">1</span>; j &lt; r; j++)</span><br><span class="line">        &#123;</span><br><span class="line">          dp[l][r] = max(dp[l][r], dp[l][j] + dp[j][r] + nums[l] * nums[r] * nums[j]);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][n - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="结果反思"><a href="#结果反思" class="headerlink" title="结果反思"></a>结果反思</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Burst%20Balloons_test.png?x-oss-process=style/Blog-Normal" alt="测试" title="">
                 </div>
                 <div class="image-caption">测试</div>
             </figure>
-<p>  这个算法还是比较简洁的，没有什么多余的东西，就是纯dp。</p>
+<p>&emsp;&emsp;这个算法还是比较简洁的，没有什么多余的东西，就是纯dp。</p>
 <hr>
-<h3 id="代码分析"><a class="markdownIt-Anchor" href="#代码分析"></a> 代码分析</h3>
-<p>  因为要考虑到戳破气球时，有边界的问题，所以在两边加上两个无法被戳破的分数为1的气球，构成n+2的新数组，最后的状态转移为：$$Coins[left][right] = max(Coins[left][right], Coins[left][i] + Coins[i][right] + nums[left] * nums[right] * nums[i]);$$</p>
+<h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><p>&emsp;&emsp;因为要考虑到戳破气球时，有边界的问题，所以在两边加上两个无法被戳破的分数为1的气球，构成n+2的新数组，最后的状态转移为：<script type="math/tex">Coins[left][right] = max(Coins[left][right], Coins[left][i] + Coins[i][right] + nums[left] * nums[right] * nums[i]);</script></p>
 <hr>
-<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
-<p>  这个题目说明了动态规划有时候按正向推导分解问题可能会分解不了多个较小的子问题，在这种时候要尝试逆向思维，反过来思考到达最后的状态时，要经过哪些状态。这道题有点和上两周那道Freedom Trail即辐射4旋转字符串一样，都是从最后的状态开始，从而分解成多个子问题。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;这个题目说明了动态规划有时候按正向推导分解问题可能会分解不了多个较小的子问题，在这种时候要尝试逆向思维，反过来思考到达最后的状态时，要经过哪些状态。这道题有点和上两周那道Freedom Trail即辐射4旋转字符串一样，都是从最后的状态开始，从而分解成多个子问题。</p>
 
         </div>
 
