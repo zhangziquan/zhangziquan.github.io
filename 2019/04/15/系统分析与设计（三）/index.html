@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?905249609e5774f6b20d26393024eec4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/">
+    
+    
+    <title>系统分析与设计（三） | 缘ね花落的博客 | zhangzq blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="SSAD">
+    <meta name="description" content="系统分析与设计（三）  简答题  简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点 从项目特点、风险特征、人力资源利用角度思考  瀑布模型  瀑布模型（Waterfall Model） 是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈，因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并进行适">
+<meta name="keywords" content="SSAD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计（三）">
+<meta property="og:url" content="http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/index.html">
+<meta property="og:site_name" content="缘ね花落的博客">
+<meta property="og:description" content="系统分析与设计（三）  简答题  简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点 从项目特点、风险特征、人力资源利用角度思考  瀑布模型  瀑布模型（Waterfall Model） 是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈，因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并进行适">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/waterfall_model.png">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/Incremental_model.png">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/spiral_model.png">
+<meta property="og:updated_time" content="2019-04-15T12:51:23.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计（三）">
+<meta name="twitter:description" content="系统分析与设计（三）  简答题  简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点 从项目特点、风险特征、人力资源利用角度思考  瀑布模型  瀑布模型（Waterfall Model） 是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈，因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并进行适">
+<meta name="twitter:image" content="http://ziquanzhang.ink/images/SSAD/waterfall_model.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Bonfire.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">系统分析与设计（三）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">系统分析与设计（三）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-15T12:48:00.000Z" itemprop="datePublished" class="page-time">
+  2019-04-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计三"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 系统分析与设计（三）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简答题"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 简答题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简述瀑布模型-增量模型-螺旋模型含原型方法并分析优缺点"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text"> 简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#瀑布模型"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text"> 瀑布模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#增量模型"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text"> 增量模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#螺旋模型"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text"> 螺旋模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简述统一过程三大特点与面向对象的方法有什么关系"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text"> 简述统一过程三大特点，与面向对象的方法有什么关系？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简述统一过程四个阶段的划分准则是什么每个阶段关键的里程碑是什么"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text"> 简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#软件企业为什么能按固定节奏生产-固定周期发布软件产品它给企业项目管理带来哪些好处"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text"> 软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-系统分析与设计（三）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">系统分析与设计（三）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-15 20:48:00" datetime="2019-04-15T12:48:00.000Z"  itemprop="datePublished">2019-04-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="系统分析与设计三"><a class="markdownIt-Anchor" href="#系统分析与设计三"></a> 系统分析与设计（三）</h1>
+<h2 id="简答题"><a class="markdownIt-Anchor" href="#简答题"></a> 简答题</h2>
+<h3 id="简述瀑布模型-增量模型-螺旋模型含原型方法并分析优缺点"><a class="markdownIt-Anchor" href="#简述瀑布模型-增量模型-螺旋模型含原型方法并分析优缺点"></a> 简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点</h3>
+<p>从项目特点、风险特征、人力资源利用角度思考</p>
+<h4 id="瀑布模型"><a class="markdownIt-Anchor" href="#瀑布模型"></a> 瀑布模型</h4>
+<ul>
+<li>瀑布模型（Waterfall Model） 是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈，因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并进行适当的修改，项目开发进程从一个阶段“流动”到下一个阶段。在软件开发中，它往往是较少迭代和灵活的方法之一，因为在概念，启动，分析，设计，构建，测试，部署和维护阶段，进展主要在一个方向（“向下”，如瀑布）流动。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\SSAD\waterfall_model.png" alt="waterfall_model" title="">
+                </div>
+                <div class="image-caption">waterfall_model</div>
+            </figure>
+<ul>
+<li>
+<p>优点：</p>
+<ol>
+<li>定义了软件开发基本流程与活动，适用于需求和范围固定，产品本身坚固稳定，技术清晰理解的项目。</li>
+<li>在软件生产周期的早期花费的时间可以降低后期的成本。</li>
+<li>提供了一种结构化的方法，模型本身通过离散的，易于理解和可解释的阶段线性地进展，因此易于理解</li>
+<li>强调文档以及源代码，如果存在完整工作的设计文档，新的团队成员甚至全新的团队应该能够通过阅读文档来熟悉。</li>
+</ol>
+</li>
+<li>
+<p>缺点：</p>
+<ol>
+<li>项目的需求设计难以更改，各阶段的划分完全固定，产生大量文档。</li>
+<li>客户在看到软件成品之前可能不知道他们的需求是什么，因此改变他们的需求，导致重新设计，重新开发和重新测试，并增加成本。</li>
+<li>在设计新的软件产品或功能时，设计人员仅仅依据文档，可能不会意识到未来的困难，在这种情况下，存在错误预估人力分配等问题。</li>
+</ol>
+</li>
+</ul>
+<h4 id="增量模型"><a class="markdownIt-Anchor" href="#增量模型"></a> 增量模型</h4>
+<ul>
+<li>增量模型是把待开发的软件系统模块化，将每个模块作为一个增量组件，从而分批次地分析、设计、编码和测试这些增量组件。运用增量模型的软件开发过程是递增式的过程。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\SSAD\Incremental_model.png" alt="Incremental_model" title="">
+                </div>
+                <div class="image-caption">Incremental_model</div>
+            </figure>
+<ul>
+<li>
+<p>优点：</p>
+<ol>
+<li>将待开发的软件系统模块化，可以分批次地提交软件产品，使用户可以及时了解软件项目的进展。</li>
+<li>以组件为单位进行开发降低了软件开发的风险。一个开发周期内的错误不会影响到整个软件系统。</li>
+<li>比其他软件开发方法更容易测试和调试，因为在每次迭代期间进行相对较小的更改。</li>
+<li>允许部分利用产品并避免长的开发时间。</li>
+</ol>
+</li>
+<li>
+<p>缺点：</p>
+<ol>
+<li>由此产生的成本可能超过组织的成本。</li>
+<li>要求待开发的软件系统可以被模块化。</li>
+<li>随着产品中添加了额外的功能，可能会出现与系统架构相关的问题，这些问题在早期的原型中并不明显</li>
+</ol>
+</li>
+</ul>
+<h4 id="螺旋模型"><a class="markdownIt-Anchor" href="#螺旋模型"></a> 螺旋模型</h4>
+<ul>
+<li>螺旋模型是风险驱动的软件开发过程模型，兼顾了快速原型的迭代的特征以及瀑布模型的系统化与严格监控，在每个迭代阶段构建原型是螺旋模型用以减小风险的途径。</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\SSAD\spiral_model.png" alt="spiral_model" title="">
+                </div>
+                <div class="image-caption">spiral_model</div>
+            </figure>
+<ul>
+<li>
+<p>优点：</p>
+<ol>
+<li>适合大型软件的开发，对于需求不明确情况下，便于风险控制和需求变更。</li>
+<li>能够让客户参与到项目每个阶段中，保证项目的方向不偏移。</li>
+<li>能够进行风险的评估，从而避免了不合理的需求导致难以实现</li>
+<li>每次循环都能得到一个软件原型来进行评估和客户的评价，提出修正建议</li>
+</ol>
+</li>
+<li>
+<p>缺点：</p>
+<ol>
+<li>开发周期长，客户未必接受长时间的开发和不稳定的结果。</li>
+<li>风险分析需要相当丰富的评估经验，风险规避也需要深厚的专业知识。</li>
+<li>迭代次数不确定，不适合大团队，无法确定发布日期。</li>
+</ol>
+</li>
+</ul>
+<h3 id="简述统一过程三大特点与面向对象的方法有什么关系"><a class="markdownIt-Anchor" href="#简述统一过程三大特点与面向对象的方法有什么关系"></a> 简述统一过程三大特点，与面向对象的方法有什么关系？</h3>
+<ul>
+<li>
+<p>迭代和增量的<br>
+统一过程是一个迭代和增量开发过程。精化，构建和过渡阶段分为一系列时间盒迭代。 （初始阶段也可以划分为大型项目的迭代。）每次迭代都会产生一个增量，这是系统的一个版本，它包含与之前版本相比增加或改进的功能。</p>
+</li>
+<li>
+<p>以架构为中心<br>
+统一流程坚持认为架构是项目团队塑造系统的核心。由于没有一个模型足以涵盖系统的所有方面，因此统一过程支持多个体系结构模型和视图。</p>
+</li>
+<li>
+<p>注重风险<br>
+统一过程要求项目团队专注于在项目生命周期的早期解决最关键的风险。必须选择每次迭代的可交付成果，特别是在精化阶段，以确保首先解决最大的风险。</p>
+</li>
+</ul>
+<p>关系：统一过程是面向对象的基于web的程序开发方法论。</p>
+<h3 id="简述统一过程四个阶段的划分准则是什么每个阶段关键的里程碑是什么"><a class="markdownIt-Anchor" href="#简述统一过程四个阶段的划分准则是什么每个阶段关键的里程碑是什么"></a> 简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</h3>
+<p>按时间将生命周期过程展开成四个阶段。</p>
+<ol>
+<li>初始阶段：生命周期目标里程碑。制定系统的近似愿景，制定业务案例，确定范围，并对成本和进度进行粗略估算。</li>
+<li>细化阶段：生命周期体系结构里程碑。解决已知的风险因素并建立和验证系统架构。</li>
+<li>构造阶段：初始运行能力里程碑。最终的构建阶段可交付成果是可以在移交阶段部署的软件。</li>
+<li>移交阶段：产品发布里程碑。在此阶段，系统将部署到目标用户，过渡阶段还包括系统转换和用户培训。</li>
+</ol>
+<h3 id="软件企业为什么能按固定节奏生产-固定周期发布软件产品它给企业项目管理带来哪些好处"><a class="markdownIt-Anchor" href="#软件企业为什么能按固定节奏生产-固定周期发布软件产品它给企业项目管理带来哪些好处"></a> 软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</h3>
+<p>因为软件企业采用了RUP，即统一过程，这样企业在在软件开发的过程中能够按照这四个阶段来进行开发，合理规划软件范围，有节奏地生产，发布，同时企业内部也有自身期限要求以及评估等等，能够指导开发人员在一定时间内完成任务，使企业能够固定周期地发布软件产品。</p>
+<p>企业有节奏生产软件产品能增强企业在市场上的竞争力，能够使得资金得以进行周转，本身的稳定开发能够吸引更多的客户，有利于项目的及时提交从而获得反馈，降低了延期带来的风险，能够保证项目顺利完成。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-04-15T12:51:23.896Z" itemprop="dateUpdated">2019-04-15 20:51:23</time>
+</span><br>
+
+
+        
+        <a href="/2019/04/15/系统分析与设计（三）/" target="_blank" rel="external">http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSAD/">SSAD</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/&title=《系统分析与设计（三）》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/&title=《系统分析与设计（三）》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计（三）》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/30/软件测试（二）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">软件测试（二）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Mon Apr 15 2019 20:48:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+	
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018 - 2019</span>
+			<span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("09/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+			setInterval("createtime()",250);
+			</script>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/&title=《系统分析与设计（三）》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/&title=《系统分析与设计（三）》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计（三）》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3aQW7jMBAEwPz/01lgr1nL3TNkkgVKJyOR6CkdOHSTHx/x9fn3+vr5+c7ne/Ix83uGFx4eHt6o9FfX8z2v8F9LacecPfuPEfDw8PCu8ZJm8KroUxN6gsxrxsPDw/sNvOen8lfwzEhqwMPDw/u/eG2TaEOHTSCCh4eH9528PG549dTmRSTjX89a8PDw8GLeZlL+qc/ftL+Hh4eHV+6qJ5PyZsn7PGbeKl5Wi4eHh3eBly+O28Xu7BhBvuAuNs/w8PDwjvKSg6dtTDBDtm0paj94eHh4F3izDa12gm6bTbup9tze8PDw8M7y8h//eXzQBhntX4qYAw8PD+8CL9/ObyfofZi7GefjRqF4eHh4pybcOICYFb1afOPh4eFd4OVNYlZifn8LWJ0vw8PDw1vz9setZiO3xwtWvxXw8PDwjvI2G1ezwHf2so61Bzw8PLxDc2YbMeQHrZLgIH99deyLh4eHd5k3+5oWOVuU5y8ODw8P7zYvjyROHS+YLcfbg1x4eHh493ibhe/sdSTHZNuA+E3fw8PDw7vAy+PXU6Xsg4nnV4yHh4f3/bwkYthM2Wc3xt78VsDDw8O7wEu+LJ+U26ayWYJ/7PsSHh4eXnnQah+8ntq+ap96UwMeHh7eBV5SdD50Gzq0YUTbovDw8PBu8DYHBRJkvVkVk6KmgoeHh3eZN1s6t9tR7RGrvJ43jQEPDw/vEG8W9bZlzZbUs0Jn22Z4eHh4Oe+zvDYtITmmMHuJL8fEw8PDu8Db9JP8kEEeQOSvIw9/8fDw8G7w2rJmccMmYmiX2kX3w8PDw1vwkqEPbErFf8+72ZvGg4eHh/ejvHZqboOM5L/5OHh4eHi/hzfbzp8FGfmG3LHGgIeHhxfz9mFEe2igjYzzAAIPDw/vNq/9ynyxO1sE76Pk1f4eHh4e3hPvD5GLP6TQVSjhAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="https://www.ziquanzhang.ink/js/live2d/jquery.min.js"></script>
+
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq\'s blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script src="https://www.ziquanzhang.ink/js/live2d/autoload.js"></script>
+
+</body>
+</html>
