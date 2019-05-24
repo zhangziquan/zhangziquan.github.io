@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?905249609e5774f6b20d26393024eec4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/">
+    
+    
+    <title>系统分析与设计（四） | 缘ね花落的博客 | zhangzq blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="SSAD">
+    <meta name="description" content="系统分析与设计（四）简答题 用例的概念提供了一个或多个成功/失败场景，该场景说明了系统是如何和最终用户或其它系统互动，用来描述参与者如何使用系统来实现其目标。  用例和场景的关系？什么是主场景或 happy path？用例是一个或多个场景的表示，场景则是一个参与者（Actor）向系统做出请求，系统根据参与者的请求，在不同的条件下，执行某一行为序列。而用例则包含多个场景。主场景则是用户最常用，直接地">
+<meta name="keywords" content="SSAD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计（四）">
+<meta property="og:url" content="http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/index.html">
+<meta property="og:site_name" content="缘ね花落的博客">
+<meta property="og:description" content="系统分析与设计（四）简答题 用例的概念提供了一个或多个成功/失败场景，该场景说明了系统是如何和最终用户或其它系统互动，用来描述参与者如何使用系统来实现其目标。  用例和场景的关系？什么是主场景或 happy path？用例是一个或多个场景的表示，场景则是一个参与者（Actor）向系统做出请求，系统根据参与者的请求，在不同的条件下，执行某一行为序列。而用例则包含多个场景。主场景则是用户最常用，直接地">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/ShanBay.png">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/Baicizhan.png">
+<meta property="og:updated_time" content="2019-05-24T02:17:12.437Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计（四）">
+<meta name="twitter:description" content="系统分析与设计（四）简答题 用例的概念提供了一个或多个成功/失败场景，该场景说明了系统是如何和最终用户或其它系统互动，用来描述参与者如何使用系统来实现其目标。  用例和场景的关系？什么是主场景或 happy path？用例是一个或多个场景的表示，场景则是一个参与者（Actor）向系统做出请求，系统根据参与者的请求，在不同的条件下，执行某一行为序列。而用例则包含多个场景。主场景则是用户最常用，直接地">
+<meta name="twitter:image" content="http://ziquanzhang.ink/images/SSAD/ShanBay.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Bonfire.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">系统分析与设计（四）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">系统分析与设计（四）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-24T02:10:00.000Z" itemprop="datePublished" class="page-time">
+  2019-05-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计（四）"><span class="post-toc-number">1.</span> <span class="post-toc-text">系统分析与设计（四）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简答题"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">简答题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#建模练习题（用例模型）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">建模练习题（用例模型）</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-系统分析与设计（四）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">系统分析与设计（四）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-24 10:10:00" datetime="2019-05-24T02:10:00.000Z"  itemprop="datePublished">2019-05-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="系统分析与设计（四）"><a href="#系统分析与设计（四）" class="headerlink" title="系统分析与设计（四）"></a>系统分析与设计（四）</h1><h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><ol>
+<li><p>用例的概念<br>提供了一个或多个成功/失败场景，该场景说明了系统是如何和最终用户或其它系统互动，用来描述参与者如何使用系统来实现其目标。</p>
+</li>
+<li><p>用例和场景的关系？什么是主场景或 happy path？<br>用例是一个或多个场景的表示，场景则是一个参与者（Actor）向系统做出请求，系统根据参与者的请求，在不同的条件下，执行某一行为序列。而用例则包含多个场景。<br>主场景则是用户最常用，直接地实现用户目标的一个场景，描述了当各项工作都正常进行时用例的工作方式，所以又被称为happy path。</p>
+</li>
+<li><p>用例有哪些形式？</p>
+<ul>
+<li>摘要 Brief (high level)：简单的一段式摘要，通常是主要成功案例。用于在早期需求分析中，快速了解主题和范围。</li>
+<li>简便格式 Casual：非正式段落格式，涵盖各种场景的多个段落。</li>
+<li>完全 Fully：所有步骤和变化都写得很详细，并有支持部分，如前提条件和成功保证。</li>
+</ul>
+</li>
+<li><p>对于复杂业务，为什么编制完整用例非常难？<br>因为对于复杂业务来说，用例场景比较多，场景较为复杂，很难完全地考虑到所有的子用例和场景并且在绘制图时，可能因为用例图过于繁杂而会出错。</p>
+</li>
+<li><p>什么是用例图？<br>由参与者（Actor）、用例（Use Case），边界以及它们之间的关系构成的用于描述系统功能的视图。用例图是外部用户（参与者）所能观察到的系统功能的模型图。<br>描述系统上下文，显示系统的边界，以及与系统交互的外部对象，并展示系统如何去使用它们。通常作为一个总结系统和用户行为的交流工具。</p>
+</li>
+<li><p>用例图的基本符号与元素？</p>
+<ul>
+<li>参与者（Actor）：表示系统用户，即与应用进行交互的用户</li>
+<li>用例（Use Case）：表示对系统提供的功能和服务描述</li>
+<li>用例之间的关系：<ul>
+<li>包含关系（include）：用例可以简单地包含其他用例具有的行为，并把它所包含的用例行为作为自身行为的一部分。箭头由基础用例(Base)指向被包含用例(Inclusion)</li>
+<li>扩展关系（Extend）：在一定条件下，把新的行为加入到已有的用例中。</li>
+<li>泛化关系（Generalization）：一个父用例可以被特化形成多个子用例。</li>
+<li>关联关系（Association）：参与者与用例之间的关系  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用例图的画法与步骤<ol>
+<li>选择系统边界<br>该系统是软件应用，硬件再加上参与者或者是整个组织？</li>
+<li>确定主要参与者<br>参与者通过使用系统服务来实现目标</li>
+<li>确定每个主要参与者的目标</li>
+<li>定义满足用户目标的用例；并根据这些目标来进行命名。<br>用户目标级用例将与用户目标一对一，但至少有一个例外，将进行检查。  </li>
+</ol>
+</li>
+<li>用例图给利益相关人与开发者的价值有哪些？<br>对于利益相关人来说，用例图可以直观地显示整个系统的功能，服务以及用户的行为结果，能够使系统按照其需求进行开发。<br>对于开发者来说，用例图能够细化用户的需求，软件的服务要求等，通过场景来理解软件的目标，使软件架构设计思路更加清晰。</li>
+</ol>
+<h2 id="建模练习题（用例模型）"><a href="#建模练习题（用例模型）" class="headerlink" title="建模练习题（用例模型）"></a>建模练习题（用例模型）</h2><ul>
+<li><p>选择2-3个你熟悉的类似业务的在线服务系统（或移动 APP），如定旅馆（携程、去哪儿等）、定电影票、背单词APP等，分别绘制它们用例图。并满足以下要求：</p>
+<ul>
+<li>请使用用户的视角，描述用户目标或系统提供的服务 </li>
+<li>粒度达到子用例级别，并用 include 和 exclude 关联它们</li>
+<li>请用色彩标注出你认为创新（区别于竞争对手的）用例或子用例</li>
+<li><p>尽可能识别外部系统和服务</p>
+<p><img src="\images\SSAD\ShanBay.png" alt="ShanBay"></p>
+<p><img src="\images\SSAD\Baicizhan.png" alt="Hotel"></p>
+</li>
+</ul>
+</li>
+<li><p>然后，回答下列问题：</p>
+<ol>
+<li>为什么相似系统的用例图是相似的？<br>因为在相似的系统中，系统的功能和服务都是大致相同的，基础功能差不多，所以主场景往往也相似，用例图所以是相似的。</li>
+<li>如果是定旅馆业务，请对比 Asg_RH 用例图，简述如何利用不同时代、不同地区产品的用例图，展现、突出创新业务和技术<br>根据旅客的要求，对酒店周围环境的要求来进行旅馆的推荐，以及可以通过选择旅行路线，景点路线来推荐相关的酒店。根据不同地区的旅馆的特色，如果符合用户的爱好则可以进行推荐。</li>
+<li>如何利用用例图定位创新思路（业务创新、或技术创新、或商业模式创新）在系统中的作用<br>在用例图中，可以给创新的模块进行颜色的高亮处理，标记出与之相关的子用例，行为过程，和产生的结果，观察在用例图中的影响。</li>
+<li><p>请使用 SCRUM 方法，选择一个用例图，编制某定旅馆开发的需求（backlog）开发计划表<br> | ID | Name | IMP | Est | How to Demo | Notes |<br> | :-: | :-: | :-: | :-: | :-: | :-: |<br> | 1 | 注册 | 6 | 3 | 用户可以通过手机号注册，或者是使用微信/支付宝注册绑定手机号 | 当用户使用微信注册后，需要绑定手机 |<br> | 2 | 登陆 | 6 | 4 | 用户通过手机号/邮箱/微信/支付宝/昵称进行登陆 | 需要进行微信/支付宝支持<br> | 3 | 搜索酒店 | 8 | 4 | 通过选择条件如地点/时间/人数/价格/星级来搜索酒店 | 要求结果按照用户优先选择的条件排序 |<br> | 4 | 预定房间 | 10 | 6 | 预定房间要先判断对应房型是否有空 |   |<br> | 5 | 支付订单 | 8 | 6 | 下单后，对房间进行锁定，若15分钟内未支付，则取消订单并解锁 | |<br> | 6 | 取消订单 | 7 | 5 | 取消订单后，对应的房间能够解锁 | |<br> | 7 | 查询订单 | 6 | 3 | 能够查询之前完成/取消/正在支付的订单 | |</p>
+</li>
+<li><p>根据任务4，参考 使用用例点估算软件成本，给出项目用例点的估算<br> | 用例 | 事物 | 计算 | 原因 | UC权重 |<br> | :-: | :-: | :-: | :-: | :-: |<br> | 注册 | 1 | 1 | 通过手机号注册，或者是使用微信/支付宝注册绑定手机号 | 简单 5 |<br> | 登陆 | 2 | 2 | 通过手机号/邮箱/微信/支付宝/昵称进行登陆 | 简单 5 |<br> | 搜索旅店 | 11 | 8 | 通过选择条件进行搜索 | 复杂 15 |<br> | 预定房间 | 9 | 7 | 判断对应房型是否有空 | 复杂 15 |<br> | 支付订单 | 5 | 4 | 支付限定时间 | 平均 10 |<br> | 取消订单 | 2 | 2 | 取消订单，解锁房间 | 简单 5 |<br> | 查询订单 | 2 | 2 | 查询历史订单 | 简单 5 |</p>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-05-24T02:17:12.437Z" itemprop="dateUpdated">2019-05-24 10:17:12</time>
+</span><br>
+
+
+        
+        <a href="/2019/05/24/系统分析与设计（四）/" target="_blank" rel="external">http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSAD/">SSAD</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/&title=《系统分析与设计（四）》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/&title=《系统分析与设计（四）》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计（四）》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/15/系统分析与设计（三）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">系统分析与设计（三）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Fri May 24 2019 10:10:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+	
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018 - 2019</span>
+			<span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("09/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+			setInterval("createtime()",250);
+			</script>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/&title=《系统分析与设计（四）》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/&title=《系统分析与设计（四）》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计（四）》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3aQY7CQAwEQP7/6d3zCkLa9hixUuWEUEioOYxHbT8e8fXzdL2/5/n7q2+unpa/98CFh4eHN/7rz4/LP+dPSK6rhUt+hYeHh7fNu9pR8809v/99Obn6bVJO8PDw8L6T934jTkrIBImHh4f3v3gJOC8qSamoLhYeHh7eJ3l5HFAtGO8XoleEVrIWPDw8vJiXd5G+5/NKfw8PDw9v3FWvhg759p0c6Hv/8M9b8PDw8BZ4vdGBahRbDRHyRYkiCTw8PLyjvGqQmg9X9Qa58tgiCnnx8PDwFnj5D/KQImGfOlI3Iwk8PDy8AS952YHmfeugnDNuSgIeHh7eGq8XtubhQh5b5IXq5h48PDy8j/Dmbade9DBfuBf34+Hh4X2El0cJ+eG7Ol6QL/3N8/Hw8PAWeHuwfOvPN/rmSAEeHh7eAm8S4Pa27F4JqQ5y4eHh4W3w5o2oPM44FfsWShceHh7eAi/fS/fS0bMTZDd34uHh4a3x8nNps6lffFevPYaHh4e3wZsEAXkM0StC1ZLw4ld4eHh4y7ze+FQvkqhevfYbHh4e3gYvvymPdKvjU/kYQS9QxsPDw9vgVR89GZYqpyNxAHG5BHh4eHhHeb3WfrUNlsS7eRkovBcPDw9vgZfHENV4txoBT1pxN4uCh4eHt8brtbgKrymGEZNC9cgrCR4eHt4hXj50lQwHVI/OSdkoNNjw8PDwlnnVQ21vOU6NFJQ7e3h4eHhjXi+AyI/CeZi7Ukjw8PDwPnFGLUcMvQLQOygn720i8fDw8Iq8/A+dDVsLUWwcMZdHB/Dw8PAGvF5jrHcU7o0OVAsYHh4e3nfyqsff6iBXXiRWCgMeHh7eIV4eyyaH6bzN1gw48PDw8NZ4eRiRjxdsBL7lfBoPDw9vgdcbbKpSq0fw/FA+jzDw8PDwYt4v+zv0UQX8KwEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="https://www.ziquanzhang.ink/js/live2d/jquery.min.js"></script>
+
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq\'s blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script src="https://www.ziquanzhang.ink/js/live2d/autoload.js"></script>
+
+</body>
+</html>
