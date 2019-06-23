@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?905249609e5774f6b20d26393024eec4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/">
+    
+    
+    <title>系统分析与设计个人总结 | 缘ね花落的博客 | zhangzq blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="SSAD">
+    <meta name="description" content="系统分析与设计个人总结    学号 昵称     16340296 缘ね花落     个人总结 我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。 作为技术经理  解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。 对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使">
+<meta name="keywords" content="SSAD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计个人总结">
+<meta property="og:url" content="http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/index.html">
+<meta property="og:site_name" content="缘ね花落的博客">
+<meta property="og:description" content="系统分析与设计个人总结    学号 昵称     16340296 缘ね花落     个人总结 我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。 作为技术经理  解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。 对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/contributor.png">
+<meta property="og:updated_time" content="2019-06-23T15:01:18.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计个人总结">
+<meta name="twitter:description" content="系统分析与设计个人总结    学号 昵称     16340296 缘ね花落     个人总结 我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。 作为技术经理  解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。 对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使">
+<meta name="twitter:image" content="http://ziquanzhang.ink/images/SSAD/contributor.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Bonfire.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">系统分析与设计个人总结</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">系统分析与设计个人总结</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-23T14:53:00.000Z" itemprop="datePublished" class="page-time">
+  2019-06-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 系统分析与设计个人总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 个人总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#psp-21-表格"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> PSP 2.1 表格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要工作清单"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 主要工作清单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在项目相关仓库中的贡献"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> 在项目相关仓库中的贡献</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人博客清单"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"> 个人博客清单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特别致谢"><span class="post-toc-number">1.6.</span> <span class="post-toc-text"> 特别致谢</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-系统分析与设计个人总结"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">系统分析与设计个人总结</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-23 22:53:00" datetime="2019-06-23T14:53:00.000Z"  itemprop="datePublished">2019-06-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="系统分析与设计个人总结"><a class="markdownIt-Anchor" href="#系统分析与设计个人总结"></a> 系统分析与设计个人总结</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>学号</strong></th>
+<th style="text-align:center"><strong>昵称</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">16340296</td>
+<td style="text-align:center">缘ね花落</td>
+</tr>
+</tbody>
+</table>
+<h2 id="个人总结"><a class="markdownIt-Anchor" href="#个人总结"></a> 个人总结</h2>
+<p>我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。</p>
+<p>作为技术经理</p>
+<ul>
+<li>解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。</li>
+<li>对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使用最有效、简洁的方法去实现。</li>
+</ul>
+<p>作为前端开发人员</p>
+<ul>
+<li>使用mpvue框架来编写开发任务的列表显示，实现问卷创建的UI设计，做到问卷对客户友好，便于客户查看任务订单。</li>
+<li>分析设计，进行实现。</li>
+</ul>
+<h2 id="psp-21-表格"><a class="markdownIt-Anchor" href="#psp-21-表格"></a> PSP 2.1 表格</h2>
+<table>
+<thead>
+<tr>
+<th><strong>PSP2.1</strong></th>
+<th><strong>Personal Software Process Stages</strong></th>
+<th style="text-align:center"><strong>Time (%)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Planning</strong></td>
+<td><strong>计划</strong></td>
+<td style="text-align:center"><strong>10</strong></td>
+</tr>
+<tr>
+<td>· Estimate</td>
+<td>预估任务时间</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td><strong>Development</strong></td>
+<td><strong>开发</strong></td>
+<td style="text-align:center"><strong>80</strong></td>
+</tr>
+<tr>
+<td>· Analysis</td>
+<td>需求分析（包括自我学习）</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>· Design Spec</td>
+<td>生成设计文档</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td>· Design Review</td>
+<td>设计复审</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>· Coding Standard</td>
+<td>代码规范</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td>· Design</td>
+<td>具体设计（绘制UI, 架构设计等）</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td>· Coding</td>
+<td>具体编码</td>
+<td style="text-align:center">25</td>
+</tr>
+<tr>
+<td>· Code Review</td>
+<td>代码复审</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>· Test</td>
+<td>测试（自我测试，修改代码，提交修改）</td>
+<td style="text-align:center">15</td>
+</tr>
+<tr>
+<td><strong>Reporting</strong></td>
+<td><strong>报告</strong></td>
+<td style="text-align:center"><strong>10</strong></td>
+</tr>
+<tr>
+<td>· Test Report</td>
+<td>测试报告</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>· Size Measurement</td>
+<td>计算工作量</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>· Postmortem &amp; Process Improvement Plan</td>
+<td>事后总结, 并提出过程改进计划</td>
+<td style="text-align:center">6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="主要工作清单"><a class="markdownIt-Anchor" href="#主要工作清单"></a> 主要工作清单</h2>
+<p>最得意/有价值的工作清单：实现问卷的创建UI，参考了很多问卷设计的页面，给出一套非常清新，方便操作的界面，对用户友好UP</p>
+<p>最苦劳的工作清单：做任务列表的list，需要考虑到各种情况，并且刷新频繁，很容易就会出bug，也是耗时最多的地方，并且因为UI的问题，认真设计了好久，但觉得也就那样。</p>
+<h2 id="在项目相关仓库中的贡献"><a class="markdownIt-Anchor" href="#在项目相关仓库中的贡献"></a> 在项目相关仓库中的贡献</h2>
+<p align="center"><img src="/images/SSAD/contributor.png" alt="contributor"></p>
+<h2 id="个人博客清单"><a class="markdownIt-Anchor" href="#个人博客清单"></a> 个人博客清单</h2>
+<ul>
+<li><a href="https://www.ziquanzhang.ink/2019/06/23/mpvue%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_blank" rel="noopener">mpvue前端小技巧</a></li>
+<li><a href="">谈谈mpvue组件化的重要性</a></li>
+<li><a href="">数据库查询的高级技巧</a></li>
+</ul>
+<h2 id="特别致谢"><a class="markdownIt-Anchor" href="#特别致谢"></a> 特别致谢</h2>
+<p>感谢 16340293-Tuid 同学，为了我们的数据库处理和调用，付出了很多。<br>
+感谢 16340294-Duke 和 16340319-zhuangwz 同学，督促我们的开发进度，使开发保持正常进度。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-06-23T15:01:18.530Z" itemprop="dateUpdated">2019-06-23 23:01:18</time>
+</span><br>
+
+
+        
+        <a href="/2019/06/23/系统分析与设计个人总结/" target="_blank" rel="external">http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSAD/">SSAD</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计个人总结》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/23/mpvue前端小技巧/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">mpvue前端小技巧</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Sun Jun 23 2019 22:53:00 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+	
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018 - 2019</span>
+			<span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("09/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+			setInterval("createtime()",250);
+			</script>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计个人总结》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQY4bMQwEwP3/pzdATgESz3aTkuNDzckwPJJKB5Em9fUVP9+/nz8///3N87vJb57ffR5h9eDh4eGNlv7qeTX9qymTEZIZn+cqRsDDw8O7xkuCQT5ZPlobkPI14+Hh4X0CLyEl3+dHf7tBeHh4eJ/GS6ZpSfvPeHh4eP+LlxQjknJAWyzIA8D1WgseHh5eVyk9UBR45+fr/T08PDy8UVd9Hypmxdw8APywTjw8PLwLvPxSVH4C5wl3m9bPrnzh4eHh3eBtXp6lxW27a3apCw8PD+8Gr0hM40CSHOX5ctvE/WUyjYeHh3eU11Y+c9IzbwYrthsPDw/vAi8/pts2f16Wba8vHKu74OHh4Y14yWGap8h1ayqeMZ+9GAgPDw9vwWvb/7Nm/6mNKPB4eHh4b+HlS9wjN0uPLhbg4eHhXeDNpslT21k63m5ZfQELDw8Pb8FrS6Wzpy0Qt8WIl802PDw8vAu8pNrZtr7ad/NDvy2L4OHh4d3mzUoM+0ZaMtdmTDw8PLyzvLzwmoSBDfhGaMHDw8O7x9s0+NsyQVssbsfBw8PDu83LD/q8nX8qm81DyA8rx8PDwzvKOxUM8nJwsjWzltg/vsHDw8O7zGsLCvnW5NQZu454eHh4eAvecylhk87mmGQN7fZF9yPw8PDw1ry2qb8p3ebBY3b1qr6ZhYeHh3cIsykWtKnwpgwRRTw8PDy8C7z2mtQ+Uc6Rm4sFeHh4eGd53+WTpNTtRrTzFmk3Hh4e3gXeqfJE3Y4aBYw8ia+peHh4eCVvFgzytHgfZvLAUEc/PDw8vAUv/5N/6vebt3I8Hh4e3ifwkuS4DQmz6sGwv4eHh4f3Rl7eJJsVZ9trB1EbDw8PD+8ar20+5Ul2cYjH7bHi6gMeHh7eBd6mAdY2sdpy7axwjIeHh3eN9wsBmZKXZkTezQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="https://www.ziquanzhang.ink/js/live2d/jquery.min.js"></script>
+
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq\'s blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script src="https://www.ziquanzhang.ink/js/live2d/autoload.js"></script>
+
+</body>
+</html>
