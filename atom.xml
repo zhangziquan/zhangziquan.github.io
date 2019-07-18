@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ziquanzhang.ink/"/>
-  <updated>2019-06-23T15:01:18.530Z</updated>
+  <updated>2019-07-18T07:01:00.252Z</updated>
   <id>http://ziquanzhang.ink/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Weakly Supervised Salient Object Detection Using Image Labels 解析</title>
+    <link href="http://ziquanzhang.ink/2019/07/18/Weakly%20Supervised%20Salient%20Object%20Detection%20Using%20Image%20Labels%20%E8%A7%A3%E6%9E%90/"/>
+    <id>http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/</id>
+    <published>2019-07-18T07:00:47.000Z</published>
+    <updated>2019-07-18T07:01:00.252Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="weakly-supervised-salient-object-detection-using-image-labels"><a class="markdownIt-Anchor" href="#weakly-supervised-salient-object-detection-using-image-labels"></a> Weakly Supervised Salient Object Detection Using Image Labels</h1><h2 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h2><p>这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。</p><h2 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> Problem</h2><p>在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基于低级特征的方法，无法处理多类图片，通常存在2个问题：</p><ol><li>缺少空间相关性推断，位置附近的像素</li><li>无法检测高语义特征，因为某些物体在低语义特征（颜色，大小，纹理）上和其它对象对比度较低，因此要进行检测需要高语义特征支持。</li></ol><p>而采用监督学习后，因为有了有效的标记，能够在训练中学习到显著对象的特征规则，忽略了干扰的噪声，所以在效果上能够有极大提升，但是也存在几个问题：</p><ol><li>有监督学习同时也带来了过拟合问题，泛化性变弱。</li><li>监督学习的数据集需要进行标记且整个过程耗时耗费人力物力。</li></ol><p>因此本文就监督学习的两个问题给出了解决方案。</p><h2 id="network"><a class="markdownIt-Anchor" href="#network"></a> Network</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/DL/network.png" alt="network" title="">                </div>                <div class="image-caption">network</div>            </figure><p>整个网络的主要流程就是使用无监督学习的检测方法，生成初始预测显著性图，用原图像对Multi-FCN进行训练，得到CAM图以及FCN预测的显著性图，这三个图通过CRF模型，进行综合增强，得到第二轮的显著性概率图。</p><p>就框架中的3个比较重要的地方展开</p><h3 id="multi-fcn"><a class="markdownIt-Anchor" href="#multi-fcn"></a> Multi-FCN</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/DL/multi-FCN.png" alt="multi-FCN" title="">                </div>                <div class="image-caption">multi-FCN</div>            </figure><p>作为监督学习的一个重要的部分，FCN是CNN上的拓展，与CNN相比，FCN将全连接层全部换成deconv（反卷积，最通常的叫法是上采样）即对最后一个卷基层的特征图进行上采样，使其恢复到与输入相同的尺寸，从而对每个像素都能进行预测。（在这里FCN使用多个只是为了能够检测不同比例的图像的视觉对比。）</p><p>论文中的FCN主要任务是输出分类任务和以及输出逐像素的显著图，这里体现了监督学习，因为通过分类任务的训练，能够通过高语义特征的划分来区分不同对象，这样能够纠正在无监督学习下，因为语义信息模糊的规则，如在低特征上无法区分的对象，也能检测出来了。</p><h3 id="cam"><a class="markdownIt-Anchor" href="#cam"></a> CAM</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/DL/CAM.png" alt="CAM" title="">                </div>                <div class="image-caption">CAM</div>            </figure><p>CAM即类激活映射，一开始是作为对分类问题的网络，提供关注区域（提供依据），在对卷积层结果进行全局池化后，能够进行特征图加权求和得到对某一类的热力图，这样就能得知模型是通过哪些像素来确定图片中的物体的属于哪一类的。</p><p>CAM得到的热力图相对于FCN的逐像素预测图来说相对没这么准确，但是对于对象位置的定位十分准确，并且在泛化性上表现很好，对于一些未知类别的图像，也能够对显著对象进行准确的定位，所以可以加入到CRF中，为第二轮生成更加精确的预测图做一个引导。</p><p>个人认为是因为CAM在FCN训练过程中，在一些背景等无关信息上得到了训练，所以不会过度关注这些地方。</p><h3 id="crf模型"><a class="markdownIt-Anchor" href="#crf模型"></a> CRF模型</h3><p>CRF是这个框架中的核心部分，即条件概率分布模型，在文章中只提到了能够通过空间相对位置，以及显著对象定位来纠正一些错误的预测。这个模型是一个概率图模型，用于求联合概率。即在上文提到的，无监督学习的一个缺点就是没有考虑空间一致性（鼓励附近具有相似颜色的像素采用相似的显着性概率），因此在通过CRF后，能得到更具有空间相关性的概率图。</p><p>在这里为了让未知的图像能够有更好的预测效果，使用无标记的数据集进行微调，即让CAM来指导预测图，在上面已经提到过CAM对于未知图像有比较好的定位效果。</p><h2 id="result"><a class="markdownIt-Anchor" href="#result"></a> Result</h2><p>在表现上超越许多非监督学习模型，并且能够和许多监督学习的模型相比较。证明了在泛化性上是表现很好的，能够和监督学习模型相比也说明了这一弱监督学习的成功。</p><h2 id="ablation-studies"><a class="markdownIt-Anchor" href="#ablation-studies"></a> Ablation Studies</h2><p>在模型检测测试当中，可见CAM和CRF的作用十分重要，单使用FCN的预测效果仅能和原来的无监督学习相比，而增加了CRF，能够增强空间相关性，解决了第一个问题。</p><p>而CAM的加入提供了定位以及对模型的引导有一个泛化作用，并且是强监督学习变为了弱监督学习，能让FCN训练有素，避免了过拟合，而且能够纠正一些错误的预测，其中包含大量的网络参数能够发现大规模样本中某些潜在规则，从而进行降噪。</p><h2 id="related"><a class="markdownIt-Anchor" href="#related"></a> Related</h2><p>Deep Unsupervised Saliency Detection: A Multiple Noisy Labeling Perspective</p><p>在2018年的CVPR中，同样有一篇论文采取了类似的使用无监督学习作为初始化思路，使用伪监督学习，以此来进行监督学习并且避免了过拟合的问题。</p><p>文章认为传统的无监督学习由于独立数据集，使得在自然环境中的泛化性较强，并且有一些噪音也有一定的作用，因此使用传统无监督学习得到的结果作为ground truth + noisy, 作为监督来同时训练一个显著性检测模块和噪声模块，在一定程度上也取得了一定的效果。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;weakly-supervised-salient-object-detection-using-image-labels&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#weakly-supervised-salient-object-
+      
+    
+    </summary>
+    
+      <category term="DL" scheme="http://ziquanzhang.ink/categories/DL/"/>
+    
+    
+      <category term="Salient Object Detection" scheme="http://ziquanzhang.ink/tags/Salient-Object-Detection/"/>
+    
+      <category term="Supervised" scheme="http://ziquanzhang.ink/tags/Supervised/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统分析与设计（六）</title>
+    <link href="http://ziquanzhang.ink/2019/06/28/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%85%AD%EF%BC%89/"/>
+    <id>http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/</id>
+    <published>2019-06-28T07:44:31.673Z</published>
+    <updated>2019-06-28T10:01:44.561Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="系统分析与设计六"><a class="markdownIt-Anchor" href="#系统分析与设计六"></a> 系统分析与设计（六）</h1><h2 id="使用-umlet-建模"><a class="markdownIt-Anchor" href="#使用-umlet-建模"></a> 使用 <strong>UMLet</strong> 建模</h2><ol><li>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键<ul><li>注意事项：<ul><li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li><li>关联必须有多重性、部分有名称与导航方向</li><li>属性要注意计算字段</li></ul></li><li>数据建模，为了简化描述仅需要给出表清单，例如：<ul><li>Hotel（ID/Key，Name，LoctionID/Fkey，Address……）</li></ul></li></ul></li></ol><ul><li><p>Make Reservation 用例<br><img src="/image/SSAD/hw6-1.PNG" alt="hw6-1"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure></li><li><p>Payment 用例<br><img src="/image/SSAD/hw6-2.PNG" alt="hw6-2"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure></li></ul><ol start="2"><li>使用 UML State Model，对每个订单对象生命周期建模<ul><li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li><li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li></ul></li></ol><ul><li>Reservation<br><img src="/image/SSAD/hw6-3.PNG" alt="hw6-3"></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;系统分析与设计六&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统分析与设计六&quot;&gt;&lt;/a&gt; 系统分析与设计（六）&lt;/h1&gt;
+&lt;h2 id=&quot;使用-umlet-建模&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=
+      
+    
+    </summary>
+    
+      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+    
+    
+      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+    
+  </entry>
   
   <entry>
     <title>系统分析与设计个人总结</title>

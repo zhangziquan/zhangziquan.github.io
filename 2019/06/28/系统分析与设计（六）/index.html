@@ -25,30 +25,32 @@ var _hmt = _hmt || [];
     
     
     
-    <link rel="canonical" href="http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/">
+    <link rel="canonical" href="http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/">
     
     
-    <title>系统分析与设计个人总结 | 缘ね花落的博客 | zhangzq blog</title>
+    <title>系统分析与设计（六） | 缘ね花落的博客 | zhangzq blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="SSAD">
-    <meta name="description" content="系统分析与设计个人总结    学号 昵称     16340296 缘ね花落     个人总结 我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。 作为技术经理  解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。 对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使">
+    <meta name="description" content="系统分析与设计（六）  使用 UMLet 建模  使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项：  对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要">
 <meta name="keywords" content="SSAD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="系统分析与设计个人总结">
-<meta property="og:url" content="http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/index.html">
+<meta property="og:title" content="系统分析与设计（六）">
+<meta property="og:url" content="http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/index.html">
 <meta property="og:site_name" content="缘ね花落的博客">
-<meta property="og:description" content="系统分析与设计个人总结    学号 昵称     16340296 缘ね花落     个人总结 我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。 作为技术经理  解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。 对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使">
+<meta property="og:description" content="系统分析与设计（六）  使用 UMLet 建模  使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项：  对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ziquanzhang.ink/images/SSAD/contributor.png">
-<meta property="og:updated_time" content="2019-06-23T15:01:18.530Z">
+<meta property="og:image" content="http://ziquanzhang.ink/image/SSAD/hw6-1.PNG">
+<meta property="og:image" content="http://ziquanzhang.ink/image/SSAD/hw6-2.PNG">
+<meta property="og:image" content="http://ziquanzhang.ink/image/SSAD/hw6-3.PNG">
+<meta property="og:updated_time" content="2019-06-28T10:01:44.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="系统分析与设计个人总结">
-<meta name="twitter:description" content="系统分析与设计个人总结    学号 昵称     16340296 缘ね花落     个人总结 我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。 作为技术经理  解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。 对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使">
-<meta name="twitter:image" content="http://ziquanzhang.ink/images/SSAD/contributor.png">
+<meta name="twitter:title" content="系统分析与设计（六）">
+<meta name="twitter:description" content="系统分析与设计（六）  使用 UMLet 建模  使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项：  对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要">
+<meta name="twitter:image" content="http://ziquanzhang.ink/image/SSAD/hw6-1.PNG">
     
         <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
     
@@ -143,7 +145,7 @@ var _hmt = _hmt || [];
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">系统分析与设计个人总结</div>
+        <div class="flex-col header-title ellipsis">系统分析与设计（六）</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -165,11 +167,11 @@ var _hmt = _hmt || [];
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">系统分析与设计个人总结</h1>
+        <h1 class="title">系统分析与设计（六）</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-06-23T14:53:00.000Z" itemprop="datePublished" class="page-time">
-  2019-06-23
+                <time datetime="2019-06-28T07:44:31.673Z" itemprop="datePublished" class="page-time">
+  2019-06-28
 </time>
 
 
@@ -190,18 +192,18 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计个人总结"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 系统分析与设计个人总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人总结"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 个人总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#psp-21-表格"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> PSP 2.1 表格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要工作清单"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 主要工作清单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在项目相关仓库中的贡献"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> 在项目相关仓库中的贡献</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#个人博客清单"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"> 个人博客清单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特别致谢"><span class="post-toc-number">1.6.</span> <span class="post-toc-text"> 特别致谢</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计六"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 系统分析与设计（六）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-umlet-建模"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 使用 UMLet 建模</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-系统分析与设计个人总结"
+<article id="post-系统分析与设计（六）"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">系统分析与设计个人总结</h1>
+        <h1 class="post-card-title">系统分析与设计（六）</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-06-23 22:53:00" datetime="2019-06-23T14:53:00.000Z"  itemprop="datePublished">2019-06-23</time>
+            <time class="post-time" title="2019-06-28 15:44:31" datetime="2019-06-28T07:44:31.673Z"  itemprop="datePublished">2019-06-28</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Software-System-Analysis-and-Design/">Software System Analysis and Design</a></li></ul>
@@ -216,134 +218,50 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="系统分析与设计个人总结"><a class="markdownIt-Anchor" href="#系统分析与设计个人总结"></a> 系统分析与设计个人总结</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>学号</strong></th>
-<th style="text-align:center"><strong>昵称</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">16340296</td>
-<td style="text-align:center">缘ね花落</td>
-</tr>
-</tbody>
-</table>
-<h2 id="个人总结"><a class="markdownIt-Anchor" href="#个人总结"></a> 个人总结</h2>
-<p>我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。</p>
-<p>作为技术经理</p>
+            <h1 id="系统分析与设计六"><a class="markdownIt-Anchor" href="#系统分析与设计六"></a> 系统分析与设计（六）</h1>
+<h2 id="使用-umlet-建模"><a class="markdownIt-Anchor" href="#使用-umlet-建模"></a> 使用 <strong>UMLet</strong> 建模</h2>
+<ol>
+<li>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键
 <ul>
-<li>解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。</li>
-<li>对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使用最有效、简洁的方法去实现。</li>
-</ul>
-<p>作为前端开发人员</p>
+<li>注意事项：
 <ul>
-<li>使用mpvue框架来编写开发任务的列表显示，实现问卷创建的UI设计，做到问卷对客户友好，便于客户查看任务订单。</li>
-<li>分析设计，进行实现。</li>
+<li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li>
+<li>关联必须有多重性、部分有名称与导航方向</li>
+<li>属性要注意计算字段</li>
 </ul>
-<h2 id="psp-21-表格"><a class="markdownIt-Anchor" href="#psp-21-表格"></a> PSP 2.1 表格</h2>
-<table>
-<thead>
-<tr>
-<th><strong>PSP2.1</strong></th>
-<th><strong>Personal Software Process Stages</strong></th>
-<th style="text-align:center"><strong>Time (%)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Planning</strong></td>
-<td><strong>计划</strong></td>
-<td style="text-align:center"><strong>10</strong></td>
-</tr>
-<tr>
-<td>· Estimate</td>
-<td>预估任务时间</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td><strong>Development</strong></td>
-<td><strong>开发</strong></td>
-<td style="text-align:center"><strong>80</strong></td>
-</tr>
-<tr>
-<td>· Analysis</td>
-<td>需求分析（包括自我学习）</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td>· Design Spec</td>
-<td>生成设计文档</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td>· Design Review</td>
-<td>设计复审</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td>· Coding Standard</td>
-<td>代码规范</td>
-<td style="text-align:center">6</td>
-</tr>
-<tr>
-<td>· Design</td>
-<td>具体设计（绘制UI, 架构设计等）</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td>· Coding</td>
-<td>具体编码</td>
-<td style="text-align:center">25</td>
-</tr>
-<tr>
-<td>· Code Review</td>
-<td>代码复审</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td>· Test</td>
-<td>测试（自我测试，修改代码，提交修改）</td>
-<td style="text-align:center">15</td>
-</tr>
-<tr>
-<td><strong>Reporting</strong></td>
-<td><strong>报告</strong></td>
-<td style="text-align:center"><strong>10</strong></td>
-</tr>
-<tr>
-<td>· Test Report</td>
-<td>测试报告</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td>· Size Measurement</td>
-<td>计算工作量</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td>· Postmortem &amp; Process Improvement Plan</td>
-<td>事后总结, 并提出过程改进计划</td>
-<td style="text-align:center">6</td>
-</tr>
-</tbody>
-</table>
-<h2 id="主要工作清单"><a class="markdownIt-Anchor" href="#主要工作清单"></a> 主要工作清单</h2>
-<p>最得意/有价值的工作清单：实现问卷的创建UI，参考了很多问卷设计的页面，给出一套非常清新，方便操作的界面，对用户友好UP</p>
-<p>最苦劳的工作清单：做任务列表的list，需要考虑到各种情况，并且刷新频繁，很容易就会出bug，也是耗时最多的地方，并且因为UI的问题，认真设计了好久，但觉得也就那样。</p>
-<h2 id="在项目相关仓库中的贡献"><a class="markdownIt-Anchor" href="#在项目相关仓库中的贡献"></a> 在项目相关仓库中的贡献</h2>
-<p align="center"><img src="/images/SSAD/contributor.png" alt="contributor"></p>
-<h2 id="个人博客清单"><a class="markdownIt-Anchor" href="#个人博客清单"></a> 个人博客清单</h2>
+</li>
+<li>数据建模，为了简化描述仅需要给出表清单，例如：
 <ul>
-<li><a href="https://www.ziquanzhang.ink/2019/06/23/mpvue%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_blank" rel="noopener">mpvue前端小技巧</a></li>
-<li><a href="">谈谈mpvue组件化的重要性</a></li>
-<li><a href="">数据库查询的高级技巧</a></li>
+<li>Hotel（ID/Key，Name，LoctionID/Fkey，Address……）</li>
 </ul>
-<h2 id="特别致谢"><a class="markdownIt-Anchor" href="#特别致谢"></a> 特别致谢</h2>
-<p>感谢 16340293-Tuid 同学，为了我们的数据库处理和调用，付出了很多。<br>
-感谢 16340294-Duke 和 16340319-zhuangwz 同学，督促我们的开发进度，使开发保持正常进度。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>Make Reservation 用例<br>
+<img src="/image/SSAD/hw6-1.PNG" alt="hw6-1"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Payment 用例<br>
+<img src="/image/SSAD/hw6-2.PNG" alt="hw6-2"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>使用 UML State Model，对每个订单对象生命周期建模
+<ul>
+<li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li>
+<li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Reservation<br>
+<img src="/image/SSAD/hw6-3.PNG" alt="hw6-3"></li>
+</ul>
 
         </div>
 
@@ -352,12 +270,12 @@ var _hmt = _hmt || [];
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-06-23T15:01:18.530Z" itemprop="dateUpdated">2019-06-23 23:01:18</time>
+    最后更新时间：<time datetime="2019-06-28T10:01:44.561Z" itemprop="dateUpdated">2019-06-28 18:01:44</time>
 </span><br>
 
 
         
-        <a href="/2019/06/23/系统分析与设计个人总结/" target="_blank" rel="external">http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/</a>
+        <a href="/2019/06/28/系统分析与设计（六）/" target="_blank" rel="external">http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/</a>
         
     </div>
     
@@ -388,7 +306,7 @@ var _hmt = _hmt || [];
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/&title=《系统分析与设计（六）》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -398,22 +316,22 @@ var _hmt = _hmt || [];
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/&title=《系统分析与设计（六）》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计个人总结》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&via=http://ziquanzhang.ink" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计（六）》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/&via=http://ziquanzhang.ink" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -436,18 +354,18 @@ var _hmt = _hmt || [];
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/06/28/系统分析与设计（六）/" id="post-prev" class="post-nav-link">
+      <a href="/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">系统分析与设计（六）</h4>
+        <h4 class="title">Weakly Supervised Salient Object Detection Using Image Labels 解析</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/06/23/mpvue前端小技巧/" id="post-next" class="post-nav-link">
+      <a href="/2019/06/23/系统分析与设计个人总结/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">mpvue前端小技巧</h4>
+        <h4 class="title">系统分析与设计个人总结</h4>
       </a>
     </div>
   
@@ -470,7 +388,7 @@ var _hmt = _hmt || [];
     <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
     <script>
         var gitment = new Gitment({
-			id: "Sun Jun 23 2019 22:53:00 GMT+0800",
+			id: "Fri Jun 28 2019 15:44:31 GMT+0800",
             owner: 'zhangziquan',
             repo: 'blog-comment',
             oauth: {
@@ -580,7 +498,7 @@ var _hmt = _hmt || [];
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/&title=《系统分析与设计（六）》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -590,22 +508,22 @@ var _hmt = _hmt || [];
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&title=《系统分析与设计个人总结》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/&title=《系统分析与设计（六）》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计个人总结》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/&via=http://ziquanzhang.ink" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《系统分析与设计（六）》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/&via=http://ziquanzhang.ink" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -616,7 +534,7 @@ var _hmt = _hmt || [];
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQY4bMQwEwP3/pzdATgESz3aTkuNDzckwPJJKB5Em9fUVP9+/nz8///3N87vJb57ffR5h9eDh4eGNlv7qeTX9qymTEZIZn+cqRsDDw8O7xkuCQT5ZPlobkPI14+Hh4X0CLyEl3+dHf7tBeHh4eJ/GS6ZpSfvPeHh4eP+LlxQjknJAWyzIA8D1WgseHh5eVyk9UBR45+fr/T08PDy8UVd9Hypmxdw8APywTjw8PLwLvPxSVH4C5wl3m9bPrnzh4eHh3eBtXp6lxW27a3apCw8PD+8Gr0hM40CSHOX5ctvE/WUyjYeHh3eU11Y+c9IzbwYrthsPDw/vAi8/pts2f16Wba8vHKu74OHh4Y14yWGap8h1ayqeMZ+9GAgPDw9vwWvb/7Nm/6mNKPB4eHh4b+HlS9wjN0uPLhbg4eHhXeDNpslT21k63m5ZfQELDw8Pb8FrS6Wzpy0Qt8WIl802PDw8vAu8pNrZtr7ad/NDvy2L4OHh4d3mzUoM+0ZaMtdmTDw8PLyzvLzwmoSBDfhGaMHDw8O7x9s0+NsyQVssbsfBw8PDu83LD/q8nX8qm81DyA8rx8PDwzvKOxUM8nJwsjWzltg/vsHDw8O7zGsLCvnW5NQZu454eHh4eAvecylhk87mmGQN7fZF9yPw8PDw1ry2qb8p3ebBY3b1qr6ZhYeHh3cIsykWtKnwpgwRRTw8PDy8C7z2mtQ+Uc6Rm4sFeHh4eGd53+WTpNTtRrTzFmk3Hh4e3gXeqfJE3Y4aBYw8ia+peHh4eCVvFgzytHgfZvLAUEc/PDw8vAUv/5N/6vebt3I8Hh4e3ifwkuS4DQmz6sGwv4eHh4f3Rl7eJJsVZ9trB1EbDw8PD+8ar20+5Ul2cYjH7bHi6gMeHh7eBd6mAdY2sdpy7axwjIeHh3eN9wsBmZKXZkTezQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3awU4kMQwEUP7/p0HihIRIl+0YRuj1aTX0dvJySKxy3t7i5/3zOf/16zvff0nen8xh9ODh4eG1pv7TkwPO0z1/obcc0Rfw8PDw1njnjbi3lffezOcTjYWHh4f3p7zz/8oL6zMjmQMeHh7e/+OdS/N5IIKHh4f3Crx8WnkM0TsAkqhiJWvBw8PDi3mTTfmv/r3Y38PDw8MbdNXzTTkPZPMG24XZ4uHh4S3wkiHzwaqM6ljN5hkeHh7eVV7v0kDyZrUNVr3sFc0fDw8Pb5mXRKK9S1H5hJI2Wx774uHh4W3w8vZVL6TIN/r8l/JFBzw8PLyrvEkIm2/W1SMkjyoe3sHDw8Nb4E0Og/Onq7FC7z5AFPXi4eHhLfDyrTY/KuZXBJrHAB4eHt4L8Cblb/WddSoeHh7eJV5SNE+aZNVoIz82CmU0Hh4e3iVeL1Dotc16gW9eoD80wPDw8PAu8XrBxHly14ZvXSNIwg48PDy8Ca9aOudxbW/TrzbkHr6Ah4eHt8xrNuPjwyC/QJCMG1Hx8PDwFnjVKGESNGwEE9Gs8PDw8K7y8lihd7spKXwnB9JD+Y6Hh4e3xpu3wfKpJ4V4tQQvrzEeHh7emDcPAnoXsM6x74VGGh4eHt4Cb2Nzry5c9c3qBSw8PDy8u7xqyz/ZoKvbeh7alg8VPDw8vGVeb4uvXsbqRRvJcjwcDHh4eHiXeJP2fLVhNj9+esktHh4e3l3ee/GZN8D2mm14eHh4v8Obnyfn4asBRL4cd69q4eHh4VV582nl5Xjyfr58FwprPDw8vAGvei1gDuiV3fkS4OHh4b0CL29oVVtZeZMs/w4eHh7ea/Kq5XXe9MovYz38joeHh7fGq4YR1alPIuNqAIGHh4e3zZsPmZOSIjhZ4upBgoeHh3eJ9wHZ3+4Dr/cgrQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

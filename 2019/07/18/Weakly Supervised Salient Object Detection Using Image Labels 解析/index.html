@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?905249609e5774f6b20d26393024eec4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <link rel="canonical" href="http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/">
+    
+    
+    <title>Weakly Supervised Salient Object Detection Using Image Labels 解析 | 缘ね花落的博客 | zhangzq blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Salient Object Detection,Supervised">
+    <meta name="description" content="Weakly Supervised Salient Object Detection Using Image Labels  Abstract 这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。  Problem 在目前的显著对象检测中，往往使用非监督方法，采用">
+<meta name="keywords" content="Salient Object Detection,Supervised">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Weakly Supervised Salient Object Detection Using Image Labels 解析">
+<meta property="og:url" content="http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/index.html">
+<meta property="og:site_name" content="缘ね花落的博客">
+<meta property="og:description" content="Weakly Supervised Salient Object Detection Using Image Labels  Abstract 这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。  Problem 在目前的显著对象检测中，往往使用非监督方法，采用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ziquanzhang.ink/images/DL/network.png">
+<meta property="og:image" content="http://ziquanzhang.ink/images/DL/multi-FCN.png">
+<meta property="og:image" content="http://ziquanzhang.ink/images/DL/CAM.png">
+<meta property="og:updated_time" content="2019-07-18T07:01:00.252Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Weakly Supervised Salient Object Detection Using Image Labels 解析">
+<meta name="twitter:description" content="Weakly Supervised Salient Object Detection Using Image Labels  Abstract 这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。  Problem 在目前的显著对象检测中，往往使用非监督方法，采用">
+<meta name="twitter:image" content="http://ziquanzhang.ink/images/DL/network.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/Bonfire.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+	<meta name="baidu-site-verification" content="lC9npJUVe8" />
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/Nyan Cat.gif">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">zhang ziquan</h5>
+          <a href="mailto:1417580438@qq.com" title="1417580438@qq.com" class="mail">1417580438@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zhangziquan" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://steamcommunity.com/id/zhangziquan/" target="_blank" >
+                <i class="icon icon-lg icon-steam"></i>
+                Steam
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/game"  >
+                <i class="icon icon-lg icon-gamepad"></i>
+                stupid game
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Weakly Supervised Salient Object Detection Using Image Labels 解析</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Weakly Supervised Salient Object Detection Using Image Labels 解析</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-18T07:00:47.000Z" itemprop="datePublished" class="page-time">
+  2019-07-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/DL/">DL</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#weakly-supervised-salient-object-detection-using-image-labels"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Weakly Supervised Salient Object Detection Using Image Labels</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#abstract"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#problem"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> Problem</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#network"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> Network</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#multi-fcn"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text"> Multi-FCN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cam"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text"> CAM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#crf模型"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text"> CRF模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#result"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> Result</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ablation-studies"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"> Ablation Studies</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#related"><span class="post-toc-number">1.6.</span> <span class="post-toc-text"> Related</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Weakly Supervised Salient Object Detection Using Image Labels 解析"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Weakly Supervised Salient Object Detection Using Image Labels 解析</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-18 15:00:47" datetime="2019-07-18T07:00:47.000Z"  itemprop="datePublished">2019-07-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/DL/">DL</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="weakly-supervised-salient-object-detection-using-image-labels"><a class="markdownIt-Anchor" href="#weakly-supervised-salient-object-detection-using-image-labels"></a> Weakly Supervised Salient Object Detection Using Image Labels</h1>
+<h2 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h2>
+<p>这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。</p>
+<h2 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> Problem</h2>
+<p>在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基于低级特征的方法，无法处理多类图片，通常存在2个问题：</p>
+<ol>
+<li>缺少空间相关性推断，位置附近的像素</li>
+<li>无法检测高语义特征，因为某些物体在低语义特征（颜色，大小，纹理）上和其它对象对比度较低，因此要进行检测需要高语义特征支持。</li>
+</ol>
+<p>而采用监督学习后，因为有了有效的标记，能够在训练中学习到显著对象的特征规则，忽略了干扰的噪声，所以在效果上能够有极大提升，但是也存在几个问题：</p>
+<ol>
+<li>有监督学习同时也带来了过拟合问题，泛化性变弱。</li>
+<li>监督学习的数据集需要进行标记且整个过程耗时耗费人力物力。</li>
+</ol>
+<p>因此本文就监督学习的两个问题给出了解决方案。</p>
+<h2 id="network"><a class="markdownIt-Anchor" href="#network"></a> Network</h2>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/DL/network.png" alt="network" title="">
+                </div>
+                <div class="image-caption">network</div>
+            </figure>
+<p>整个网络的主要流程就是使用无监督学习的检测方法，生成初始预测显著性图，用原图像对Multi-FCN进行训练，得到CAM图以及FCN预测的显著性图，这三个图通过CRF模型，进行综合增强，得到第二轮的显著性概率图。</p>
+<p>就框架中的3个比较重要的地方展开</p>
+<h3 id="multi-fcn"><a class="markdownIt-Anchor" href="#multi-fcn"></a> Multi-FCN</h3>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/DL/multi-FCN.png" alt="multi-FCN" title="">
+                </div>
+                <div class="image-caption">multi-FCN</div>
+            </figure>
+<p>作为监督学习的一个重要的部分，FCN是CNN上的拓展，与CNN相比，FCN将全连接层全部换成deconv（反卷积，最通常的叫法是上采样）即对最后一个卷基层的特征图进行上采样，使其恢复到与输入相同的尺寸，从而对每个像素都能进行预测。（在这里FCN使用多个只是为了能够检测不同比例的图像的视觉对比。）</p>
+<p>论文中的FCN主要任务是输出分类任务和以及输出逐像素的显著图，这里体现了监督学习，因为通过分类任务的训练，能够通过高语义特征的划分来区分不同对象，这样能够纠正在无监督学习下，因为语义信息模糊的规则，如在低特征上无法区分的对象，也能检测出来了。</p>
+<h3 id="cam"><a class="markdownIt-Anchor" href="#cam"></a> CAM</h3>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/DL/CAM.png" alt="CAM" title="">
+                </div>
+                <div class="image-caption">CAM</div>
+            </figure>
+<p>CAM即类激活映射，一开始是作为对分类问题的网络，提供关注区域（提供依据），在对卷积层结果进行全局池化后，能够进行特征图加权求和得到对某一类的热力图，这样就能得知模型是通过哪些像素来确定图片中的物体的属于哪一类的。</p>
+<p>CAM得到的热力图相对于FCN的逐像素预测图来说相对没这么准确，但是对于对象位置的定位十分准确，并且在泛化性上表现很好，对于一些未知类别的图像，也能够对显著对象进行准确的定位，所以可以加入到CRF中，为第二轮生成更加精确的预测图做一个引导。</p>
+<p>个人认为是因为CAM在FCN训练过程中，在一些背景等无关信息上得到了训练，所以不会过度关注这些地方。</p>
+<h3 id="crf模型"><a class="markdownIt-Anchor" href="#crf模型"></a> CRF模型</h3>
+<p>CRF是这个框架中的核心部分，即条件概率分布模型，在文章中只提到了能够通过空间相对位置，以及显著对象定位来纠正一些错误的预测。这个模型是一个概率图模型，用于求联合概率。即在上文提到的，无监督学习的一个缺点就是没有考虑空间一致性（鼓励附近具有相似颜色的像素采用相似的显着性概率），因此在通过CRF后，能得到更具有空间相关性的概率图。</p>
+<p>在这里为了让未知的图像能够有更好的预测效果，使用无标记的数据集进行微调，即让CAM来指导预测图，在上面已经提到过CAM对于未知图像有比较好的定位效果。</p>
+<h2 id="result"><a class="markdownIt-Anchor" href="#result"></a> Result</h2>
+<p>在表现上超越许多非监督学习模型，并且能够和许多监督学习的模型相比较。证明了在泛化性上是表现很好的，能够和监督学习模型相比也说明了这一弱监督学习的成功。</p>
+<h2 id="ablation-studies"><a class="markdownIt-Anchor" href="#ablation-studies"></a> Ablation Studies</h2>
+<p>在模型检测测试当中，可见CAM和CRF的作用十分重要，单使用FCN的预测效果仅能和原来的无监督学习相比，而增加了CRF，能够增强空间相关性，解决了第一个问题。</p>
+<p>而CAM的加入提供了定位以及对模型的引导有一个泛化作用，并且是强监督学习变为了弱监督学习，能让FCN训练有素，避免了过拟合，而且能够纠正一些错误的预测，其中包含大量的网络参数能够发现大规模样本中某些潜在规则，从而进行降噪。</p>
+<h2 id="related"><a class="markdownIt-Anchor" href="#related"></a> Related</h2>
+<p>Deep Unsupervised Saliency Detection: A Multiple Noisy Labeling Perspective</p>
+<p>在2018年的CVPR中，同样有一篇论文采取了类似的使用无监督学习作为初始化思路，使用伪监督学习，以此来进行监督学习并且避免了过拟合的问题。</p>
+<p>文章认为传统的无监督学习由于独立数据集，使得在自然环境中的泛化性较强，并且有一些噪音也有一定的作用，因此使用传统无监督学习得到的结果作为ground truth + noisy, 作为监督来同时训练一个显著性检测模块和噪声模块，在一定程度上也取得了一定的效果。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-18T07:01:00.252Z" itemprop="dateUpdated">2019-07-18 15:01:00</time>
+</span><br>
+
+
+        
+        <a href="/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" target="_blank" rel="external">http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ziquanzhang.ink">
+            <img src="/img/Nyan Cat.gif" alt="zhang ziquan">
+            zhang ziquan
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Salient-Object-Detection/">Salient Object Detection</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Supervised/">Supervised</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/&title=《Weakly Supervised Salient Object Detection Using Image Labels 解析》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/&title=《Weakly Supervised Salient Object Detection Using Image Labels 解析》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Weakly Supervised Salient Object Detection Using Image Labels 解析》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/28/系统分析与设计（六）/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">系统分析与设计（六）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+			id: "Thu Jul 18 2019 15:00:47 GMT+0800",
+            owner: 'zhangziquan',
+            repo: 'blog-comment',
+            oauth: {
+                client_id: '5e5c57c64db494a7f6c0',
+                client_secret: 'faed34b1a876acd24b48dc022083d85113a730a2',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        唯一指定二维码
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+	
+    <div class="bottom">
+        <p><span>zhang ziquan &copy; 2018 - 2019</span>
+			<span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("09/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+			setInterval("createtime()",250);
+			</script>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/&title=《Weakly Supervised Salient Object Detection Using Image Labels 解析》 — 缘ね花落的博客&pic=http://ziquanzhang.ink/img/Nyan Cat.gif" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/&title=《Weakly Supervised Salient Object Detection Using Image Labels 解析》 — 缘ね花落的博客&source=张子权的博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Weakly Supervised Salient Object Detection Using Image Labels 解析》 — 缘ね花落的博客&url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/&via=http://ziquanzhang.ink" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADNklEQVR42u3aQXLCQAwEwPz/0+QBic3MylThdXNKBYPdm4MijX5+4tfr4PX3mqPfHH3q/Prz7z///QUvbGxs7JuwX6ev5JqjR2y/YfJtuQUbGxt7V3ZeTtrrz4/4/Jrz4nd0ZVTksLGxsbGDNiAvVPlBJN+DjY2Njb3GLtqAuPzMR1HY2NjYz2G3hWFSipLwIAkbRkePjY2NvRE7T0W//+eP5NvY2NjYX8xeC1/baLYthHmsu6jAxsbG3oidF4CWMWknkoXOts3AxsbG3pU9KRj5o5wf1nxcVUQC+Q2wsbGxb8JeK2DzJZvJQs9VV2JjY2PvwT4vHu1CT1tg8pg2OfqiycHGxsZ+GPuqBiY/3LaNaUdd2NjY2E9grz1cW6La9aA8PCj2j7CxsbFvzp7fbBISRyn00my/KMzY2NjYN2e3/+Lnj9gGCe1wqm2WsLGxsXdlrwUAeQC8NipaO5o20sDGxsbeg52D82Agj2zzoDcfFS3O0rCxsbG3YOcNQ1LS1spPexx5KT0sYNjY2Ng3Z+flJA96k9uvlatkvJXcBRsbG3sndnE2ZTDQDvrz5ZvJfaNqjI2NjX0rdvvhdpkmx19VPkdjJmxsbOwbstu2oV2gSQ6uDRvaCf8/12BjY2Nvx84HPWvFaV66Ji3QmykaNjY29s3ZbfPQrsvkQ6tJCcybqDepCDY2NvYN2UlZasf97aPnqzlX/TGwsbGxd2W3o5n84dZG/Fe1N4crO9jY2NhbsJORzWQFpx055c8wGTZhY2Nj78rOd3zWFnEmTUXburTtCjY2NvZO7LzZaCPbeUicYBYPFxsbG/vm7LwZaMdGa8Ft2w61i0fY2NjYz2HnhefaqHgyoqqnaNjY2Nibstvx0Fpbsjbxmn8WGxsbeyf2q3zNi0obG+Q/F38SbGxs7I3YkyQ0X7JZI63FBvmnsLGxsXdit+HuKEkuh/55sazfxcbGxt6Ona88tuz83fxJ2vWdN7M0bGxs7EeyJ+3BfDWnDZujU8HGxsZ+DPtz4/u2qTgvY2+ux8bGxt6O3Y54kkKSF575aOmD8QA2Njb217OLtcW4hWij3Hwg1QYYecHDxsbGviH7FzH+F3IdaPRxAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="https://www.ziquanzhang.ink/js/live2d/jquery.min.js"></script>
+
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '一个神奇的网站';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'zhangzq\'s blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script src="https://www.ziquanzhang.ink/js/live2d/autoload.js"></script>
+
+</body>
+</html>
