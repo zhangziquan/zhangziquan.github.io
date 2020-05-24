@@ -5,9 +5,9 @@
   <subtitle>zhangzq blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://ziquanzhang.ink/"/>
+  <link href="https://zhangziquan.github.io/"/>
   <updated>2019-07-18T07:01:00.252Z</updated>
-  <id>http://ziquanzhang.ink/</id>
+  <id>https://zhangziquan.github.io/</id>
   
   <author>
     <name>zhang ziquan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Weakly Supervised Salient Object Detection Using Image Labels 解析</title>
-    <link href="http://ziquanzhang.ink/2019/07/18/Weakly%20Supervised%20Salient%20Object%20Detection%20Using%20Image%20Labels%20%E8%A7%A3%E6%9E%90/"/>
-    <id>http://ziquanzhang.ink/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/</id>
+    <link href="https://zhangziquan.github.io/2019/07/18/Weakly%20Supervised%20Salient%20Object%20Detection%20Using%20Image%20Labels%20%E8%A7%A3%E6%9E%90/"/>
+    <id>https://zhangziquan.github.io/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/</id>
     <published>2019-07-18T07:00:47.000Z</published>
     <updated>2019-07-18T07:01:00.252Z</updated>
     
@@ -34,19 +34,19 @@
     
     </summary>
     
-      <category term="DL" scheme="http://ziquanzhang.ink/categories/DL/"/>
+      <category term="DL" scheme="https://zhangziquan.github.io/categories/DL/"/>
     
     
-      <category term="Salient Object Detection" scheme="http://ziquanzhang.ink/tags/Salient-Object-Detection/"/>
+      <category term="Salient Object Detection" scheme="https://zhangziquan.github.io/tags/Salient-Object-Detection/"/>
     
-      <category term="Supervised" scheme="http://ziquanzhang.ink/tags/Supervised/"/>
+      <category term="Supervised" scheme="https://zhangziquan.github.io/tags/Supervised/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计（六）</title>
-    <link href="http://ziquanzhang.ink/2019/06/28/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%85%AD%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/06/28/系统分析与设计（六）/</id>
+    <link href="https://zhangziquan.github.io/2019/06/28/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%85%AD%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/06/28/系统分析与设计（六）/</id>
     <published>2019-06-28T07:44:31.673Z</published>
     <updated>2019-06-28T10:01:44.561Z</updated>
     
@@ -62,17 +62,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计个人总结</title>
-    <link href="http://ziquanzhang.ink/2019/06/23/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
-    <id>http://ziquanzhang.ink/2019/06/23/系统分析与设计个人总结/</id>
+    <link href="https://zhangziquan.github.io/2019/06/23/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/"/>
+    <id>https://zhangziquan.github.io/2019/06/23/系统分析与设计个人总结/</id>
     <published>2019-06-23T14:53:00.000Z</published>
     <updated>2019-06-23T15:01:18.530Z</updated>
     
@@ -91,17 +91,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>mpvue前端小技巧</title>
-    <link href="http://ziquanzhang.ink/2019/06/23/mpvue%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    <id>http://ziquanzhang.ink/2019/06/23/mpvue前端小技巧/</id>
+    <link href="https://zhangziquan.github.io/2019/06/23/mpvue%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>https://zhangziquan.github.io/2019/06/23/mpvue前端小技巧/</id>
     <published>2019-06-23T13:14:00.000Z</published>
     <updated>2019-06-23T13:17:48.671Z</updated>
     
@@ -116,21 +116,21 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="mpvue" scheme="http://ziquanzhang.ink/tags/mpvue/"/>
+      <category term="mpvue" scheme="https://zhangziquan.github.io/tags/mpvue/"/>
     
-      <category term="Wechat" scheme="http://ziquanzhang.ink/tags/Wechat/"/>
+      <category term="Wechat" scheme="https://zhangziquan.github.io/tags/Wechat/"/>
     
-      <category term="html" scheme="http://ziquanzhang.ink/tags/html/"/>
+      <category term="html" scheme="https://zhangziquan.github.io/tags/html/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计（五）</title>
-    <link href="http://ziquanzhang.ink/2019/05/24/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%BA%94%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/05/24/系统分析与设计（五）/</id>
+    <link href="https://zhangziquan.github.io/2019/05/24/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%BA%94%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/05/24/系统分析与设计（五）/</id>
     <published>2019-05-24T02:43:00.000Z</published>
     <updated>2019-05-26T15:50:39.805Z</updated>
     
@@ -146,17 +146,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计（四）</title>
-    <link href="http://ziquanzhang.ink/2019/05/24/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/05/24/系统分析与设计（四）/</id>
+    <link href="https://zhangziquan.github.io/2019/05/24/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%9B%9B%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/05/24/系统分析与设计（四）/</id>
     <published>2019-05-24T02:10:00.000Z</published>
     <updated>2019-05-24T02:38:32.944Z</updated>
     
@@ -172,17 +172,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计（三）</title>
-    <link href="http://ziquanzhang.ink/2019/04/15/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%89%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/04/15/系统分析与设计（三）/</id>
+    <link href="https://zhangziquan.github.io/2019/04/15/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/04/15/系统分析与设计（三）/</id>
     <published>2019-04-15T12:48:00.000Z</published>
     <updated>2019-04-15T12:51:23.896Z</updated>
     
@@ -198,17 +198,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>软件测试（二）</title>
-    <link href="http://ziquanzhang.ink/2019/03/30/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/03/30/软件测试（二）/</id>
+    <link href="https://zhangziquan.github.io/2019/03/30/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/03/30/软件测试（二）/</id>
     <published>2019-03-30T11:39:00.000Z</published>
     <updated>2019-03-30T11:44:56.491Z</updated>
     
@@ -224,17 +224,17 @@
     
     </summary>
     
-      <category term="STMT" scheme="http://ziquanzhang.ink/categories/STMT/"/>
+      <category term="STMT" scheme="https://zhangziquan.github.io/categories/STMT/"/>
     
     
-      <category term="software development" scheme="http://ziquanzhang.ink/tags/software-development/"/>
+      <category term="software development" scheme="https://zhangziquan.github.io/tags/software-development/"/>
     
   </entry>
   
   <entry>
     <title>在hexo博客中添加视频</title>
-    <link href="http://ziquanzhang.ink/2019/03/30/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/"/>
-    <id>http://ziquanzhang.ink/2019/03/30/在hexo博客中添加视频/</id>
+    <link href="https://zhangziquan.github.io/2019/03/30/%E5%9C%A8hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/"/>
+    <id>https://zhangziquan.github.io/2019/03/30/在hexo博客中添加视频/</id>
     <published>2019-03-30T08:25:00.000Z</published>
     <updated>2019-03-30T08:47:19.496Z</updated>
     
@@ -251,17 +251,17 @@
     
     </summary>
     
-      <category term="Hexo-tips" scheme="http://ziquanzhang.ink/categories/Hexo-tips/"/>
+      <category term="Hexo-tips" scheme="https://zhangziquan.github.io/categories/Hexo-tips/"/>
     
     
-      <category term="Hexo" scheme="http://ziquanzhang.ink/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://zhangziquan.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计（二）</title>
-    <link href="http://ziquanzhang.ink/2019/03/30/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/03/30/系统分析与设计（二）/</id>
+    <link href="https://zhangziquan.github.io/2019/03/30/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/03/30/系统分析与设计（二）/</id>
     <published>2019-03-30T07:35:00.000Z</published>
     <updated>2019-04-12T06:55:49.298Z</updated>
     
@@ -277,17 +277,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>系统分析与设计（一）</title>
-    <link href="http://ziquanzhang.ink/2019/03/15/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://ziquanzhang.ink/2019/03/15/系统分析与设计（一）/</id>
+    <link href="https://zhangziquan.github.io/2019/03/15/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2019/03/15/系统分析与设计（一）/</id>
     <published>2019-03-15T09:08:00.000Z</published>
     <updated>2019-03-30T11:39:42.347Z</updated>
     
@@ -303,17 +303,17 @@
     
     </summary>
     
-      <category term="Software System Analysis and Design" scheme="http://ziquanzhang.ink/categories/Software-System-Analysis-and-Design/"/>
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
     
     
-      <category term="SSAD" scheme="http://ziquanzhang.ink/tags/SSAD/"/>
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
   <entry>
     <title>Smart-Market</title>
-    <link href="http://ziquanzhang.ink/2018/12/31/Smart-Market/"/>
-    <id>http://ziquanzhang.ink/2018/12/31/Smart-Market/</id>
+    <link href="https://zhangziquan.github.io/2018/12/31/Smart-Market/"/>
+    <id>https://zhangziquan.github.io/2018/12/31/Smart-Market/</id>
     <published>2018-12-31T11:37:00.000Z</published>
     <updated>2019-03-15T09:06:58.916Z</updated>
     
@@ -329,17 +329,17 @@
     
     </summary>
     
-      <category term="Block-Chain" scheme="http://ziquanzhang.ink/categories/Block-Chain/"/>
+      <category term="Block-Chain" scheme="https://zhangziquan.github.io/categories/Block-Chain/"/>
     
     
-      <category term="ethereum" scheme="http://ziquanzhang.ink/tags/ethereum/"/>
+      <category term="ethereum" scheme="https://zhangziquan.github.io/tags/ethereum/"/>
     
   </entry>
   
   <entry>
     <title>2018算法设计期末项目</title>
-    <link href="http://ziquanzhang.ink/2018/12/24/2018%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://ziquanzhang.ink/2018/12/24/2018算法设计期末项目/</id>
+    <link href="https://zhangziquan.github.io/2018/12/24/2018%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://zhangziquan.github.io/2018/12/24/2018算法设计期末项目/</id>
     <published>2018-12-23T17:27:00.000Z</published>
     <updated>2018-12-25T08:19:08.750Z</updated>
     
@@ -355,19 +355,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="TSP" scheme="http://ziquanzhang.ink/tags/TSP/"/>
+      <category term="TSP" scheme="https://zhangziquan.github.io/tags/TSP/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 732. My Calendar III</title>
-    <link href="http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/"/>
-    <id>http://ziquanzhang.ink/2018/12/06/LeetCode-732-My-Calendar-III/</id>
+    <link href="https://zhangziquan.github.io/2018/12/06/LeetCode-732-My-Calendar-III/"/>
+    <id>https://zhangziquan.github.io/2018/12/06/LeetCode-732-My-Calendar-III/</id>
     <published>2018-12-06T13:01:00.000Z</published>
     <updated>2018-12-06T13:07:47.009Z</updated>
     
@@ -384,21 +384,21 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
-      <category term="Graph" scheme="http://ziquanzhang.ink/tags/Graph/"/>
+      <category term="Graph" scheme="https://zhangziquan.github.io/tags/Graph/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 312. Burst Balloons</title>
-    <link href="http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/"/>
-    <id>http://ziquanzhang.ink/2018/11/27/LeetCode-312-Burst-Balloons/</id>
+    <link href="https://zhangziquan.github.io/2018/11/27/LeetCode-312-Burst-Balloons/"/>
+    <id>https://zhangziquan.github.io/2018/11/27/LeetCode-312-Burst-Balloons/</id>
     <published>2018-11-27T15:20:00.000Z</published>
     <updated>2018-11-27T15:23:40.513Z</updated>
     
@@ -415,21 +415,21 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
-      <category term="Dynamic Programming" scheme="http://ziquanzhang.ink/tags/Dynamic-Programming/"/>
+      <category term="Dynamic Programming" scheme="https://zhangziquan.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 354. Russian Doll Envelopes</title>
-    <link href="http://ziquanzhang.ink/2018/11/17/LeetCode-354-Russian-Doll-Envelopes/"/>
-    <id>http://ziquanzhang.ink/2018/11/17/LeetCode-354-Russian-Doll-Envelopes/</id>
+    <link href="https://zhangziquan.github.io/2018/11/17/LeetCode-354-Russian-Doll-Envelopes/"/>
+    <id>https://zhangziquan.github.io/2018/11/17/LeetCode-354-Russian-Doll-Envelopes/</id>
     <published>2018-11-17T08:45:00.000Z</published>
     <updated>2018-11-17T08:48:44.730Z</updated>
     
@@ -445,23 +445,23 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
-      <category term="Dynamic Programming" scheme="http://ziquanzhang.ink/tags/Dynamic-Programming/"/>
+      <category term="Dynamic Programming" scheme="https://zhangziquan.github.io/tags/Dynamic-Programming/"/>
     
-      <category term="Greedy" scheme="http://ziquanzhang.ink/tags/Greedy/"/>
+      <category term="Greedy" scheme="https://zhangziquan.github.io/tags/Greedy/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 514. Freedom Trail</title>
-    <link href="http://ziquanzhang.ink/2018/11/09/LeetCode-514-Freedom-Trail/"/>
-    <id>http://ziquanzhang.ink/2018/11/09/LeetCode-514-Freedom-Trail/</id>
+    <link href="https://zhangziquan.github.io/2018/11/09/LeetCode-514-Freedom-Trail/"/>
+    <id>https://zhangziquan.github.io/2018/11/09/LeetCode-514-Freedom-Trail/</id>
     <published>2018-11-09T08:52:00.000Z</published>
     <updated>2018-11-09T09:12:44.676Z</updated>
     
@@ -479,21 +479,21 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
-      <category term="Dynamic Programming" scheme="http://ziquanzhang.ink/tags/Dynamic-Programming/"/>
+      <category term="Dynamic Programming" scheme="https://zhangziquan.github.io/tags/Dynamic-Programming/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode]  828. Unique Letter String</title>
-    <link href="http://ziquanzhang.ink/2018/11/05/LeetCode-828-Unique-Letter-String/"/>
-    <id>http://ziquanzhang.ink/2018/11/05/LeetCode-828-Unique-Letter-String/</id>
+    <link href="https://zhangziquan.github.io/2018/11/05/LeetCode-828-Unique-Letter-String/"/>
+    <id>https://zhangziquan.github.io/2018/11/05/LeetCode-828-Unique-Letter-String/</id>
     <published>2018-11-05T12:39:00.000Z</published>
     <updated>2018-11-05T12:42:19.942Z</updated>
     
@@ -509,19 +509,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>区块链热身报告</title>
-    <link href="http://ziquanzhang.ink/2018/11/04/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/"/>
-    <id>http://ziquanzhang.ink/2018/11/04/区块链热身报告/</id>
+    <link href="https://zhangziquan.github.io/2018/11/04/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%83%AD%E8%BA%AB%E6%8A%A5%E5%91%8A/"/>
+    <id>https://zhangziquan.github.io/2018/11/04/区块链热身报告/</id>
     <published>2018-11-04T13:17:00.000Z</published>
     <updated>2018-11-04T13:19:28.296Z</updated>
     
@@ -538,17 +538,17 @@
     
     </summary>
     
-      <category term="Block-Chain" scheme="http://ziquanzhang.ink/categories/Block-Chain/"/>
+      <category term="Block-Chain" scheme="https://zhangziquan.github.io/categories/Block-Chain/"/>
     
     
-      <category term="ethereum" scheme="http://ziquanzhang.ink/tags/ethereum/"/>
+      <category term="ethereum" scheme="https://zhangziquan.github.io/tags/ethereum/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 45. Jump Game II</title>
-    <link href="http://ziquanzhang.ink/2018/10/28/LeetCode-45-Jump-Game-II/"/>
-    <id>http://ziquanzhang.ink/2018/10/28/LeetCode-45-Jump-Game-II/</id>
+    <link href="https://zhangziquan.github.io/2018/10/28/LeetCode-45-Jump-Game-II/"/>
+    <id>https://zhangziquan.github.io/2018/10/28/LeetCode-45-Jump-Game-II/</id>
     <published>2018-10-28T13:57:00.000Z</published>
     <updated>2018-10-28T13:59:09.326Z</updated>
     
@@ -566,19 +566,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 403. Frog Jump</title>
-    <link href="http://ziquanzhang.ink/2018/10/19/LeetCode-403-Frog-Jump/"/>
-    <id>http://ziquanzhang.ink/2018/10/19/LeetCode-403-Frog-Jump/</id>
+    <link href="https://zhangziquan.github.io/2018/10/19/LeetCode-403-Frog-Jump/"/>
+    <id>https://zhangziquan.github.io/2018/10/19/LeetCode-403-Frog-Jump/</id>
     <published>2018-10-19T08:13:00.000Z</published>
     <updated>2018-10-19T08:16:22.543Z</updated>
     
@@ -596,19 +596,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 297. Serialize and Deserialize Binary Tree</title>
-    <link href="http://ziquanzhang.ink/2018/10/14/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/"/>
-    <id>http://ziquanzhang.ink/2018/10/14/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/</id>
+    <link href="https://zhangziquan.github.io/2018/10/14/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/"/>
+    <id>https://zhangziquan.github.io/2018/10/14/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/</id>
     <published>2018-10-14T08:38:00.000Z</published>
     <updated>2018-10-14T08:39:41.193Z</updated>
     
@@ -623,19 +623,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 679. 24 Game</title>
-    <link href="http://ziquanzhang.ink/2018/10/07/LeetCode-679-24-Game/"/>
-    <id>http://ziquanzhang.ink/2018/10/07/LeetCode-679-24-Game/</id>
+    <link href="https://zhangziquan.github.io/2018/10/07/LeetCode-679-24-Game/"/>
+    <id>https://zhangziquan.github.io/2018/10/07/LeetCode-679-24-Game/</id>
     <published>2018-10-07T12:49:00.000Z</published>
     <updated>2018-10-07T12:56:32.895Z</updated>
     
@@ -653,19 +653,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 124. Binary Tree Maximum Path Sum</title>
-    <link href="http://ziquanzhang.ink/2018/09/30/LeetCode-124-Binary-Tree-Maximum-Path-Sum/"/>
-    <id>http://ziquanzhang.ink/2018/09/30/LeetCode-124-Binary-Tree-Maximum-Path-Sum/</id>
+    <link href="https://zhangziquan.github.io/2018/09/30/LeetCode-124-Binary-Tree-Maximum-Path-Sum/"/>
+    <id>https://zhangziquan.github.io/2018/09/30/LeetCode-124-Binary-Tree-Maximum-Path-Sum/</id>
     <published>2018-09-30T02:17:00.000Z</published>
     <updated>2018-09-30T02:21:12.897Z</updated>
     
@@ -680,19 +680,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 145. Binary Tree Postorder Traversal</title>
-    <link href="http://ziquanzhang.ink/2018/09/23/LeetCode-145-Binary-Tree-Postorder-Traversal/"/>
-    <id>http://ziquanzhang.ink/2018/09/23/LeetCode-145-Binary-Tree-Postorder-Traversal/</id>
+    <link href="https://zhangziquan.github.io/2018/09/23/LeetCode-145-Binary-Tree-Postorder-Traversal/"/>
+    <id>https://zhangziquan.github.io/2018/09/23/LeetCode-145-Binary-Tree-Postorder-Traversal/</id>
     <published>2018-09-23T02:10:00.000Z</published>
     <updated>2018-09-30T02:14:21.055Z</updated>
     
@@ -707,19 +707,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>[LeetCode] 765. Couples Holding Hands</title>
-    <link href="http://ziquanzhang.ink/2018/09/15/LeetCode/"/>
-    <id>http://ziquanzhang.ink/2018/09/15/LeetCode/</id>
+    <link href="https://zhangziquan.github.io/2018/09/15/LeetCode/"/>
+    <id>https://zhangziquan.github.io/2018/09/15/LeetCode/</id>
     <published>2018-09-15T09:11:00.000Z</published>
     <updated>2018-09-15T09:14:56.496Z</updated>
     
@@ -736,19 +736,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>数值计算实验一</title>
-    <link href="http://ziquanzhang.ink/2018/09/12/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%AE%9E%E9%AA%8C%E4%B8%80/"/>
-    <id>http://ziquanzhang.ink/2018/09/12/数值计算实验一/</id>
+    <link href="https://zhangziquan.github.io/2018/09/12/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%AE%9E%E9%AA%8C%E4%B8%80/"/>
+    <id>https://zhangziquan.github.io/2018/09/12/数值计算实验一/</id>
     <published>2018-09-12T11:46:27.000Z</published>
     <updated>2018-09-12T14:01:52.013Z</updated>
     
@@ -770,8 +770,8 @@
   
   <entry>
     <title>[LeetCode] 75. Sort Colors</title>
-    <link href="http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/"/>
-    <id>http://ziquanzhang.ink/2018/09/09/Leetcode-75-Sort-Colors/</id>
+    <link href="https://zhangziquan.github.io/2018/09/09/Leetcode-75-Sort-Colors/"/>
+    <id>https://zhangziquan.github.io/2018/09/09/Leetcode-75-Sort-Colors/</id>
     <published>2018-09-09T02:46:00.000Z</published>
     <updated>2018-09-15T09:17:36.888Z</updated>
     
@@ -788,19 +788,19 @@
     
     </summary>
     
-      <category term="The Design and Analysis of Computer Algorithms" scheme="http://ziquanzhang.ink/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
+      <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="http://ziquanzhang.ink/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
-      <category term="LeetCode" scheme="http://ziquanzhang.ink/tags/LeetCode/"/>
+      <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>I am a title</title>
-    <link href="http://ziquanzhang.ink/2018/09/05/I-am-a-title-1/"/>
-    <id>http://ziquanzhang.ink/2018/09/05/I-am-a-title-1/</id>
+    <link href="https://zhangziquan.github.io/2018/09/05/I-am-a-title-1/"/>
+    <id>https://zhangziquan.github.io/2018/09/05/I-am-a-title-1/</id>
     <published>2018-09-05T07:59:00.000Z</published>
     <updated>2018-09-12T13:30:11.459Z</updated>
     
@@ -818,14 +818,14 @@
     </summary>
     
     
-      <category term="test" scheme="http://ziquanzhang.ink/tags/test/"/>
+      <category term="test" scheme="https://zhangziquan.github.io/tags/test/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://ziquanzhang.ink/2018/09/04/hello-world/"/>
-    <id>http://ziquanzhang.ink/2018/09/04/hello-world/</id>
+    <link href="https://zhangziquan.github.io/2018/09/04/hello-world/"/>
+    <id>https://zhangziquan.github.io/2018/09/04/hello-world/</id>
     <published>2018-09-04T10:58:54.147Z</published>
     <updated>2018-09-04T10:58:54.147Z</updated>
     
