@@ -35,13 +35,13 @@ var _hmt = _hmt || [];
     
     
     <meta name="keywords" content="SSAD">
-    <meta name="description" content="系统分析与设计（六）使用 UMLet 建模 使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项： 对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要给出表清单">
+    <meta name="description" content="系统分析与设计（六）  使用 UMLet 建模  使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项：  对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要">
 <meta name="keywords" content="SSAD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统分析与设计（六）">
 <meta property="og:url" content="https://zhangziquan.github.io/2019/06/28/系统分析与设计（六）/index.html">
 <meta property="og:site_name" content="缘ね花落的博客">
-<meta property="og:description" content="系统分析与设计（六）使用 UMLet 建模 使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项： 对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要给出表清单">
+<meta property="og:description" content="系统分析与设计（六）  使用 UMLet 建模  使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项：  对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangziquan.github.io/images/SSAD/hw6-1.png">
 <meta property="og:image" content="https://zhangziquan.github.io/images/SSAD/hw6-2.png">
@@ -49,7 +49,7 @@ var _hmt = _hmt || [];
 <meta property="og:updated_time" content="2020-05-25T09:32:41.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统分析与设计（六）">
-<meta name="twitter:description" content="系统分析与设计（六）使用 UMLet 建模 使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项： 对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要给出表清单">
+<meta name="twitter:description" content="系统分析与设计（六）  使用 UMLet 建模  使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键  注意事项：  对象必须是名词、特别是技术名词、报表、描述类的处理； 关联必须有多重性、部分有名称与导航方向 属性要注意计算字段   数据建模，为了简化描述仅需要">
 <meta name="twitter:image" content="https://zhangziquan.github.io/images/SSAD/hw6-1.png">
     
         <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
@@ -192,7 +192,7 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计（六）"><span class="post-toc-number">1.</span> <span class="post-toc-text">系统分析与设计（六）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-UMLet-建模"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用 UMLet 建模</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统分析与设计六"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 系统分析与设计（六）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-umlet-建模"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 使用 UMLet 建模</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -218,35 +218,50 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="系统分析与设计（六）"><a href="#系统分析与设计（六）" class="headerlink" title="系统分析与设计（六）"></a>系统分析与设计（六）</h1><h2 id="使用-UMLet-建模"><a href="#使用-UMLet-建模" class="headerlink" title="使用 UMLet 建模"></a>使用 <strong>UMLet</strong> 建模</h2><ol>
-<li><p>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键</p>
+            <h1 id="系统分析与设计六"><a class="markdownIt-Anchor" href="#系统分析与设计六"></a> 系统分析与设计（六）</h1>
+<h2 id="使用-umlet-建模"><a class="markdownIt-Anchor" href="#使用-umlet-建模"></a> 使用 <strong>UMLet</strong> 建模</h2>
+<ol>
+<li>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键
 <ul>
-<li>注意事项：<ul>
+<li>注意事项：
+<ul>
 <li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li>
 <li>关联必须有多重性、部分有名称与导航方向</li>
 <li>属性要注意计算字段</li>
 </ul>
 </li>
-<li>数据建模，为了简化描述仅需要给出表清单，例如：<ul>
-<li>Hotel（ID/Key，Name，LoctionID/Fkey，Address…..）</li>
-</ul>
-</li>
-<li><p>Make Reservation 用例<br><img src="/images/SSAD/hw6-1.png" alt="hw6-1"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Payment 用例<br><img src="/images/SSAD/hw6-2.png" alt="hw6-2"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>使用 UML State Model，对每个订单对象生命周期建模</p>
+<li>数据建模，为了简化描述仅需要给出表清单，例如：
 <ul>
-<li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li>
-<li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li>
-<li>Reservation<br><img src="/images/SSAD/hw6-3.png" alt="hw6-3"> </li>
+<li>Hotel（ID/Key，Name，LoctionID/Fkey，Address……）</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
+<ul>
+<li>
+<p>Make Reservation 用例<br>
+<img src="/images/SSAD/hw6-1.png" alt="hw6-1"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Payment 用例<br>
+<img src="/images/SSAD/hw6-2.png" alt="hw6-2"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>使用 UML State Model，对每个订单对象生命周期建模
+<ul>
+<li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li>
+<li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Reservation<br>
+<img src="/images/SSAD/hw6-3.png" alt="hw6-3"></li>
+</ul>
 
         </div>
 

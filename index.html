@@ -207,17 +207,16 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="博客重启计划"><a href="#博客重启计划" class="headerlink" title="博客重启计划"></a>博客重启计划</h1><p>时隔快一年重新把这个博客整一整。。。</p>
-<p>之前先是域名过期跪了，换回了github的域名访问。</p>
-<p>然后发现live2d挂了，重新修复了一下，计划弄些新的live2d过来。</p>
-<p>接下来就是随缘日常更新一下，相关论文解析以及某些技术向问题之类的。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/emoticon/emoticon_1.jpg" alt="emoticon_1" title="">
-                </div>
-                <div class="image-caption">emoticon_1</div>
-            </figure>
+         博客重启计划
+时隔快一年重新把这个博客整一整。。。
+之前先是域名过期跪了，换回了github的域名访问。
+然后发现live2d挂了，重新修复了一下，计划弄些新的live2d过来。
+接下来就是随缘日常更新一下，相关论文解析以及某些技术向问题之类的。
+
+                
+                    
+                    
+            ...
     
 
         <a href="/2020/05/25/博客重启计划/" class="post-more waves-effect waves-button">
@@ -264,55 +263,11 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="Weakly-Supervised-Salient-Object-Detection-Using-Image-Labels"><a href="#Weakly-Supervised-Salient-Object-Detection-Using-Image-Labels" class="headerlink" title="Weakly Supervised Salient Object Detection Using Image Labels"></a>Weakly Supervised Salient Object Detection Using Image Labels</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。</p>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基于低级特征的方法，无法处理多类图片，通常存在2个问题：</p>
-<ol>
-<li>缺少空间相关性推断，位置附近的像素</li>
-<li>无法检测高语义特征，因为某些物体在低语义特征（颜色，大小，纹理）上和其它对象对比度较低，因此要进行检测需要高语义特征支持。</li>
-</ol>
-<p>而采用监督学习后，因为有了有效的标记，能够在训练中学习到显著对象的特征规则，忽略了干扰的噪声，所以在效果上能够有极大提升，但是也存在几个问题：</p>
-<ol>
-<li>有监督学习同时也带来了过拟合问题，泛化性变弱。</li>
-<li>监督学习的数据集需要进行标记且整个过程耗时耗费人力物力。</li>
-</ol>
-<p>因此本文就监督学习的两个问题给出了解决方案。</p>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/DL/network.png" alt="network" title="">
-                </div>
-                <div class="image-caption">network</div>
-            </figure>
-<p>整个网络的主要流程就是使用无监督学习的检测方法，生成初始预测显著性图，用原图像对Multi-FCN进行训练，得到CAM图以及FCN预测的显著性图，这三个图通过CRF模型，进行综合增强，得到第二轮的显著性概率图。</p>
-<p>就框架中的3个比较重要的地方展开</p>
-<h3 id="Multi-FCN"><a href="#Multi-FCN" class="headerlink" title="Multi-FCN"></a>Multi-FCN</h3><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/DL/multi-FCN.png" alt="multi-FCN" title="">
-                </div>
-                <div class="image-caption">multi-FCN</div>
-            </figure>
-<p>作为监督学习的一个重要的部分，FCN是CNN上的拓展，与CNN相比，FCN将全连接层全部换成deconv（反卷积，最通常的叫法是上采样）即对最后一个卷基层的特征图进行上采样，使其恢复到与输入相同的尺寸，从而对每个像素都能进行预测。（在这里FCN使用多个只是为了能够检测不同比例的图像的视觉对比。）</p>
-<p>论文中的FCN主要任务是输出分类任务和以及输出逐像素的显著图，这里体现了监督学习，因为通过分类任务的训练，能够通过高语义特征的划分来区分不同对象，这样能够纠正在无监督学习下，因为语义信息模糊的规则，如在低特征上无法区分的对象，也能检测出来了。</p>
-<h3 id="CAM"><a href="#CAM" class="headerlink" title="CAM"></a>CAM</h3><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/DL/CAM.png" alt="CAM" title="">
-                </div>
-                <div class="image-caption">CAM</div>
-            </figure>
-<p>CAM即类激活映射，一开始是作为对分类问题的网络，提供关注区域（提供依据），在对卷积层结果进行全局池化后，能够进行特征图加权求和得到对某一类的热力图，这样就能得知模型是通过哪些像素来确定图片中的物体的属于哪一类的。</p>
-<p>CAM得到的热力图相对于FCN的逐像素预测图来说相对没这么准确，但是对于对象位置的定位十分准确，并且在泛化性上表现很好，对于一些未知类别的图像，也能够对显著对象进行准确的定位，所以可以加入到CRF中，为第二轮生成更加精确的预测图做一个引导。</p>
-<p>个人认为是因为CAM在FCN训练过程中，在一些背景等无关信息上得到了训练，所以不会过度关注这些地方。</p>
-<h3 id="CRF模型"><a href="#CRF模型" class="headerlink" title="CRF模型"></a>CRF模型</h3><p>CRF是这个框架中的核心部分，即条件概率分布模型，在文章中只提到了能够通过空间相对位置，以及显著对象定位来纠正一些错误的预测。这个模型是一个概率图模型，用于求联合概率。即在上文提到的，无监督学习的一个缺点就是没有考虑空间一致性（鼓励附近具有相似颜色的像素采用相似的显着性概率），因此在通过CRF后，能得到更具有空间相关性的概率图。</p>
-<p>在这里为了让未知的图像能够有更好的预测效果，使用无标记的数据集进行微调，即让CAM来指导预测图，在上面已经提到过CAM对于未知图像有比较好的定位效果。</p>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>在表现上超越许多非监督学习模型，并且能够和许多监督学习的模型相比较。证明了在泛化性上是表现很好的，能够和监督学习模型相比也说明了这一弱监督学习的成功。</p>
-<h2 id="Ablation-Studies"><a href="#Ablation-Studies" class="headerlink" title="Ablation Studies"></a>Ablation Studies</h2><p>在模型检测测试当中，可见CAM和CRF的作用十分重要，单使用FCN的预测效果仅能和原来的无监督学习相比，而增加了CRF，能够增强空间相关性，解决了第一个问题。</p>
-<p>而CAM的加入提供了定位以及对模型的引导有一个泛化作用，并且是强监督学习变为了弱监督学习，能让FCN训练有素，避免了过拟合，而且能够纠正一些错误的预测，其中包含大量的网络参数能够发现大规模样本中某些潜在规则，从而进行降噪。</p>
-<h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><p>Deep Unsupervised Saliency Detection: A Multiple Noisy Labeling Perspective</p>
-<p>在2018年的CVPR中，同样有一篇论文采取了类似的使用无监督学习作为初始化思路，使用伪监督学习，以此来进行监督学习并且避免了过拟合的问题。</p>
-<p>文章认为传统的无监督学习由于独立数据集，使得在自然环境中的泛化性较强，并且有一些噪音也有一定的作用，因此使用传统无监督学习得到的结果作为ground truth + noisy, 作为监督来同时训练一个显著性检测模块和噪声模块，在一定程度上也取得了一定的效果。</p>
-
+         Weakly Supervised Salient Object Detection Using Image Labels
+ Abstract
+这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。
+ Problem
+在目前的显著对象检测中，往往使用非监督方法...
     
 
         <a href="/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/" class="post-more waves-effect waves-button">
@@ -359,36 +314,19 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="系统分析与设计（六）"><a href="#系统分析与设计（六）" class="headerlink" title="系统分析与设计（六）"></a>系统分析与设计（六）</h1><h2 id="使用-UMLet-建模"><a href="#使用-UMLet-建模" class="headerlink" title="使用 UMLet 建模"></a>使用 <strong>UMLet</strong> 建模</h2><ol>
-<li><p>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键</p>
-<ul>
-<li>注意事项：<ul>
-<li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li>
-<li>关联必须有多重性、部分有名称与导航方向</li>
-<li>属性要注意计算字段</li>
-</ul>
-</li>
-<li>数据建模，为了简化描述仅需要给出表清单，例如：<ul>
-<li>Hotel（ID/Key，Name，LoctionID/Fkey，Address…..）</li>
-</ul>
-</li>
-<li><p>Make Reservation 用例<br><img src="/images/SSAD/hw6-1.png" alt="hw6-1"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Payment 用例<br><img src="/images/SSAD/hw6-2.png" alt="hw6-2"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>使用 UML State Model，对每个订单对象生命周期建模</p>
-<ul>
-<li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li>
-<li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li>
-<li>Reservation<br><img src="/images/SSAD/hw6-3.png" alt="hw6-3"> </li>
-</ul>
-</li>
-</ol>
+         系统分析与设计（六）
+ 使用 UMLet 建模
 
+使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键
+
+注意事项：
+
+对象必须是名词、特别是技术名词、报表、描述类的处理；
+关联必须有多重性、部分有名称与导航方向
+属性要注意计算字段
+
+
+数据建模，为了简化描述...
     
 
         <a href="/2019/06/28/系统分析与设计（六）/" class="post-more waves-effect waves-button">
@@ -435,132 +373,27 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="系统分析与设计个人总结"><a href="#系统分析与设计个人总结" class="headerlink" title="系统分析与设计个人总结"></a>系统分析与设计个人总结</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><strong>学号</strong></th>
-<th style="text-align:center"><strong>昵称</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">16340296</td>
-<td style="text-align:center">缘ね花落</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h2><p>我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。</p>
-<p>作为技术经理</p>
-<ul>
-<li>解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。</li>
-<li>对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，争取使用最有效、简洁的方法去实现。</li>
-</ul>
-<p>作为前端开发人员</p>
-<ul>
-<li>使用mpvue框架来编写开发任务的列表显示，实现问卷创建的UI设计，做到问卷对客户友好，便于客户查看任务订单。</li>
-<li>分析设计，进行实现。</li>
-</ul>
-<h2 id="PSP-2-1-表格"><a href="#PSP-2-1-表格" class="headerlink" title="PSP 2.1 表格"></a>PSP 2.1 表格</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th><strong>PSP2.1</strong></th>
-<th><strong>Personal Software Process Stages</strong></th>
-<th style="text-align:center"><strong>Time (%)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Planning</strong></td>
-<td><strong>计划</strong></td>
-<td style="text-align:center"><strong>10</strong></td>
-</tr>
-<tr>
-<td>· Estimate</td>
-<td>预估任务时间</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td><strong>Development</strong></td>
-<td><strong>开发</strong></td>
-<td style="text-align:center"><strong>80</strong></td>
-</tr>
-<tr>
-<td>· Analysis</td>
-<td>需求分析（包括自我学习）</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td>· Design Spec</td>
-<td>生成设计文档</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td>· Design Review</td>
-<td>设计复审</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td>· Coding Standard</td>
-<td>代码规范</td>
-<td style="text-align:center">6</td>
-</tr>
-<tr>
-<td>· Design</td>
-<td>具体设计（绘制UI, 架构设计等）</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td>· Coding</td>
-<td>具体编码</td>
-<td style="text-align:center">25</td>
-</tr>
-<tr>
-<td>· Code Review</td>
-<td>代码复审</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td>· Test</td>
-<td>测试（自我测试，修改代码，提交修改）</td>
-<td style="text-align:center">15</td>
-</tr>
-<tr>
-<td><strong>Reporting</strong></td>
-<td><strong>报告</strong></td>
-<td style="text-align:center"><strong>10</strong></td>
-</tr>
-<tr>
-<td>· Test Report</td>
-<td>测试报告</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td>· Size Measurement</td>
-<td>计算工作量</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td>· Postmortem &amp; Process Improvement Plan</td>
-<td>事后总结, 并提出过程改进计划</td>
-<td style="text-align:center">6</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="主要工作清单"><a href="#主要工作清单" class="headerlink" title="主要工作清单"></a>主要工作清单</h2><p>最得意/有价值的工作清单：实现问卷的创建UI，参考了很多问卷设计的页面，给出一套非常清新，方便操作的界面，对用户友好UP</p>
-<p>最苦劳的工作清单：做任务列表的list，需要考虑到各种情况，并且刷新频繁，很容易就会出bug，也是耗时最多的地方，并且因为UI的问题，认真设计了好久，但觉得也就那样。</p>
-<h2 id="在项目相关仓库中的贡献"><a href="#在项目相关仓库中的贡献" class="headerlink" title="在项目相关仓库中的贡献"></a>在项目相关仓库中的贡献</h2><p align="center"><img src="/images/SSAD/contributor.png" alt="contributor"></p>
+         系统分析与设计个人总结
 
-<h2 id="个人博客清单"><a href="#个人博客清单" class="headerlink" title="个人博客清单"></a>个人博客清单</h2><ul>
-<li><a href="https://www.ziquanzhang.ink/2019/06/23/mpvue%E5%89%8D%E7%AB%AF%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_blank" rel="noopener">mpvue前端小技巧</a></li>
-<li><a href="">谈谈mpvue组件化的重要性</a></li>
-<li><a href="">数据库查询的高级技巧</a></li>
-</ul>
-<h2 id="特别致谢"><a href="#特别致谢" class="headerlink" title="特别致谢"></a>特别致谢</h2><p>感谢 16340293-Tuid 同学，为了我们的数据库处理和调用，付出了很多。<br>感谢 16340294-Duke 和 16340319-zhuangwz 同学，督促我们的开发进度，使开发保持正常进度。</p>
 
+
+学号
+昵称
+
+
+
+
+16340296
+缘ね花落
+
+
+
+ 个人总结
+我在团队中的角色是技术经理和前端开发人员，负责前端的开发和需求，主要是设计和逻辑实现，主要的工作就是写前端，顺便搞搞UI设计，弄一些好看的效果。
+作为技术经理
+
+解决其它成员遇到的一些问题，写好组件方便其它设计成员使用，写出例子。
+对其它成员提出的一些需求进行技术评估，并构思实现方法，寻找方法，...
     
 
         <a href="/2019/06/23/系统分析与设计个人总结/" class="post-more waves-effect waves-button">
@@ -607,79 +440,14 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p align="center"><a href="http://mpvue.com" target="_blank" rel="noopener noreferrer"><img width="100" src="http://mpvue.com/assets/logo.png" alt="mpvue logo"></a></p>
-<p align="center">
-   <a href="https://www.npmjs.com/package/mpvue" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/v/mpvue.svg?style=flat" alt="npm"></a>
-   <a href="https://www.npmjs.com/package/mpvue" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/dm/mpvue.svg?style=flat" alt="npm"></a>
- </p>
+        
 
-<h1 id="mpvue"><a href="#mpvue" class="headerlink" title="mpvue"></a>mpvue</h1><p><code>mpvue</code> 是一个使用 <a href="https://vuejs.org" target="_blank" rel="noopener">Vue.js</a> 开发小程序的前端框架，目前支持 <code>微信小程序</code>、<code>百度智能小程序</code>，<code>头条小程序</code> 和 <code>支付宝小程序</code>。 框架基于 <code>Vue.js</code>，修改了的运行时框架 runtime 和代码编译器 compiler 实现，使其可运行在小程序环境中，从而为小程序开发引入了 <code>Vue.js</code> 开发体验。</p>
-<h2 id="一些使用微信小程序前端-Mpvue开发前端的小技巧"><a href="#一些使用微信小程序前端-Mpvue开发前端的小技巧" class="headerlink" title="一些使用微信小程序前端/Mpvue开发前端的小技巧"></a>一些使用微信小程序前端/Mpvue开发前端的小技巧</h2><h3 id="Swiper的高度调整"><a href="#Swiper的高度调整" class="headerlink" title="Swiper的高度调整"></a>Swiper的高度调整</h3><p>在做小程序开发的时候，往往都要用到列表来进行展示，而对于列表类型的切换，则有很多各种各样的方法，有的使用按钮来切换，有的则使用滑动等方法,而swiper轮播视图则被很多人使用作为列表切换。</p>
-<p align="center"><img width="300" src="/images/mpvue/swiper.gif" alt="swiper"></p>
-
-<p>但是swiper存在一个比较不好的地方就是它是主要作为轮播一些图片的，因此高度需要自己设定，并不适合作为列表来使用。</p>
-<p>但如果一定要作为列表使用的话，则有两种方法</p>
-<ol>
-<li>先获得列表中的元素个数，并且元素的高度要是统一的，从而计算得到高度。</li>
-<li>内部先放一个scroll-view，使得内部的元素能够进行滚动（推荐）</li>
-</ol>
-<h3 id="使用v-for自己做一个显示列表"><a href="#使用v-for自己做一个显示列表" class="headerlink" title="使用v-for自己做一个显示列表"></a>使用v-for自己做一个显示列表</h3><p>mpvue里的v-for是一个很好用的东西，可以把数据中的一个数组对应为一组元素来进行渲染。</p>
-<ol>
-<li><p>先使用v-for来写好tab，和list，最好做成组件的形式，提高代码复用性</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"weui-tab"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"weui-navbar"</span>&gt;</span><br><span class="line">    &lt;div v-<span class="keyword">for</span>=<span class="string">"(item,index) in tabs"</span> :key=<span class="string">"index"</span> :<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123;'weui-bar-item-on':activeIndex == index &#125;"</span> </span><br><span class="line">    <span class="class"><span class="keyword">class</span></span>=<span class="string">"weui-navbar__item"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"weui-navbar__title"</span>&gt;&#123;&#123;item&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="weui-navbar-content__slider"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div class="weui-navbar-slider" v-for="(item,index) in tabs" :key="index"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div class="weui-navbar-slider-inner" :class="&#123;'weui-navbar-slider-on':activeIndex == index&#125;"&gt;&lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>
-<p> </p><p align="center"><img width="300" src="/images/mpvue/mptab.png" alt="mptab"></p><br> <p align="center"><img width="300" src="/images/mpvue/mplist.png" alt="mplist"></p><br> 以上是tab为点击切换列表，同理列表也是一样使用v-for渲染。<br> tab的切换则是通过对class进行绑定，并且能够根据判断条件来进行，比如tab点击选项后，被点击的选项下面出现的下划线和颜色变化，则是通过:activeIndex == index来判断实现的。<p></p>
-</li>
-<li><p>添加使用触摸滑动的方式切换。<br>如果点击的方式切换则没有这么友好，因此我们可以使用对整个list的触摸进行监听控制。当发现手指触摸向左/向右之后，进行切换。</p>
-<p>实现方式：<br>在主页面上绑定触摸事件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mission-main"</span> @<span class="attr">touchstart</span>=<span class="string">"touchStart"</span> @<span class="attr">touchend</span>=<span class="string">"touchEnd"</span> @<span class="attr">touchmove</span>=<span class="string">"touchmove"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>得到触摸的开始位置和结束位置，进行判断，设置阈值防止误触。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touchStart(e) &#123;</span><br><span class="line">  <span class="keyword">this</span>.startX = e.mp.changedTouches[<span class="number">0</span>].pageX;</span><br><span class="line">  <span class="keyword">this</span>.startY = e.mp.changedTouches[<span class="number">0</span>].pageY;</span><br><span class="line">&#125;,</span><br><span class="line">touchmove(e) &#123;</span><br><span class="line">  <span class="keyword">this</span>.endX = e.mp.changedTouches[<span class="number">0</span>].pageX;</span><br><span class="line">  <span class="keyword">this</span>.endY = e.mp.changedTouches[<span class="number">0</span>].pageY;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(<span class="keyword">this</span>.endY - <span class="keyword">this</span>.startY) &lt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(<span class="keyword">this</span>.endX - <span class="keyword">this</span>.startX) &gt; <span class="number">100</span>) &#123;</span><br><span class="line">.....</span><br><span class="line"><span class="keyword">switch</span>()</span><br></pre></td></tr></table></figure>
-<p align="center"><img src="/images/mpvue/scrolllist.gif" alt="scrolllist"></p>
-</li>
-<li><p>添加左右页面来进行更加流畅的滑动<br>这个是理论上的实现，先在页面滑动页面上左右两边设置相同大小的页面隐藏在两边，类似于侧边栏，滑动能出来的那种，当向一遍滑动的时候，修改style样式中的left/right，让他能够显示出来，并且通过z-index设置，让它像滚筒一样最左边的那一张移动到最右边去。left-middle-right =&gt; middle-right-left，就能无限循环。（我猜swiper是这样弄得？</p>
-</li>
-</ol>
-<h3 id="父子组件之间的交互（Props-事件通信）"><a href="#父子组件之间的交互（Props-事件通信）" class="headerlink" title="父子组件之间的交互（Props, 事件通信）"></a>父子组件之间的交互（Props, 事件通信）</h3><p>在使用mpvue之后，因为组件化更加彻底，出现很多组件需要进行相互通信的时候。</p>
-<ol>
-<li><p>父组件给子组件传递数据<br>需要使用props传递数据，父组件使用绑定类似的方式。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;children :data=<span class="string">"data"</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>子组件声明该变量为props</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">     props: [<span class="string">'data'</span>]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>因为这个传递是单向的，所以在子组件中最好不要对props的数据进行修改，应当另外声明一个变量赋值后再修改使用。<br>如果需要数据同步，在子组件中要用到watch方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  role:<span class="function"><span class="keyword">function</span> (<span class="params">oldValue, newValue</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.role = newValue</span><br><span class="line">  &#125;,</span><br><span class="line">  activeIndex:<span class="function"><span class="keyword">function</span> (<span class="params">oldValue, newValue</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.activeIndex = newValue</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>子组件传递数据给父组件<br>子组件使用$emit来触发父组件的自定义事件。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$emit(<span class="string">'confirmSend'</span>,data);</span><br></pre></td></tr></table></figure>
-<p>父组件绑定事件，在触发的时候，得到数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;questionnaire @confirmSend=<span class="string">"addQues"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">questionnaire</span>&gt;</span></span></span><br><span class="line">...</span><br><span class="line">addQues: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">this</span>.temDatas.push(val);</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.temDatas)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li>父组件调用子组件内部的方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;child ref=<span class="string">"child"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">this</span>.$.refs.child.childFn()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="v-if和v-show的区别"><a href="#v-if和v-show的区别" class="headerlink" title="v-if和v-show的区别"></a>v-if和v-show的区别</h3><p>在使用mpvue的时候常常会遇到v-if和v-show这两个东西来控制页面的显示。</p>
-<p>v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。</p>
-<p>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p>
-<p>而 v-show 则是简单地基于 CSS 进行切换，不管怎样都会进行渲染。</p>
-<p>一般来说， v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件不太可能改变，则使用 v-if 较好。</p>
-<h3 id="自定义组件click的处理"><a href="#自定义组件click的处理" class="headerlink" title="自定义组件click的处理"></a>自定义组件click的处理</h3><p>在mpvue中，不支持对组件的click操作，因此如果想要实现点击，需要换一个思路。</p>
-<ol>
-<li><p>单纯地想实现点击事件，则只需要在组件内绑定click就行了，若需要反馈只要使用以上的消息传递即可。</p>
-</li>
-<li><p>只是想得到被点击的内容，如果是这样的话，往往都是只想知道自己点击的是第几个，那么使用v-for来进行配合，直接绑定在列表上，将会得到index，然后根据自己的需要得到内容（常用于导航栏的跳转和列表详情跳转）</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div</span><br><span class="line">    <span class="class"><span class="keyword">class</span></span>=<span class="string">"mission-list-item"</span></span><br><span class="line">    v-<span class="keyword">for</span>=<span class="string">"(item, index) in show_list"</span></span><br><span class="line">    :key=<span class="string">"index"</span></span><br><span class="line">    v-on:click=<span class="string">"goto(index)"</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="在mpvue下如何解决img变形问题"><a href="#在mpvue下如何解决img变形问题" class="headerlink" title="在mpvue下如何解决img变形问题"></a>在mpvue下如何解决img变形问题</h3><p>因为在mpvue的方式是通过对vue.js编译实现的，所以在对于<code>&lt;img&gt;</code>这一标签是被编译成小程序中的<code>&lt;image&gt;</code>，而这一标签没有<code>width\height</code>属性，因此我们需要写成内联的形式。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"icon"</span> <span class="attr">style</span>=<span class="string">"width: 200px;"</span> <span class="attr">mode</span>=<span class="string">"widthFix"</span> <span class="attr">src</span>=<span class="string">"/static/images/question/单选.png"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>另外image的mode里包含了对于图片的裁剪缩放模式，能够防止因尺寸不对图片变形。</p>
-<h3 id="云开发数据库API不支持类似SQL中like模糊查询"><a href="#云开发数据库API不支持类似SQL中like模糊查询" class="headerlink" title="云开发数据库API不支持类似SQL中like模糊查询"></a>云开发数据库API不支持类似SQL中like模糊查询</h3><p>在小程序开发社区中有解决方法：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">where(&#123;</span><br><span class="line">   key:&#123;</span><br><span class="line">        $regex:'.*' + keyWord, </span><br><span class="line">   &#125; </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>类似于SQL中的<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">where</span> <span class="keyword">key</span> <span class="keyword">like</span> <span class="string">'%'</span>+keyWord</span><br></pre></td></tr></table></figure></p>
-<p>解决了我在数据库中检索数组中是否包含某一数值的难题。<br>据说后续会提供模糊搜索的API，但我貌似没有发现有。</p>
-<h3 id="Style的scope和-important"><a href="#Style的scope和-important" class="headerlink" title="Style的scope和!important"></a>Style的scope和!important</h3><p>这个是关于style的域，scope是为了某一界面的class和另一界面的class同名导致冲突/污染，能够有效地限制style仅在该页面上使用。</p>
-<p>而!important则是为了在让某一样式能够覆盖掉另一个同名样式，类似于一个组件有2个样式表，且存在同名的属性，这样在你所需要的属性后加上!important，则无论该样式作用先后的顺序，都能渲染你所需要的属性。（原本是后作用的样式表会覆盖前面的属性）</p>
-<p>至于有一些在网上很多通用的模板，如果想要修改里面的样式，看中某一点，就可以使用这种覆盖的方式，但是推荐直接拿到源码来进行魔改。。。<br>例如使用npm下载的，在node_module中找到那个包，找到所需的组件，拉出来直接魔改更加方便。</p>
-
+   
+   
+ 
+ mpvue
+mpvue 是一个使用 Vue.js 开发小程序的前端框架，目前支持 微信小程序、百度智能小程序，头条小程序 和 支付宝小程序。 框架基于 Vue.js，修改了的运行时框架 runtime 和代码编译器 compiler 实现，使其可运行在小程序环境中，从而为小程序开发引入了 Vue.js 开发体验。
+ 一些使用微信小程序前端/Mpvue开发前端的小技巧...
     
 
         <a href="/2019/06/23/mpvue前端小技巧/" class="post-more waves-effect waves-button">
@@ -726,32 +494,21 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="系统分析与设计（五）"><a href="#系统分析与设计（五）" class="headerlink" title="系统分析与设计（五）"></a>系统分析与设计（五）</h1><h2 id="使用-UMLet-建模："><a href="#使用-UMLet-建模：" class="headerlink" title="使用 UMLet 建模："></a>使用 UMLet 建模：</h2><ol>
-<li>根据订旅馆建模文档，<a href="https://sysu-swsad.github.io/swad-guide/material/Asg_RH.pdf" target="_blank" rel="noopener">Asg-RH.pdf</a>：<br>绘制用例图模型（到子用例）<br><img src="/images/SSAD/SSAD_5_Hotel.png" alt="SSAD_5_Hotel"><br>给出 make reservation 用例的活动图<div align="center">
+         系统分析与设计（五）
+ 使用 UMLet 建模：
 
-</div></li>
-</ol>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/images/SSAD/SSAD_5_make_reservation.png" alt="SSAD_5_make_reservation" title="">
-                </div>
-                <div class="image-caption">SSAD_5_make_reservation</div>
-            </figure>
-<p>&lt;/div&gt;</p>
-<ol>
-<li>根据课程练习“投递员使用投递箱给收件人快递包裹”的业务场景<ul>
-<li>分别用多泳道图建模三个场景的业务过程<br><img src="/images/SSAD/SSAD_5_swim.png" alt="SSAD_5_swim"><br><img src="/images/SSAD/SSAD_5_swim2.png" alt="SSAD_5_swim2"><br><img src="/images/SSAD/SSAD_5_swim3.png" alt="SSAD_5_swim3"></li>
-<li>根据上述流程，给出快递柜系统最终的用例图模型<ul>
-<li>用正常色彩表示第一个业务流程反映的用例</li>
-<li>用绿色背景表述第二个业务场景添加或修改的用例，以及支持 Actor</li>
-<li>用黄色背景表述第三个业务场景添加或修改的用例，以及支持 Actor<br><img src="/images/SSAD/SSAD_5_usecase.png" alt="SSAD_5_usecase"></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
+根据订旅馆建模文档，Asg-RH.pdf：
+绘制用例图模型（到子用例）
 
+给出 make reservation 用例的活动图
+
+
+
+                
+                    
+                    
+                
+                SSAD_5_make...
     
 
         <a href="/2019/05/24/系统分析与设计（五）/" class="post-more waves-effect waves-button">
@@ -798,71 +555,17 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="系统分析与设计（四）"><a href="#系统分析与设计（四）" class="headerlink" title="系统分析与设计（四）"></a>系统分析与设计（四）</h1><h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><ol>
-<li><p>用例的概念<br>提供了一个或多个成功/失败场景，该场景说明了系统是如何和最终用户或其它系统互动，用来描述参与者如何使用系统来实现其目标。</p>
-</li>
-<li><p>用例和场景的关系？什么是主场景或 happy path？<br>用例是一个或多个场景的表示，场景则是一个参与者（Actor）向系统做出请求，系统根据参与者的请求，在不同的条件下，执行某一行为序列。而用例则包含多个场景。<br>主场景则是用户最常用，直接地实现用户目标的一个场景，描述了当各项工作都正常进行时用例的工作方式，所以又被称为happy path。</p>
-</li>
-<li><p>用例有哪些形式？</p>
-<ul>
-<li>摘要 Brief (high level)：简单的一段式摘要，通常是主要成功案例。用于在早期需求分析中，快速了解主题和范围。</li>
-<li>简便格式 Casual：非正式段落格式，涵盖各种场景的多个段落。</li>
-<li>完全 Fully：所有步骤和变化都写得很详细，并有支持部分，如前提条件和成功保证。</li>
-</ul>
-</li>
-<li><p>对于复杂业务，为什么编制完整用例非常难？<br>因为对于复杂业务来说，用例场景比较多，场景较为复杂，很难完全地考虑到所有的子用例和场景并且在绘制图时，可能因为用例图过于繁杂而会出错。</p>
-</li>
-<li><p>什么是用例图？<br>由参与者（Actor）、用例（Use Case），边界以及它们之间的关系构成的用于描述系统功能的视图。用例图是外部用户（参与者）所能观察到的系统功能的模型图。<br>描述系统上下文，显示系统的边界，以及与系统交互的外部对象，并展示系统如何去使用它们。通常作为一个总结系统和用户行为的交流工具。</p>
-</li>
-<li><p>用例图的基本符号与元素？</p>
-<ul>
-<li>参与者（Actor）：表示系统用户，即与应用进行交互的用户</li>
-<li>用例（Use Case）：表示对系统提供的功能和服务描述</li>
-<li>用例之间的关系：<ul>
-<li>包含关系（include）：用例可以简单地包含其他用例具有的行为，并把它所包含的用例行为作为自身行为的一部分。箭头由基础用例(Base)指向被包含用例(Inclusion)</li>
-<li>扩展关系（Extend）：在一定条件下，把新的行为加入到已有的用例中。</li>
-<li>泛化关系（Generalization）：一个父用例可以被特化形成多个子用例。</li>
-<li>关联关系（Association）：参与者与用例之间的关系  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>用例图的画法与步骤<ol>
-<li>选择系统边界<br>该系统是软件应用，硬件再加上参与者或者是整个组织？</li>
-<li>确定主要参与者<br>参与者通过使用系统服务来实现目标</li>
-<li>确定每个主要参与者的目标</li>
-<li>定义满足用户目标的用例；并根据这些目标来进行命名。<br>用户目标级用例将与用户目标一对一，但至少有一个例外，将进行检查。  </li>
-</ol>
-</li>
-<li>用例图给利益相关人与开发者的价值有哪些？<br>对于利益相关人来说，用例图可以直观地显示整个系统的功能，服务以及用户的行为结果，能够使系统按照其需求进行开发。<br>对于开发者来说，用例图能够细化用户的需求，软件的服务要求等，通过场景来理解软件的目标，使软件架构设计思路更加清晰。</li>
-</ol>
-<h2 id="建模练习题（用例模型）"><a href="#建模练习题（用例模型）" class="headerlink" title="建模练习题（用例模型）"></a>建模练习题（用例模型）</h2><ul>
-<li><p>选择2-3个你熟悉的类似业务的在线服务系统（或移动 APP），如定旅馆（携程、去哪儿等）、定电影票、背单词APP等，分别绘制它们用例图。并满足以下要求：</p>
-<ul>
-<li>请使用用户的视角，描述用户目标或系统提供的服务 </li>
-<li>粒度达到子用例级别，并用 include 和 exclude 关联它们</li>
-<li>请用色彩标注出你认为创新（区别于竞争对手的）用例或子用例</li>
-<li><p>尽可能识别外部系统和服务</p>
-<p><img src="/images/SSAD/ShanBay.png" alt="ShanBay"></p>
-<p><img src="/images/SSAD/Baicizhan.png" alt="Hotel"></p>
-</li>
-</ul>
-</li>
-<li><p>然后，回答下列问题：</p>
-<ol>
-<li>为什么相似系统的用例图是相似的？<br>因为在相似的系统中，系统的功能和服务都是大致相同的，基础功能差不多，所以主场景往往也相似，用例图所以是相似的。</li>
-<li>如果是定旅馆业务，请对比 Asg_RH 用例图，简述如何利用不同时代、不同地区产品的用例图，展现、突出创新业务和技术<br>根据旅客的要求，对酒店周围环境的要求来进行旅馆的推荐，以及可以通过选择旅行路线，景点路线来推荐相关的酒店。根据不同地区的旅馆的特色，如果符合用户的爱好则可以进行推荐。</li>
-<li>如何利用用例图定位创新思路（业务创新、或技术创新、或商业模式创新）在系统中的作用<br>在用例图中，可以给创新的模块进行颜色的高亮处理，标记出与之相关的子用例，行为过程，和产生的结果，观察在用例图中的影响。</li>
-<li><p>请使用 SCRUM 方法，选择一个用例图，编制某定旅馆开发的需求（backlog）开发计划表</p>
-<p> | ID | Name | IMP | Est | How to Demo | Notes |<br> | :-: | :-: | :-: | :-: | :-: | :-: |<br> | 1 | 注册 | 6 | 3 | 用户可以通过手机号注册，或者是使用微信/支付宝注册绑定手机号 | 当用户使用微信注册后，需要绑定手机 |<br> | 2 | 登陆 | 6 | 4 | 用户通过手机号/邮箱/微信/支付宝/昵称进行登陆 | 需要进行微信/支付宝支持<br> | 3 | 搜索酒店 | 8 | 4 | 通过选择条件如地点/时间/人数/价格/星级来搜索酒店 | 要求结果按照用户优先选择的条件排序 |<br> | 4 | 预定房间 | 10 | 6 | 预定房间要先判断对应房型是否有空 |   |<br> | 5 | 支付订单 | 8 | 6 | 下单后，对房间进行锁定，若15分钟内未支付，则取消订单并解锁 | |<br> | 6 | 取消订单 | 7 | 5 | 取消订单后，对应的房间能够解锁 | |<br> | 7 | 查询订单 | 6 | 3 | 能够查询之前完成/取消/正在支付的订单 | |</p>
-</li>
-<li><p>根据任务4，参考 使用用例点估算软件成本，给出项目用例点的估算</p>
-<p> | 用例 | 事物 | 计算 | 原因 | UC权重 |<br> | :-: | :-: | :-: | :-: | :-: |<br> | 注册 | 1 | 1 | 通过手机号注册，或者是使用微信/支付宝注册绑定手机号 | 简单 5 |<br> | 登陆 | 2 | 2 | 通过手机号/邮箱/微信/支付宝/昵称进行登陆 | 简单 5 |<br> | 搜索旅店 | 11 | 8 | 通过选择条件进行搜索 | 复杂 15 |<br> | 预定房间 | 9 | 7 | 判断对应房型是否有空 | 复杂 15 |<br> | 支付订单 | 5 | 4 | 支付限定时间 | 平均 10 |<br> | 取消订单 | 2 | 2 | 取消订单，解锁房间 | 简单 5 |<br> | 查询订单 | 2 | 2 | 查询历史订单 | 简单 5 |</p>
-</li>
-</ol>
-</li>
-</ul>
+         系统分析与设计（四）
+ 简答题
 
+
+用例的概念
+提供了一个或多个成功/失败场景，该场景说明了系统是如何和最终用户或其它系统互动，用来描述参与者如何使用系统来实现其目标。
+
+
+用例和场景的关系？什么是主场景或 happy path？
+用例是一个或多个场景的表示，场景则是一个参与者（Actor）向系统做出请求，系统根据参与者的请求，在不同的条件下，执行某一行为序列。而用例则包含多个场景。
+主场...
     
 
         <a href="/2019/05/24/系统分析与设计（四）/" class="post-more waves-effect waves-button">
@@ -909,107 +612,13 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="系统分析与设计（三）"><a href="#系统分析与设计（三）" class="headerlink" title="系统分析与设计（三）"></a>系统分析与设计（三）</h1><h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h2><h3 id="简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点"><a href="#简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点" class="headerlink" title="简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点"></a>简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点</h3><p>从项目特点、风险特征、人力资源利用角度思考</p>
-<h4 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h4><ul>
-<li>瀑布模型（Waterfall Model） 是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈，因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并进行适当的修改，项目开发进程从一个阶段“流动”到下一个阶段。在软件开发中，它往往是较少迭代和灵活的方法之一，因为在概念，启动，分析，设计，构建，测试，部署和维护阶段，进展主要在一个方向（“向下”，如瀑布）流动。</li>
-</ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="\images\SSAD\waterfall_model.png" alt="waterfall_model" title="">
-                </div>
-                <div class="image-caption">waterfall_model</div>
-            </figure>
-<ul>
-<li><p>优点：</p>
-<ol>
-<li>定义了软件开发基本流程与活动，适用于需求和范围固定，产品本身坚固稳定，技术清晰理解的项目。</li>
-<li>在软件生产周期的早期花费的时间可以降低后期的成本。</li>
-<li>提供了一种结构化的方法，模型本身通过离散的，易于理解和可解释的阶段线性地进展，因此易于理解</li>
-<li>强调文档以及源代码，如果存在完整工作的设计文档，新的团队成员甚至全新的团队应该能够通过阅读文档来熟悉。</li>
-</ol>
-</li>
-<li><p>缺点：</p>
-<ol>
-<li>项目的需求设计难以更改，各阶段的划分完全固定，产生大量文档。</li>
-<li>客户在看到软件成品之前可能不知道他们的需求是什么，因此改变他们的需求，导致重新设计，重新开发和重新测试，并增加成本。</li>
-<li>在设计新的软件产品或功能时，设计人员仅仅依据文档，可能不会意识到未来的困难，在这种情况下，存在错误预估人力分配等问题。</li>
-</ol>
-</li>
-</ul>
-<h4 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h4><ul>
-<li>增量模型是把待开发的软件系统模块化，将每个模块作为一个增量组件，从而分批次地分析、设计、编码和测试这些增量组件。运用增量模型的软件开发过程是递增式的过程。</li>
-</ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="\images\SSAD\Incremental_model.png" alt="Incremental_model" title="">
-                </div>
-                <div class="image-caption">Incremental_model</div>
-            </figure>
-<ul>
-<li><p>优点：</p>
-<ol>
-<li>将待开发的软件系统模块化，可以分批次地提交软件产品，使用户可以及时了解软件项目的进展。</li>
-<li>以组件为单位进行开发降低了软件开发的风险。一个开发周期内的错误不会影响到整个软件系统。</li>
-<li>比其他软件开发方法更容易测试和调试，因为在每次迭代期间进行相对较小的更改。</li>
-<li>允许部分利用产品并避免长的开发时间。</li>
-</ol>
-</li>
-<li><p>缺点：</p>
-<ol>
-<li>由此产生的成本可能超过组织的成本。</li>
-<li>要求待开发的软件系统可以被模块化。</li>
-<li>随着产品中添加了额外的功能，可能会出现与系统架构相关的问题，这些问题在早期的原型中并不明显</li>
-</ol>
-</li>
-</ul>
-<h4 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h4><ul>
-<li>螺旋模型是风险驱动的软件开发过程模型，兼顾了快速原型的迭代的特征以及瀑布模型的系统化与严格监控，在每个迭代阶段构建原型是螺旋模型用以减小风险的途径。</li>
-</ul>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="\images\SSAD\spiral_model.png" alt="spiral_model" title="">
-                </div>
-                <div class="image-caption">spiral_model</div>
-            </figure>
-<ul>
-<li><p>优点：</p>
-<ol>
-<li>适合大型软件的开发，对于需求不明确情况下，便于风险控制和需求变更。</li>
-<li>能够让客户参与到项目每个阶段中，保证项目的方向不偏移。</li>
-<li>能够进行风险的评估，从而避免了不合理的需求导致难以实现</li>
-<li>每次循环都能得到一个软件原型来进行评估和客户的评价，提出修正建议</li>
-</ol>
-</li>
-<li><p>缺点：</p>
-<ol>
-<li>开发周期长，客户未必接受长时间的开发和不稳定的结果。</li>
-<li>风险分析需要相当丰富的评估经验，风险规避也需要深厚的专业知识。</li>
-<li>迭代次数不确定，不适合大团队，无法确定发布日期。</li>
-</ol>
-</li>
-</ul>
-<h3 id="简述统一过程三大特点，与面向对象的方法有什么关系？"><a href="#简述统一过程三大特点，与面向对象的方法有什么关系？" class="headerlink" title="简述统一过程三大特点，与面向对象的方法有什么关系？"></a>简述统一过程三大特点，与面向对象的方法有什么关系？</h3><ul>
-<li><p>迭代和增量的<br>  统一过程是一个迭代和增量开发过程。精化，构建和过渡阶段分为一系列时间盒迭代。 （初始阶段也可以划分为大型项目的迭代。）每次迭代都会产生一个增量，这是系统的一个版本，它包含与之前版本相比增加或改进的功能。</p>
-</li>
-<li><p>以架构为中心<br>  统一流程坚持认为架构是项目团队塑造系统的核心。由于没有一个模型足以涵盖系统的所有方面，因此统一过程支持多个体系结构模型和视图。</p>
-</li>
-<li><p>注重风险<br>  统一过程要求项目团队专注于在项目生命周期的早期解决最关键的风险。必须选择每次迭代的可交付成果，特别是在精化阶段，以确保首先解决最大的风险。</p>
-</li>
-</ul>
-<p>关系：统一过程是面向对象的基于web的程序开发方法论。</p>
-<h3 id="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"><a href="#简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？" class="headerlink" title="简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？"></a>简述统一过程四个阶段的划分准则是什么？每个阶段关键的里程碑是什么？</h3><p>按时间将生命周期过程展开成四个阶段。</p>
-<ol>
-<li>初始阶段：生命周期目标里程碑。制定系统的近似愿景，制定业务案例，确定范围，并对成本和进度进行粗略估算。</li>
-<li>细化阶段：生命周期体系结构里程碑。解决已知的风险因素并建立和验证系统架构。</li>
-<li>构造阶段：初始运行能力里程碑。最终的构建阶段可交付成果是可以在移交阶段部署的软件。</li>
-<li>移交阶段：产品发布里程碑。在此阶段，系统将部署到目标用户，过渡阶段还包括系统转换和用户培训。</li>
-</ol>
-<h3 id="软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"><a href="#软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？" class="headerlink" title="软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？"></a>软件企业为什么能按固定节奏生产、固定周期发布软件产品？它给企业项目管理带来哪些好处？</h3><p>因为软件企业采用了RUP，即统一过程，这样企业在在软件开发的过程中能够按照这四个阶段来进行开发，合理规划软件范围，有节奏地生产，发布，同时企业内部也有自身期限要求以及评估等等，能够指导开发人员在一定时间内完成任务，使企业能够固定周期地发布软件产品。</p>
-<p>企业有节奏生产软件产品能增强企业在市场上的竞争力，能够使得资金得以进行周转，本身的稳定开发能够吸引更多的客户，有利于项目的及时提交从而获得反馈，降低了延期带来的风险，能够保证项目顺利完成。</p>
+         系统分析与设计（三）
+ 简答题
+ 简述瀑布模型、增量模型、螺旋模型（含原型方法），并分析优缺点
+从项目特点、风险特征、人力资源利用角度思考
+ 瀑布模型
 
+瀑布模型（Waterfall Model） 是一个项目开发架构，开发过程是通过设计一系列阶段顺序展开的，从系统需求分析开始直到产品发布和维护，每个阶段都会产生循环反馈，因此，如果有信息未被覆盖或者发现了问题，那么最好 “返回”上一个阶段并...
     
 
         <a href="/2019/04/15/系统分析与设计（三）/" class="post-more waves-effect waves-button">
@@ -1056,45 +665,16 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="软件测试（二）"><a href="#软件测试（二）" class="headerlink" title="软件测试（二）"></a>软件测试（二）</h1><p>题目要求：在敏捷开发方法的12条原则中挑选1条你感兴趣的原则进行风险评估。(参见Lec.5, slide 9 and Lec.3, slide 10)</p>
-<h2 id="常见风险因素"><a href="#常见风险因素" class="headerlink" title="常见风险因素"></a>常见风险因素</h2><ul>
-<li>大型软件项目的风险管理：大型项目存在诸多风险因素，在不<br>同程度上对软件开发过程和软件产品质量造成影响。风险不能<br>全部消除，而只能采用避免、减轻、和接受三种应对策略。<ul>
-<li>需求变更风险；</li>
-<li>进度风险、预算风险、管理能力风险、信息安全风险；</li>
-<li>应用技术风险、质量控制风险、软件设计与开发工具风险、员工技能风险；</li>
-<li>人力资源风险、政策风险、市场风险、营销风险</li>
-</ul>
-</li>
-</ul>
-<h2 id="风险评估"><a href="#风险评估" class="headerlink" title="风险评估"></a>风险评估</h2><p>选择对第二条进行风险评估</p>
-<pre><code>欣然面对需求变化，即使在开发后期也一样。为了客户的竞争优势，敏捷过程掌控变化。
-</code></pre><ol>
-<li><p>需求变更风险：在需求变化后，存在很多需要解决的问题，导致程序开发过程中的成本增加，后期修改过程质量可能不过关，开发时期延长等等，特别是在开发后期，存在推倒重建风险。往往许多不清晰的客户需求会给开发带来灾难性的后果。所以提出的一些不合理的需求更改应当拒绝或者砍掉。</p>
-</li>
-<li><p>进度风险：需求的变化会使得开发进度缓慢，拖慢进度，使后期的任务难以完成或是无法在限定的期限完成，造成损失。</p>
-</li>
-<li><p>预算风险：和进度风险一样，抛弃旧的方案采用新方案则需要更多的预算，因此预估资金将会提高，需要重新考虑是否更改需求，否则会出现预算超支，或是为了满足预算而导致软件质量不过关。</p>
-</li>
-<li><p>管理能力风险：当客户需求发生变更的时候，项目开发可能因为没有能力去应对需求变更，在开发过程中对人力，组织的管理会出现混乱，打乱了正常的项目流程，而导致项目出现问题。</p>
-</li>
-<li><p>信息安全风险：当软件需求变更时，已完成的接口等的更改可能会并不完全被改掉，有可能会存在冗余的接口或者功能，之后的开发并未意识到其中的漏洞而被利用，导致信息安全问题。</p>
-</li>
-<li><p>应用技术风险：变更需求后可能需要额外的应用技术，若无相关知识人才，可能会增加人力预算或是学习成本，导致项目进度缓慢。</p>
-</li>
-<li><p>质量控制风险：需求变更导致预算或是进度方面出现问题，而选择加快进度，忽略了软件质量的把控，最终出现一个半成品或者是劣质品。</p>
-</li>
-<li><p>软件设计与开发工具风险：与应用技术风险相似，当需要额外的开发工具时，会增加开发成本（软件的费用）以及学习成本（时间）。</p>
-</li>
-<li><p>员工技能风险：和之前所说的学习成本一样，当需求变更可能需要相关技能的人员，若招不到相关人员采取临时培训的方法，会增加人力成本，导致项目进度缓慢，临时培训的员工技术不熟悉导致的质量问题。</p>
-</li>
-<li><p>人力资源风险：当需求变更后，项目在原有的基础上可能需要更多的人力去完成，出现人力资源问题。</p>
-</li>
-<li><p>市场风险：客户方提出的需求若是不清晰，模糊的需求，抑或是没有进行过市场调研的需求，会导致原本较好的方案被舍弃，而新的需求又没有较好的市场竞争力，导致项目失败。</p>
-</li>
-<li><p>营销风险：与市场风险类似，新的需求没有很好的市场竞争力，旧需求的基础上变更应当进行逐步更改，避免营销风险。</p>
-</li>
-</ol>
+         软件测试（二）
+题目要求：在敏捷开发方法的12条原则中挑选1条你感兴趣的原则进行风险评估。(参见Lec.5, slide 9 and Lec.3, slide 10)
+ 常见风险因素
 
+大型软件项目的风险管理：大型项目存在诸多风险因素，在不
+同程度上对软件开发过程和软件产品质量造成影响。风险不能
+全部消除，而只能采用避免、减轻、和接受三种应对策略。
+
+需求变更风险；
+进度风险、预算风险、管...
     
 
         <a href="/2019/03/30/软件测试（二）/" class="post-more waves-effect waves-button">
@@ -1141,16 +721,16 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="在hexo博客中添加视频"><a href="#在hexo博客中添加视频" class="headerlink" title="在hexo博客中添加视频"></a>在hexo博客中添加视频</h1>
-<div align="center" style="position: relative; width: 700px; height: 508px; margin:0 auto">
+         在hexo博客中添加视频
 
-    <iframe src="https://player.bilibili.com/player.html?aid=36432934&cid=63965248&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0%;"> </iframe>
-</div>
 
-<p>使用外链添加</p>
-<p>代码如下：不作解释</p>
-<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">style</span>=<span class="string">"position: relative; width: 700px; height: 508px; margin:0 auto"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://player.bilibili.com/player.html?aid=36432934&amp;cid=63965248&amp;page=1"</span></span></span><br><span class="line"><span class="tag">			<span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">			<span class="attr">style</span>=<span class="string">"position:absolute; width: 100%; height: 100%; left: 0; top: 0%;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endraw %&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
+
+     
+
+
+使用外链添加
+代码如下：不作解释
+1234567&#123;% raw %&#125;&lt;div align="center" style="position: relative; width: 700px; height: 508px; margin:0 auto"&gt;	&lt;iframe src="https://player....
     
 
         <a href="/2019/03/30/在hexo博客中添加视频/" class="post-more waves-effect waves-button">

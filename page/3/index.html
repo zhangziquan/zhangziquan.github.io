@@ -207,49 +207,14 @@ var _hmt = _hmt || [];
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="45-Jump-Game-II"><a href="#45-Jump-Game-II" class="headerlink" title="45. Jump Game II"></a>45. Jump Game II</h1><p>week8</p>
-<p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/jump-game-ii/" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p>
-<p>Each element in the array represents your maximum jump length at that position.</p>
-<p>Your goal is to reach the last index in the minimum number of jumps.</p>
-<p><strong>Note:</strong></p>
-<ul>
-<li>The number of stones is ≥ 2 and is &lt; 1,100.</li>
-<li>Each stone’s position will be a non-negative integer &lt; 231.</li>
-<li>The first stone’s position is always 0.</li>
-</ul>
-<p><strong>Example:</strong></p>
-<pre><code>Input: [2,3,1,1,4]
-Output: 2
-Explanation: The minimum number of jumps to reach the last index is 2.
-    Jump 1 step from index 0 to 1, then 3 steps to the last index.
-</code></pre><p><strong>Note:</strong></p>
-<pre><code>You can assume that you can always reach the last index.
-</code></pre><hr>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;这道题目十分简单，就是给予一个数组，使得一开始在数组的首元素中，能够跳越到最后一项，而每项中的数字即跳跃的极限范围。给出最快到达数组尾的步数。</p>
-<hr>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>&emsp;&emsp;和上一周所做的青蛙跳十分类似，但又不太一样，因为这次的只给出了跳越的极限，所以范围可以选择0~x，使得几乎都可以到达终点。</p>
-<p>&emsp;&emsp;既然是这样的话，那么就可以不需要进行分支预测和判断了，直接使用贪心算法，贪心策略并不是每次都走到最远的距离，而是根据到达的顶点之后所能达到的最大距离。这样就能保证每一个的距离都是由上一个的最远距离而来。</p>
-<hr>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">jump</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">0</span> || nums.size() == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxjump = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> steps = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(; index &lt;= maxjump &amp;&amp; index &lt; nums.size() - <span class="number">1</span>;)&#123;</span><br><span class="line">            steps++;</span><br><span class="line">            <span class="keyword">if</span>(maxjump &gt;= nums.size() <span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> steps;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> nextjump = maxjump;</span><br><span class="line">            <span class="keyword">int</span> start = index;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = nextjump; i &gt;= start; i--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i + nums[i] &gt; maxjump)&#123;</span><br><span class="line">                    maxjump = i + nums[i];</span><br><span class="line">                    index = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ol>
-<li><p>这个贪心策略的证明可以根据递归来说明，即已经到达了终点，那么要寻找达到终点的最远的起点，不断地往前回溯，最后可以得知每一次判断下一个顶点的最远距离来选择下一个跳点，能够最快到达终点。</p>
-</li>
-<li><p>这个算法同青蛙跳石头一样可以进行优化，我们可以选择从当前可跳越的最远距离的顶点开始遍历，那么很有可能第一次就得到最佳跳点，就不用经常进行赋值运算。经过优化后的算法可从12ms降为8ms。</p>
-</li>
-</ol>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Jump%20Game%20II_test.png" alt="Jump Game II_test" title="">
-                </div>
-                <div class="image-caption">Jump Game II_test</div>
-            </figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;最近刚学习贪心算法，恰好用一下，这个题目的关键之处在于怎么去证明贪心是可行的，有可能不一定贪心就可以，就像上一周青蛙跳的题目，使用贪心算法时一定要注意是否满足条件。</p>
+         45. Jump Game II
+week8
+难度：Hard
+题目链接
 
+ 题目描述
+Given an array of non-negative integers, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum ...
     
 
         <a href="/2018/10/28/LeetCode-45-Jump-Game-II/" class="post-more waves-effect waves-button">
@@ -296,64 +261,13 @@ Explanation: The minimum number of jumps to reach the last index is 2.
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="403-Frog-Jump"><a href="#403-Frog-Jump" class="headerlink" title="403. Frog Jump"></a>403. Frog Jump</h1><p>week7</p>
-<p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/frog-jump/" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.</p>
-<p>Given a list of stones’ positions (in units) in sorted ascending order, determine if the frog is able to cross the river by landing on the last stone. Initially, the frog is on the first stone and assume the first jump must be 1 unit.</p>
-<p>If the frog’s last jump was k units, then its next jump must be either k - 1, k, or k + 1 units. Note that the frog can only jump in the forward direction.</p>
-<p><strong>Note:</strong></p>
-<ul>
-<li>The number of stones is ≥ 2 and is &lt; 1,100.</li>
-<li>Each stone’s position will be a non-negative integer &lt; 231.</li>
-<li>The first stone’s position is always 0.</li>
-</ul>
-<p><strong>Example1:</strong></p>
-<pre><code>[0,1,3,5,6,8,12,17]
+         403. Frog Jump
+week7
+难度：Hard
+题目链接
 
-There are a total of 8 stones.
-The first stone at the 0th unit, second stone at the 1st unit,
-third stone at the 3rd unit, and so on...
-The last stone at the 17th unit.
-
-Return true. The frog can jump to the last stone by jumping
-1 unit to the 2nd stone, then 2 units to the 3rd stone, then
-2 units to the 4th stone, then 3 units to the 6th stone,
-4 units to the 7th stone, and 5 units to the 8th stone.
-</code></pre><p><strong>Example2:</strong></p>
-<pre><code>[0,1,2,3,4,8,9,11]
-
-Return false. There is no way to jump to the last stone as
-the gap between the 5th and 6th stone is too large.
-</code></pre><hr>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;著名的青蛙跳石头问题，在大一的时候一次ACM比赛中碰到一次，貌似是原题，结果很显然扑街了，现在看到题目才算正式理解了题目。。。想来当时没有学习什么数据结构也是做不出的了，暴力AK明显会timelimit。<br>&emsp;&emsp;青蛙跳石头的题意是有一只青蛙要过河，河流分成X个部分，有的地方有石头，有的没有。而这只青蛙要连续跳过去，可能这只青蛙的手刹有点毛病，每当跳过K个单位时，下一次跳越要是K-1、K或者K+1个单位，并且只能向前。<br>&emsp;&emsp;一开始的理解是只要判断下一块石头是否在跳越范围内就行了，但注意的是青蛙可以飞过某一块石头，所以就有很多种跳越方式，假设有两条路径能到达点A，通过不同路径后到达点A后，其下一步的跳越范围（能力）也会不一样，所以情况会很复杂。</p>
-<hr>
-<h2 id="第一次解题思路"><a href="#第一次解题思路" class="headerlink" title="第一次解题思路"></a>第一次解题思路</h2><p>&emsp;&emsp;由于青蛙的选择路径的多变，会引起后续的跳越，因此它的选择分支是从第一次就开始了，试想一下每个分支又会衍生不同的分支，那不就是一颗路径树了吗，只要遍历这一棵树，找到某一路径可以到达终点即可，因为只需要得出青蛙是否能过河的结论，所以无需遍历所有路径（除非所有路径都不能到达）。<br>&emsp;&emsp;为了尽快地解决问题，很明显是用深度遍历的，当得到一条路径后，马上返回true节省时间。所以使用递归的方式，遍历所有状态。</p>
-<hr>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        stoness = stones;</span><br><span class="line">        <span class="keyword">return</span> cross(stoness.begin(),<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">cross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator start, <span class="keyword">int</span> dis)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start == stoness.end()<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = dis - <span class="number">1</span>; i &lt;= dis+<span class="number">1</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = find(start+<span class="number">1</span>,stoness.end(),i+*start);</span><br><span class="line">            <span class="keyword">if</span>(it != stoness.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(cross(it,i)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;stoness;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="结果与反思"><a href="#结果与反思" class="headerlink" title="结果与反思"></a>结果与反思</h3><p>&emsp;&emsp;在过了example后，提交的检测超时了，例子是[1..998,99999999],这个极端的例子展示了这个算法的弱点，没有根据搜索得的信息加快速度，每次都搜索到了998这个节点，但由于最后一个点不可到达，所以都在最后一步终止，浪费了大量的时间，所以我们要采取一种措施及时止损。</p>
-<h2 id="第二次解题思路"><a href="#第二次解题思路" class="headerlink" title="第二次解题思路"></a>第二次解题思路</h2><p>&emsp;&emsp;采用遍历路径树是没有错的，因为我们需要验证每一条路径是否能通往最后一个节点，但我们不能重复判断同一个状态多次，因为每条路径中有着许多相同的状态，即达到点相同，且下一步的跳越范围相同，如果我们在一条路径中已经得知该状态是否能达到终点，就可以在其它路径中引用进行快速判断。就是如一个节点不通，则经过该节点的所有路径都不通。</p>
-<p>&emsp;&emsp;具体方法是维护一个哈希表保存状态的可行性，因为一个状态有两个属性，一是点的位置，二是上一步跳越距离，因为石头数量有限，可以通过左移取或，将两个值合并起来得到一个唯一的值，从而确定一个唯一的状态，保存该状态是否能达到终点。</p>
-<h3 id="改进代码"><a href="#改进代码" class="headerlink" title="改进代码"></a>改进代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canCross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; stones)</span> </span>&#123;</span><br><span class="line">        stoness = stones;</span><br><span class="line">        <span class="keyword">return</span> cross(stoness.begin(),<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">cross</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator start, <span class="keyword">int</span> dis)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(start == stoness.end()<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> key = *start | dis&lt;&lt;<span class="number">11</span>;</span><br><span class="line">        <span class="keyword">if</span> (status.count(key)) &#123;</span><br><span class="line">            <span class="keyword">return</span> status[key];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = dis + <span class="number">1</span>; i &gt;= dis<span class="number">-1</span>; i--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = find(start+<span class="number">1</span>,stoness.end(),i+*start);</span><br><span class="line">            <span class="keyword">if</span>(it != stoness.end())&#123;</span><br><span class="line">                <span class="keyword">if</span>(cross(it,i)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> status[key] = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> status[key] = <span class="literal">false</span>;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;stoness;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">bool</span>&gt; status;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ol>
-<li><p>在查询下一个跳越点时，可以使用循环来寻找，但我觉得如果跳越距离很大，那么就要遍历很多个位置，因此使用find直接在vector中寻找对应k-1，k，k+1距离的点会更加快。</p>
-</li>
-<li><p>在看了一下别人的做法中，发现可以先在两个点之后，判断是否后一个点是前一个点的两倍还多，即stone[i]&gt;2*stone[i-1]，若存在这一情况，那么必定不能到达，因为青蛙在2次跳越后，不可能跳越2倍的距离，而且这个数组又是升序的，所以不可逾越。可以去掉很多极端情况。</p>
-</li>
-<li><p>看了一下题目的评论，有一个评论说从步数大的开始遍历会更快得到答案，想了一下似乎是这样的，因位较小的步数最终很有可能走到大步数的状态，中间多出了很多不必要的状态，改成i—后，从24ms提升到了16ms，感觉改善很客观。居然能到95.46%了。</p>
-</li>
-</ol>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://ziquanzhang-image.oss-cn-shenzhen.aliyuncs.com/LeetCode/Frog%20Jump_test.PNG" alt="Frog Jump_test" title="">
-                </div>
-                <div class="image-caption">Frog Jump_test</div>
-            </figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;这个题目的关键之处在于如何利用已知的信息进行搜索，而不是采用盲目搜索的方式，在搜索过程中，发现一个点不通则将之后的路径封掉，对信息的复用，极大加快算法的速度，另外一些顺序的选择也很有可能影响速度。</p>
-
+ 题目描述
+A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it mus...
     
 
         <a href="/2018/10/19/LeetCode-403-Frog-Jump/" class="post-more waves-effect waves-button">
@@ -400,49 +314,13 @@ the gap between the 5th and 6th stone is too large.
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="297-Serialize-and-Deserialize-Binary-Tree"><a href="#297-Serialize-and-Deserialize-Binary-Tree" class="headerlink" title="297. Serialize and Deserialize Binary Tree"></a>297. Serialize and Deserialize Binary Tree</h1><p>week6</p>
-<p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/24-game/description/" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.</p>
-<p>Design an algorithm to serialize and deserialize a binary tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary tree can be serialized to a string and this string can be deserialized to the original tree structure.</p>
-<p><strong>Example:</strong></p>
-<pre>
+         297. Serialize and Deserialize Binary Tree
+week6
+难度：Hard
+题目链接
 
-You may serialize the following tree:
-
-    1
-   / \
-  2   3
-     / \
-    4   5
-
-as "[1,2,3,null,null,4,5]"
-
-</pre>
-
-<p><strong>Clarification:</strong> The above format is the same as <a href="https://leetcode.com/faq/#binary-tree" target="_blank" rel="noopener">how LeetCode serializes a binary tree.</a> You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.</p>
-<p><strong>Note:</strong> Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.</p>
-<hr>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;题目的意思是将一棵树序列化为字符串，而且序列化后的树能够经过反序列化变为原来的树结构。序列化的意思是将状态信息转化为可以存储和传输的形式，这在很多场合都能够用到，可以使自定义对象持久化，方便传输对象，以及便于程序维护等等。</p>
-<hr>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>&emsp;&emsp;题目已经给出了LeetCode所用的二叉树的序列化的形式，即将二叉树的每个节点的值存在一个字符串中，用标点符号隔开。观察其顺序可以发现是使用分层方式来构造的，因此我们可以用分层遍历的方式来构造这个字符串，然后再还原。</p>
-<p>&emsp;&emsp;使用分层遍历，构造一个队列存储遍历的节点并将子节点放在队列中，从而逐层遍历，构造字符串，注意也要把空节点放进去，否则将无法还原为原来的树。</p>
-<p>&emsp;&emsp;得到字符串并以“，”为分割点分割成不同的字符串节点，然后使用队列构造回原来的树。</p>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Codec</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Encodes a tree to a single string.</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">serialize</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> sertree;</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; <span class="built_in">queue</span>;</span><br><span class="line">        <span class="built_in">queue</span>.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!<span class="built_in">queue</span>.empty())&#123;</span><br><span class="line">            TreeNode* node = <span class="built_in">queue</span>.front();</span><br><span class="line">            <span class="built_in">queue</span>.pop();</span><br><span class="line">            <span class="keyword">if</span>(sertree.length()&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                sertree += <span class="string">","</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                sertree += <span class="string">"null"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                sertree += <span class="built_in">std</span>::to_string(node-&gt;val);</span><br><span class="line">                <span class="built_in">queue</span>.push(node-&gt;left);</span><br><span class="line">                <span class="built_in">queue</span>.push(node-&gt;right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sertree;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Decodes your encoded data to tree.</span></span><br><span class="line">    <span class="function">TreeNode* <span class="title">deserialize</span><span class="params">(<span class="built_in">string</span> data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(data == <span class="string">"null"</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; treeNodes = split(data,<span class="string">","</span>);</span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> TreeNode(atoi(treeNodes[<span class="number">0</span>].c_str()));</span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; <span class="built_in">queue</span>; </span><br><span class="line">        <span class="built_in">queue</span>.push(root);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; treeNodes.size(); i+=<span class="number">2</span>)&#123;</span><br><span class="line">            TreeNode* node = <span class="built_in">queue</span>.front();</span><br><span class="line">            <span class="built_in">queue</span>.pop();</span><br><span class="line">            <span class="keyword">if</span>(treeNodes[i] != <span class="string">"null"</span>)&#123;</span><br><span class="line">                TreeNode* left = <span class="keyword">new</span> TreeNode(atoi(treeNodes[i].c_str()));</span><br><span class="line">                node-&gt;left = left;</span><br><span class="line">                <span class="built_in">queue</span>.push(left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(treeNodes[i+<span class="number">1</span>] != <span class="string">"null"</span>)&#123;</span><br><span class="line">                TreeNode* right = <span class="keyword">new</span> TreeNode(atoi(treeNodes[i+<span class="number">1</span>].c_str()));</span><br><span class="line">                node-&gt;right = right;</span><br><span class="line">                <span class="built_in">queue</span>.push(right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; split(<span class="keyword">const</span> <span class="built_in">string</span>&amp; str, <span class="keyword">const</span> <span class="built_in">string</span>&amp; delim) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</span><br><span class="line">        <span class="keyword">if</span>(<span class="string">""</span> == str) <span class="keyword">return</span> res;</span><br><span class="line">        <span class="comment">//先将要切割的字符串从string类型转换为char*类型</span></span><br><span class="line">        <span class="keyword">char</span> * strs = <span class="keyword">new</span> <span class="keyword">char</span>[str.length() + <span class="number">1</span>] ;</span><br><span class="line">        <span class="built_in">strcpy</span>(strs, str.c_str()); </span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span> * d = <span class="keyword">new</span> <span class="keyword">char</span>[delim.length() + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">strcpy</span>(d, delim.c_str());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span> *p = strtok(strs, d);</span><br><span class="line">        <span class="keyword">while</span>(p) &#123;</span><br><span class="line">            <span class="built_in">string</span> s = p; <span class="comment">//分割得到的字符串转换为string类型</span></span><br><span class="line">            res.push_back(s); <span class="comment">//存入结果数组</span></span><br><span class="line">            p = strtok(<span class="literal">NULL</span>, d);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Your Codec object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment">// Codec codec;</span></span><br><span class="line"><span class="comment">// codec.deserialize(codec.serialize(root));</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ol>
-<li><p>注意c++中的string中没有split这个函数，所以要自己写一个split函数，使用c++里的strtok方法，先将字符串转化成Char数组类型，（注意char*最后有一个终止符，length+1），然后调用这个方法来处理char数组，通过循环进行逐步分割，再变成string，最后传出结果vector;</p>
-</li>
-<li><p>反序列化为树结构时，需要注意要去除空节点。否则将会出现访问空节点的错误，另外因为存放了null，所以每一次可以同时访问左右两个节点。</p>
-</li>
-<li><p>除了使用分层序列化之外，还有许多方法，比如使用深度+递归，广度遍历也可以，只要能够做到反序列化从转化为原来的树结构即可。</p>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;在这个题目中，我发现JAVA和C++其实很大区别的，写多了JAVA之后，发现许多方法都在c++没有提供，比如split，还有许多很方便使用的Likedlist等等数据结构。所以在JAVA中许多包装的方法还是挺好用的，以前还觉得很相似，但是现在发现在应用上的便利性上差距挺大的，所以遇到问题可以先使用JAVA来完成一下，确定解决的方法，然后再使用C++来实现。</p>
-<p>&emsp;&emsp;看了一下除此之外有人使用map<long,treenode*>来进行存储，直接偷鸡使用全局变量存储状态。。。不算是序列化。而且题目已经标明了不可用存储状态的做法了。</long,treenode*></p>
-
+ 题目描述
+Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a fil...
     
 
         <a href="/2018/10/14/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/" class="post-more waves-effect waves-button">
@@ -489,50 +367,17 @@ as "[1,2,3,null,null,4,5]"
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="24-Game"><a href="#24-Game" class="headerlink" title="24 Game"></a>24 Game</h1><p>week5</p>
-<p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/24-game/description/" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>You have 4 cards each containing a number from 1 to 9. You need to judge whether they could operated through *, /, +, -, (, ) to get the value of 24.</p>
-<p><strong>Example1:</strong></p>
-<pre>
+         24 Game
+week5
+难度：Hard
+题目链接
 
-Input: [4, 1, 8, 7]
-Output: True
-Explanation: (8-4) * (7-1) = 24
+ 题目描述
+You have 4 cards each containing a number from 1 to 9. You need to judge whether they could operated through *, /, +, -, (, ) to get the value of 24.
+Example1:
 
-</pre>
 
-<p><strong>Example2:</strong></p>
-<pre>
-
-Input: [1, 2, 1, 2]
-Output: False
-
-</pre>
-
-<p><strong>Note:</strong></p>
-<pre><code>1.The division operator / represents real division, not integer division. For example, 4 / (1 - 2/3) = 12.
-2. Every operation done is between two numbers. In particular, we cannot use - as a unary operator. For example, with [1, 1, 1, 1] as input, the expression -1 - 1 - 1 - 1 is not allowed.
-3. You cannot concatenate numbers together. For example, if the input is [1, 2, 1, 2], we cannot write this as 12 + 12.
-</code></pre><hr>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;这道题目的意思很明显，就是要解决24点的问题，随机给出4个数，仅能用四则运算，若得到24点则输出正确，否则输出错误。</p>
-<hr>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>&emsp;&emsp;解决这道题一开始是使用穷举法，将所有的可能都列举出来，然后进行判断，但每一次运算只能减少一个数，而一开始有4个数，4个运算法则，而四则运算中，乘和加是和两个数顺序无关的，那么结果有<script type="math/tex">C^2_4*6*C^2_3*6*C^2_2*6 = 3888</script><br>种可能，有点多，不可能用代码都列出来。<br>&emsp;&emsp;所以接下来考虑利用递归的方式，将每一种方法都遍历一遍，类似于深度搜索的方法，构成一棵树，根为4个数，每个分支代表一次运算，其子节点数的个数-1，因此树的高度为4，用深度遍历的原因是我们只需要把这个24点有无解输出就可以了，不需要输出解甚至所有的解，所以每次遍历都要达到高度4，以便最快得到一个解。<br>&emsp;&emsp;采用递归的方式能够更好的遍历，当一个解不符合时，马上退回上一个状态，寻找下一个解，这里使用vector存储得到的解，当不符合时，弹出得到的运算数，回到上一状态。</p>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">judgePoint24</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; dnums;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> val:nums)</span><br><span class="line">        &#123;</span><br><span class="line">            dnums.push_back((<span class="keyword">double</span>)val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dfs(dnums);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;&amp; nums)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size() == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums.size() == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">abs</span>(nums[<span class="number">0</span>] - <span class="number">24</span>) &lt; <span class="number">1e-6</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> size = nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i == j)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;card;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; size; k++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(k != i &amp;&amp; k != j)</span><br><span class="line">                    &#123;</span><br><span class="line">                        card.push_back(nums[k]);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; <span class="number">4</span>; l++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(l == <span class="number">0</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        card.push_back(nums[i]+nums[j]);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(l == <span class="number">1</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        card.push_back(nums[i]*nums[j]);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(l == <span class="number">2</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        card.push_back(nums[i]-nums[j]);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(l == <span class="number">3</span> &amp;&amp; nums[j]!= <span class="number">0</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        card.push_back(nums[i]/nums[j]);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span>(dfs(card))</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    card.pop_back();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ol>
-<li><p>因为所给的数的类型是int，因此在运算时要将其转成double类型方便进行乘除运算，否则会出现较大误差，并且判断是否为24点时因计算机的运算可能存在误差，所以要根据其和24点的误差小于一定值来判断。</p>
-</li>
-<li><p>因为在加减乘除中，加和乘对于数作为被加/乘数和加/乘数的结果是无影响的，因此，可以跳过2次运算，这样相当于每个节点原本8个子节点缩减为6个子节点，大大减少其分支，一开始以为没少多少，但是由于树高为4，算出的解能少3/4，极大减少时间。</p>
-</li>
-<li><p>加减乘除的顺序可以调转，也可以是先做加运算一直做到头，再做其它运算，也是可以的，但是个人觉得运算混搭可能会加快得到解的速度，即得到解的概率会大一些，单一进行运算很难得到24点。又由于其运算结果个数并不多，所以感觉使用启发式搜索并没有太大改进，判断时间可能使搜索时间变得更多。</p>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>&emsp;&emsp;思路主要是来源于题目写了一个tag为“depth-first search”让我有了一点思路，做这一些判断等题目，若是要进行所有结果的遍历，那么最好的方法就是进行搜索，搜索主要就是用到了树的遍历，即遍历状态。如果状态数过多，那么使用启发式搜索要比盲目搜索更好，而盲目搜索也要根据目的来确定，启发式搜索的难点就在于调参，确定一个搜索方向，而这道题因方向难以确定，而状态数不多，因此才采用深度搜索。</p>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
-</script>
+...
     
 
         <a href="/2018/10/07/LeetCode-679-24-Game/" class="post-more waves-effect waves-button">
@@ -579,56 +424,14 @@ Output: False
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="Binary-Tree-Maximum-Path-Sum"><a href="#Binary-Tree-Maximum-Path-Sum" class="headerlink" title="Binary Tree Maximum Path Sum"></a>Binary Tree Maximum Path Sum</h1><p>week4</p>
-<p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/description/" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given a non-empty binary tree, find the maximum path sum.</p>
-<p>For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.</p>
-<p><strong>Example1:</strong></p>
-<pre>
-Input: [1,2,3]
+         Binary Tree Maximum Path Sum
+week4
+难度：Hard
+题目链接
 
-       1
-      / \
-     2   3
-
-Output: 6
-</pre>
-
-<p><strong>Example2:</strong></p>
-<pre>
-Input: [-10,9,20,null,null,15,7]
-
-   -10
-   / \
-  9  20
-    /  \
-   15   7
-
-Output: 42
-</pre>
-
-<hr>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>&emsp;&emsp;这道题目要求找出一颗二叉树中的得到最大数之和的一条路径，路径中的头和尾可以是二叉树中的任意一节点。这也就是说除了可以经过根节点外，还可以是二叉树里任意子树，只要得到的和为最大。</p>
-<hr>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>&emsp;&emsp;首先想到的是用递归的算法，来算出每一个节点作为根节点所得到的最大路径和，这和书上第四章的某道题目有点相像：已知两顶点，求出两个顶点存在多少条路径。当时我们可以使用递归方式分别求出上一层到下一层节点有多少条路径，逐步计算出到达每一层的路径，最后得到总的路径数。<br>&emsp;&emsp;这道题目也是这样，子树的最大路径和可以是左子树+根+右子树等等，但其作为上一层的子节点只能是左子树/右子树+根。因此我们判断长度和返回到上一层的值是不一样的。即<code>maxNum = max(leftNum + rightNum + node-&gt;val,maxNum);</code>(若左右子树<0，则设其为0)和返回的值`return node-="">val + sumNum;`</0，则设其为0)和返回的值`return></p>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* *</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> maxNum;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxPathSum</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root != <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            maxNum = root-&gt;val;</span><br><span class="line">        &#125;</span><br><span class="line">        sumPath(root);</span><br><span class="line">        <span class="keyword">return</span> maxNum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumPath</span><span class="params">(TreeNode * node)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node == <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> leftNum = sumPath(node-&gt;left);<span class="comment">//求左右子节点的最大路径和</span></span><br><span class="line">        <span class="keyword">int</span> rightNum = sumPath(node-&gt;right);</span><br><span class="line">        <span class="keyword">if</span>(leftNum &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            leftNum = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(rightNum &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            rightNum = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sumNum = max(leftNum,rightNum);</span><br><span class="line">        maxNum = max(leftNum + rightNum + node-&gt;val,maxNum);<span class="comment">//每一次和原本的值作比较</span></span><br><span class="line">        <span class="keyword">return</span> node-&gt;val + sumNum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><ol>
-<li><p>有可能存在只有一个节点，所以一开始最大和设为根节点的值，也可以设置成INT_MIN，因为可能最终的值是负数。</p>
-</li>
-<li><p>因为不一定经过根节点的就是路径最大和，而且每一颗子树都有可能是目标树或者一个特别大的节点，所以每次递归都要进行一次比较，以求得最大的值。</p>
-</li>
-<li><p>做完之后发现代码运行好像很慢，比较了一下和大佬的代码，发现还是写的太复杂了一点，有一些判断根本是不必要的，比如判断是否&lt;0等，直接用max取最大的就可以了，因为负数不是不合法的，不会产生什么逻辑错误。</p>
-</li>
-<li><p>此外发现大佬的代码中写了这么一句速度看起来比我的快不少。。。在网上查了下之后似乎是cin、cout效率低的原因是要把东西输入到缓冲区在进行输入输出，这一句语句可以取消其缓冲，使得和scanf、printf的效率差不多。。这也解释了为什么以前有时候用cin和cout会超时，而用scanf、printf不会。</p>
-</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> fast = []() &#123;ios_base::sync_with_stdio(<span class="number">0</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>); <span class="built_in">cout</span>.tie(<span class="number">0</span>); <span class="keyword">return</span> <span class="number">0</span>; &#125;();</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;附上大佬简洁的代码。。但感觉阅读上可能并不会很快，可能有时候需要在简洁和易懂中作出取舍</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> fast = []() &#123;ios_base::sync_with_stdio(<span class="number">0</span>); <span class="built_in">cin</span>.tie(<span class="number">0</span>); <span class="built_in">cout</span>.tie(<span class="number">0</span>); <span class="keyword">return</span> <span class="number">0</span>; &#125;();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">go</span><span class="params">(TreeNode* t, <span class="keyword">int</span>&amp; Ans)</span> </span>&#123; <span class="comment">//maxPathSum through t</span></span><br><span class="line">        <span class="keyword">if</span> (!t) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> L = go(t-&gt;left, Ans), R = go(t-&gt;right, Ans), Ret = <span class="number">0</span>;</span><br><span class="line">        Ret = max(t-&gt;val, t-&gt;val + max(L, R));</span><br><span class="line">        Ans = max(Ans, max(L + R + t-&gt;val, Ret));</span><br><span class="line">        <span class="keyword">return</span> Ret;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxPathSum</span><span class="params">(TreeNode* t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Ans = INT_MIN;</span><br><span class="line">        go(t, Ans);</span><br><span class="line">        <span class="keyword">return</span> Ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+ 题目描述
+Given a non-empty binary tree, find the maximum path sum.
+For this problem, a path is defined as any sequence of nodes from some starting nod...
     
 
         <a href="/2018/09/30/LeetCode-124-Binary-Tree-Maximum-Path-Sum/" class="post-more waves-effect waves-button">
@@ -675,45 +478,20 @@ Output: 42
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="Binary-Tree-Postorder-Traversal"><a href="#Binary-Tree-Postorder-Traversal" class="headerlink" title="Binary Tree Postorder Traversal"></a>Binary Tree Postorder Traversal</h1><p>week3</p>
-<p>难度：Hard</p>
-<p><a href="https://leetcode.com/problems/binary-tree-postorder-traversal/description/" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given a binary tree, return the postorder traversal of its nodes’ values.</p>
-<p><strong>Example:</strong></p>
-<pre>
+         Binary Tree Postorder Traversal
+week3
+难度：Hard
+题目链接
+
+ 题目描述
+Given a binary tree, return the postorder traversal of its nodes’ values.
+Example:
+
     Input: [1,null,2,3]
     1
         \
         2
-        /
-    3
-
-    Output: [3,2,1]
-</pre>
-
-<p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
-<hr>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题目就是普通的后序遍历，即访问一棵树对其子节点使用左，右，中的顺序进行访问，其中有递归和遍历的做法。</p>
-<ol>
-<li><p>递归思路：<br> 递归的做法就是采用分而治之的方法，对一棵树均划分成3个节点，每当到一个节点时，先对其左节点递归，再到右节点，最后插入中节点后结束递归，以及当所到节点为空时也结束递归。</p>
-</li>
-<li><p>遍历思路：<br> 遍历的思路就是使用一个栈来存取遍历的节点，当访问完其中所有的子节点时，再使它出栈，其中也是用了递归的思路，因为递归就是通过栈来实现的。</p>
-</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ol>
-<li>递归思路</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; postorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; leftans = postorderTraversal(root-&gt;left);</span><br><span class="line">        <span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; rightans = postorderTraversal(root-&gt;right);</span><br><span class="line">        ans.insert(ans.end(),leftans.begin(),leftans.end());</span><br><span class="line">        ans.insert(ans.end(),rightans.begin(),rightans.end());</span><br><span class="line">        ans.insert(ans.end(),root-&gt;val);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>遍历思路</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; postorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> res;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">        s.push(root);</span><br><span class="line">        TreeNode* pre = root;</span><br><span class="line">        <span class="keyword">while</span> (!s.empty()) &#123;</span><br><span class="line">            TreeNode* p = s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            res.insert(res.begin(), p-&gt;val);</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;left) s.push(p-&gt;left);</span><br><span class="line">            <span class="keyword">if</span> (p-&gt;right) s.push(p-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>按照时间复杂度来算遍历的应该比递归的要快，但在网页上显示是一样的速度，看了一下比较慢的就是一些人先是用了栈来处理节点，到最后访问子节点的时候又用回递归的方法了，这种是典型的没有理解好stack的用法，其先进后出的性质可以让子节点也使用stack来进行遍历。</p>
-<p>此外还有一种做法就是使用先序遍历后，再进行翻转从而得到后序遍历的结果。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stack</span>&lt;TreeNode*&gt; <span class="built_in">stack</span>;</span><br><span class="line"><span class="built_in">stack</span>.push(root);</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">stack</span>.empty()) &#123;</span><br><span class="line">    TreeNode* cur = <span class="built_in">stack</span>.top();</span><br><span class="line">    <span class="built_in">stack</span>.pop();</span><br><span class="line">    res.push_back(cur-&gt;val);</span><br><span class="line">    <span class="keyword">if</span> (cur-&gt;left != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="built_in">stack</span>.push(cur-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cur-&gt;right != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="built_in">stack</span>.push(cur-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">reverse(res.begin(),res.end());</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> res;</span><br></pre></td></tr></table></figure>
+    ...
     
 
         <a href="/2018/09/23/LeetCode-145-Binary-Tree-Postorder-Traversal/" class="post-more waves-effect waves-button">
@@ -760,42 +538,12 @@ Output: 42
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="Couples-Holding-Hands"><a href="#Couples-Holding-Hands" class="headerlink" title="Couples Holding Hands"></a>Couples Holding Hands</h1><p>week 2</p>
-<p><a href="https://leetcode.com/problems/couples-holding-hands/description/&quot;" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>N couples sit in 2N seats arranged in a row and want to hold hands. We want to know the minimum number of swaps so that every couple is sitting side by side. A swap consists of choosing any two people, then they stand up and switch seats.</p>
-<p>The people and seats are represented by an integer from 0 to 2N-1, the couples are numbered in order, the first couple being (0, 1), the second couple being (2, 3), and so on with the last couple being (2N-2, 2N-1).</p>
-<p>The couples’ initial seating is given by row[i] being the value of the person who is initially sitting in the i-th seat.</p>
-<p><strong>Example 1:</strong></p>
-<pre>Input: row = [0, 2, 1, 3]
-Output: 1
-Explanation: We only need to swap the second (row[1]) and third (row[2]) person.</pre>
+         Couples Holding Hands
+week 2
+题目链接
 
-
-<p><strong>Example 2:</strong></p>
-<pre>Input: row = [3, 2, 0, 1]
-Output: 0
-Explanation: All couples are already seated side by side.</pre>
-
-<p><strong>Note:</strong> <ol><li>len(row) is even and in the range of [4, 60].</li><li>row is guaranteed to be a permutation of 0...len(row)-1.</li></ol></p>
-<hr>
-<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>这个题意为有N对情侣坐在2N个座位上，但是他们并不是坐在一起的，要使得每一对都能并肩坐在一起，计算最少的交换次数，一次交换可以选择任意的两个人。</p>
-<p>情侣按照顺序编号，并不是相连的都是情侣，（0，1），（2，3）等等。由此可知一个偶数的下一个奇数必定是它的另一半。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这里的交换有两种可能：</p>
-<ol>
-<li>交换一次后，有两组情侣完成配对。</li>
-<li>交换一次后，仅有一组情侣完成配对，而另一个等待继续交换。</li>
-</ol>
-<p>可知如果每一次都是第一种交换的话，则交换次数会比第二种要少，第一种为最佳交换，因此怎么样才能让其先完成第一种匹配呢，我的想法是，既然是第一种，则他们的情侣是交叉坐的，因此若这4个人中有2组情侣，则其和其他组的情侣就没有交集，所以无论如何其它组的情侣如何交换都不会影响到他们。（这里指交换都要匹配成功，如果试图以一次不成功的匹配凑出第一种情况，那么要匹配成功还要交换一次，那么使用第二种也是2次，在次数上是没有任何不同的）</p>
-<p>所以我们可以采用贪心算法，遍历每一组，当它的旁边不是它的情侣时，就向后遍历寻找其情侣，进行交换然后匹配成功，这里因为我们发现他们的id的特殊性，可以判断奇偶，快速找到其另一半。</p>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minSwapsCouples</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.size(); i +=<span class="number">2</span> )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> cp;</span><br><span class="line">            <span class="keyword">if</span> (row[i] % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                cp = row[i] + <span class="number">1</span>;<span class="comment">//若为偶数则情侣为下一个奇数</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                cp = row[i] - <span class="number">1</span>;<span class="comment">//若为奇数则情侣为上一个偶数</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (row[i + <span class="number">1</span>] == cp)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">2</span>; j&lt; row.size(); j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (row[j] == cp)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = row[i+<span class="number">1</span>];</span><br><span class="line">                    row[i+<span class="number">1</span>] = row[j];</span><br><span class="line">                    row[j] = temp;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>当做到这道题目的时候，便想使用贪心算法，但一直都想不清楚如何去证明，后来发现其实他们的交换先后是无关的。<br>根据网上严谨的证明应该是把row抽象成为一个n个顶点的无向图，每个顶点中为两个人，两个顶点存在边时当且仅当两个顶点中能构成一对情侣，若是第一种情况，则构成重边。<br>相连的顶点构成圈，圈里面的若为第二种情况，所以对每一个圈来说有n个顶点就至少需要n-1次交换，若为第一种情况，即有重边，只需一次交换，也是n-1（两个顶点，2-1）。<br>因此若row有n组，m个圈，则至少需要n-m次。这和以上的结论是一样的，因为不同圈之间并不会发生交换。</p>
-<hr>
-<h2 id="其它解法"><a href="#其它解法" class="headerlink" title="其它解法"></a>其它解法</h2><p>使用哈希配对的方法，两个数均除以2，若相等，则为同一组，若否，则区分出较大和较小的数，若两个数存在联系，则返回，若不存在，则建立这两个数的联系。最后根据哈希表中联系的个数来得到最小交换次数，原理同上面的一样，这里的联系就是指的是顶点之间的边，每个边需要一次交换，重边算作一次，所以每次要判断两个数是否存在联系。</p>
-<p>代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minSwapsCouples</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; row)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.size(); i += <span class="number">2</span>) &#123;</span><br><span class="line">            helper(m, row[i] / <span class="number">2</span>, row[i + <span class="number">1</span>] / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> m.size();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&amp; m, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> c1 = min(x, y), c2 = max(x, y);</span><br><span class="line">        <span class="keyword">if</span> (c1 == c2) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (m.count(c1)) helper(m, m[c1], c2);</span><br><span class="line">        <span class="keyword">else</span> m[c1] = c2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+ 题目描述
+N couples sit in 2N seats arranged in a row and want to hold hands. We want to know the minimum number of swaps so that every couple is sitting side by sid...
     
 
         <a href="/2018/09/15/LeetCode/" class="post-more waves-effect waves-button">
@@ -840,172 +588,18 @@ Explanation: All couples are already seated side by side.</pre>
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
-</script></p>
-<h1 id="数值计算实验"><a href="#数值计算实验" class="headerlink" title="数值计算实验"></a>数值计算实验</h1><h2 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h2><h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。</p>
-<p>A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。 </p>
-<p>（1）高斯消去法。</p>
-<p>（2）列主元消去法。</p>
-<h3 id="2-算法设计"><a href="#2-算法设计" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><h4 id="高斯消去法"><a href="#高斯消去法" class="headerlink" title="高斯消去法"></a>高斯消去法</h4><p>（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的三角形线性方程组。</p>
-<p>在这里使用将方程乘以某一乘数加到其它方程上以进行消元，乘数为两个未知数之商。得到等价的三角形线性方程组。</p>
-<p>（2）回代：求解上三角线性方程组利用回代的方法，从下至上求出方程组中的一方程的未知数，然后逐层回代求出其它方程的未知数。</p>
-<h4 id="列主元消去法"><a href="#列主元消去法" class="headerlink" title="列主元消去法"></a>列主元消去法</h4><p>与高斯消去法类似，在消元阶段进行交换行，选取绝对值最大的元素作为主元素，避免主元素为0，无法进行消元，以及当主元素很小时，作除数导致数值不稳定产生较大的误差。</p>
-<p>回代方法和高斯消去法一致。</p>
-<h3 id="3-数值实验"><a href="#3-数值实验" class="headerlink" title="3.数值实验"></a>3.数值实验</h3><p>随机构造出多个矩阵以及多个向量，矩阵和向量的维数n分别为10、50、100、200，同时使用高斯消去法，列主元消去法进行线性方程组的求解，比较两种算法的计算时间以及其计算时间与矩阵的维数（大小）的关系。</p>
-<p>实验结果一：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test1.png" alt="test1" title="">
-                </div>
-                <div class="image-caption">test1</div>
-            </figure></p>
-<p>实验结果二：    <figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test1-1.png" alt="test1-1" title="">
-                </div>
-                <div class="image-caption">test1-1</div>
-            </figure></p>
-<p>​    </p>
-<p>进行拟合：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/拟合.png" alt="拟合" title="">
-                </div>
-                <div class="image-caption">拟合</div>
-            </figure></p>
-<h3 id="4-结果分析"><a href="#4-结果分析" class="headerlink" title="4.结果分析"></a>4.结果分析</h3><p>通过进行计算时间的测试，并绘制曲线得到实验结果，观察可得列主元消去法因为要进行查找绝对值最大主元素，并进行交换使得计算时间比普通高斯消去方法稍长，但两者的计算时间还是相近。</p>
-<p>另外当矩阵的维数（大小）变大，这种消元回代方法的计算时间也大幅度增长，通过函数的拟合发现其计算时间为O（n^3）的，n为矩阵的维数。</p>
-<h2 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h2><h3 id="1-问题描述-1"><a href="#1-问题描述-1" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。</p>
-<p>A 为对称正定矩阵，其特征值服从独立同分布的[0,1]间的均匀分布；b 中的元素服从独立同分布的正态分布。 </p>
-<p>令 n=10、50、100、200，分别绘制出算法的收敛曲线，横坐标为迭代步数，纵坐标为相对误差。比较Jacobi 迭代法、Gauss-Seidel 迭代法、逐次超松弛迭代法、共轭梯度法与高斯消去法、列主元消去法的计算时间。改变逐次超松弛迭代法的松弛因子，分析其对收敛速度的影响。 </p>
-<h3 id="2-算法设计-1"><a href="#2-算法设计-1" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><h4 id="Jacobi迭代法"><a href="#Jacobi迭代法" class="headerlink" title="Jacobi迭代法"></a>Jacobi迭代法</h4><p>雅可比迭代法的思想在于把当前的x初始量当成方程组的解，从而进行回代得出下一步x的近似解，这种方法每次迭代都使用上一次迭代的x，若迭代矩阵谱半径&lt;1，则在一定迭代次数后，x会收敛成精确解。</p>
-<h4 id="Gauss-Seidel-迭代法"><a href="#Gauss-Seidel-迭代法" class="headerlink" title="Gauss-Seidel 迭代法"></a>Gauss-Seidel 迭代法</h4><p>高斯-赛德尔迭代与雅可比迭代类似，但是在每次迭代之中使用变量的最新信息计算x(k+1)，是雅可比迭代法的改进。</p>
-<h4 id="逐次超松弛迭代法"><a href="#逐次超松弛迭代法" class="headerlink" title="逐次超松弛迭代法"></a>逐次超松弛迭代法</h4><p>逐次超松弛迭代是高斯-赛德尔迭代的一种修正，当w 为1 时即为高斯-赛德尔迭代，即在每一步的迭代后，对上一步的\(x^(k)\)和迭代后的x‘进行加权运算 $x(k+1) = (1-w)<em>x(k)+ w</em>x(k)$，超松弛迭代w&gt;1，一般为1&lt;w&lt;2，相当于做外插，加快收敛速度。</p>
-<h4 id="共轭梯度法"><a href="#共轭梯度法" class="headerlink" title="共轭梯度法"></a>共轭梯度法</h4><p>将解线性方程组转化成求解一个等价的二次函数\(f(x) = 1/2<em> x^T </em> A <em>x - b^T </em>x\)极小化的问题，从任意起始点出发沿A的共轭方向进行线性搜索得到二次函数的极小点。</p>
-<h3 id="3-数值实验-1"><a href="#3-数值实验-1" class="headerlink" title="3.数值实验"></a>3.数值实验</h3><h4 id="四种迭代法的收敛"><a href="#四种迭代法的收敛" class="headerlink" title="四种迭代法的收敛"></a>四种迭代法的收敛</h4><p>n = 10的收敛曲线：（SOR收敛因子w 为1.1）<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-1.png" alt="test2-1" title="">
-                </div>
-                <div class="image-caption">test2-1</div>
-            </figure></p>
-<p>n = 50的收敛曲线：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-2.png" alt="test2-2" title="">
-                </div>
-                <div class="image-caption">test2-2</div>
-            </figure></p>
-<p>n = 100的收敛曲线：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-3.png" alt="test2-3" title="">
-                </div>
-                <div class="image-caption">test2-3</div>
-            </figure></p>
-<p>n = 200的收敛曲线：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-4.png" alt="test2-4" title="">
-                </div>
-                <div class="image-caption">test2-4</div>
-            </figure></p>
-<h4 id="六种算法计算时间的比较"><a href="#六种算法计算时间的比较" class="headerlink" title="六种算法计算时间的比较"></a>六种算法计算时间的比较</h4><p>n = 10：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-5.png" alt="test2-5" title="">
-                </div>
-                <div class="image-caption">test2-5</div>
-            </figure></p>
-<p>n = 50：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-6.png" alt="test2-6" title="">
-                </div>
-                <div class="image-caption">test2-6</div>
-            </figure></p>
-<p>n = 100：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-7.png" alt="test2-7" title="">
-                </div>
-                <div class="image-caption">test2-7</div>
-            </figure></p>
-<p>n = 200：<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test2-8.png" alt="test2-8" title="">
-                </div>
-                <div class="image-caption">test2-8</div>
-            </figure></p>
-<h4 id="逐次超松弛迭代松弛因子（w）的影响"><a href="#逐次超松弛迭代松弛因子（w）的影响" class="headerlink" title="逐次超松弛迭代松弛因子（w）的影响"></a>逐次超松弛迭代松弛因子（w）的影响</h4><p>完整的图：（此时n =200）<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test3.png" alt="test3" title="">
-                </div>
-                <div class="image-caption">test3</div>
-            </figure></p>
-<p>Y：（0，0.5）<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2018/09/12/数值计算实验一/test3-1.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure></p>
-<h3 id="4-结果分析-1"><a href="#4-结果分析-1" class="headerlink" title="4.结果分析"></a>4.结果分析</h3><ol>
-<li>根据实验二的结果可得在四种迭代法中，雅可比迭代法收敛性较差，据其改进的高斯-赛德尔则较好，而增加了加权平均进行外插运算的逐次超松弛迭代收敛速度更快，收敛速度最快的则是共轭梯度法。</li>
-<li>而六种算法的计算时间中可以看出，当矩阵较小时，迭代法和消元法计算时间相差不大，矩阵较大时，共轭梯度法在计算时间中有着较大的优势，达到所需精度的迭代次数比其它迭代次数要少很多，并且每次迭代耗时较少。因为构造的矩阵并不是稀疏矩阵，所以在这种情况下，普通的消元法比其它迭代法所耗时间要少。</li>
-<li>在分析松弛因子对收敛速度影响中，松弛因子对算法的收敛速度影响很大，选择合适的松弛因子能够减少算法的迭代次数，在较少的迭代次数得到较为精确的结果，对于不同的矩阵有着不同的最佳松弛因子，对于本次模拟的矩阵w较大则最好，但是w超过2之后，算法则不再收敛。</li>
-</ol>
-<h2 id="实验三"><a href="#实验三" class="headerlink" title="实验三"></a>实验三</h2><h3 id="1-问题描述-2"><a href="#1-问题描述-2" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>在 <a href="https://snap.stanford.edu/data/soc-Epinions1.html" target="_blank" rel="noopener">Epinions 社交数据集</a>中，每个网络节点可以选择信任其它节点。借鉴 Pagerank 的思想编写程序，对网络节点的受信任程度进行评分。在实验报告中，请给出伪代码。 </p>
-<h3 id="2-算法设计-2"><a href="#2-算法设计-2" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><p>和pagerank相类似，预先给每个网络节点一个信任值Trust值为1/N，N为节点的数量，这样就能得到一个向量v代表每个节点的信任评分rank</p>
-<script type="math/tex; mode=display">
-v = [1/n,1/n,1/n,……]</script><p>假定每个节点的对其他节点的总的信任程度为1，而且对每个其信任的节点都给予相同的信任程度，这样就可以得到一个信任转移矩阵A。</p>
-<script type="math/tex; mode=display">
-A（i，j）= 节点i对节点j的信任程度</script><p>每个节点的信任评分rank由信任它的节点决定，如果信任评分的节点本身的信任评分高，则给予的评分权重也高，反之给予评分权重较低。</p>
-<p>所以通过计算</p>
-<script type="math/tex; mode=display">
-v‘ = Mv</script><p>即</p>
-<script type="math/tex; mode=display">
-v(i) = ∑其它节点信任评分v(j)*信任程度A(i,j)</script><p>可以得到新的一个信任评分，经过有限次的迭代，v’将会收敛稳定下来，得到的即是各个节点的信任评分。</p>
-<p><strong>改进</strong></p>
-<p>对于一些只信任自己的，对其它节点并未作出信任的网页节点，采用这种算法有2个缺点</p>
-<p>1.使得信任评分都集中到那一循环的节点上。</p>
-<p>2.对于新建立的网络节点来说，并不公平，因为一开始没有其他节点信任它，可能导致信任评分恶性循环。</p>
-<p>因此添加一个权重占比α，原先的评分仅占α，然后默认每一个节点都对其它节点有一定程度（较小但不为0）的信任，这个信任程度影响评分所占的权重为1-α。因此迭代公式变为：</p>
-<script type="math/tex; mode=display">
-v(i) = ∑v(j)*A(i,j)*α+(1-α)/N</script><p>α一般设定为0.85。</p>
-<h3 id="3-伪代码"><a href="#3-伪代码" class="headerlink" title="3.伪代码"></a>3.伪代码</h3><pre><code>
-A = [N,N];
-α = 0.85;%设定权重
+        
 
-%构建转移矩阵，即信任关系矩阵
-for i = 1: N
-    for j = 1 : N
-    A[i,j] = 1/n(n 为i的所有出链，即给予信任的节点数总数)
-    end
-end
-
-%初始化信任评分rank
-v0(1:N) = 1/N;
-v = v0
-
-%迭代
-while norm(v-v0,'inf')>0.01 %当v逐渐收敛后结束迭代
-    v0 = v;
-    for i = 1: N
-        sum = 0;
-        for j = 1 : N
-            %计算其它节点给予该节点的信任评分
-            sum = sum + A(j,i)*v0(j)*α + (1-α)/N
-        end
-        v(i) = sum;
-    end
-end
-
-disp(v');
-</code></pre>
+ 数值计算实验
+ 实验一
+ 1.问题描述
+求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。
+A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。
+（1）高斯消去法。
+（2）列主元消去法。
+ 2.算法设计
+ 高斯消去法
+（1）消元：使用逐次消去未知数的方法把原线性方程组A...
     
 
         <a href="/2018/09/12/数值计算实验一/" class="post-more waves-effect waves-button">
@@ -1046,32 +640,12 @@ disp(v');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="Sort-Colors"><a href="#Sort-Colors" class="headerlink" title="Sort Colors"></a>Sort Colors</h1><p>week1</p>
-<p><a href="https://leetcode.com/problems/sort-colors/description/&quot;" target="_blank" rel="noopener">题目链接</a></p>
-<hr>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given an array with n objects colored red, white or blue, sort them <a href="&quot;https://en.wikipedia.org/wiki/In-place_algorithm&quot;">in-place</a> so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
-<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
-<p><strong>Note:</strong> You are not suppose to use the library’s sort function for this problem.</p>
-<p><strong>Example:</strong></p>
-<pre>Input: [2,0,2,1,1,0]
-Output: [0,0,1,1,2,2]</pre>
+         Sort Colors
+week1
+题目链接
 
-<p><strong>Follow up:</strong></p>
-<ul>
-<li><p>A rather straight forward solution is a two-pass algorithm using counting sort.</p>First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.</li>
-<li>Could you come up with a one-pass algorithm using only constant space?</li>
-</ul>
-
-<hr>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>这道题主要是对已知数的排序，数组中的每一个数的范围都已确定，因此用以往的排序如快排，归并排序并不合适，要做到一次遍历完成并使用常空间，所以我选择使用插排来完成。</p>
-<p>先使用普通的插排发现时间会很慢，而在这个过程中发现一般的插排都是逐个比较的，而这道题目的特殊点在于数的种类较少只有3个，而且是已知的，那么我们可以记录下每个数应插到的位置，就节省了比较的过程。</p>
-<p>记录下0，1，2的可插入点的前一位，比如插入1后，1可插点向后移，而2因为只能在1后，所以也向后移，而0不受1影响，插入点不变。最重要的一点是当插入0/1时，会替换掉原本的数，因为后面的数向后移动，可以当作(1，2)/2也插入到数组中（后移替换掉原本的数）。</p>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> red = <span class="number">-1</span>, white = <span class="number">-1</span>, blue = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                red++;</span><br><span class="line">                white++;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = <span class="number">2</span>;</span><br><span class="line">                nums[white] = <span class="number">1</span>;</span><br><span class="line">                nums[red] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                white++;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = <span class="number">2</span>;</span><br><span class="line">                nums[white] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                blue++;</span><br><span class="line">                nums[blue] = <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>值得注意的是我们在写的时候，要把要插入的步骤写在其它数做完后移操作之后，因为存在一种可能假设现在整个数组中还不存在1，当你要插入0时，此时0和1的插入点是相同的，假设你先插入再后移，会使得插入的0被1替换掉（因为我们的后移操作是假设1的插入点前是1，0的插入点前是0），反之1被0替换则正确。</p>
-<p>这种算法适合于已知数且不同数较少的排序，用替换取代后移，节省时间和空间。<br>时间复杂度和空间复杂度均为常数。</p>
-
+ 题目描述
+Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white a...
     
 
         <a href="/2018/09/09/Leetcode-75-Sort-Colors/" class="post-more waves-effect waves-button">
@@ -1116,94 +690,10 @@ Output: [0,0,1,1,2,2]</pre>
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <p><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
-</script></p>
-<h1 id="Welcome-to-StackEdit"><a href="#Welcome-to-StackEdit" class="headerlink" title="Welcome to StackEdit!"></a>Welcome to StackEdit!</h1><p>Hi! I’m your first Markdown file in <strong>StackEdit</strong>. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the <strong>file explorer</strong> on the left corner of the navigation bar.</p>
-<h1 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h1><p>StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible <strong>offline!</strong></p>
-<h2 id="Create-files-and-folders"><a href="#Create-files-and-folders" class="headerlink" title="Create files and folders"></a>Create files and folders</h2><p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the <strong>New file</strong> button in the file explorer. You can also create folders by clicking the <strong>New folder</strong> button.</p>
-<h2 id="Switch-to-another-file"><a href="#Switch-to-another-file" class="headerlink" title="Switch to another file"></a>Switch to another file</h2><p>All your files are listed in the file explorer. You can switch from one to another by clicking a file in the list.</p>
-<h2 id="Rename-a-file"><a href="#Rename-a-file" class="headerlink" title="Rename a file"></a>Rename a file</h2><p>You can rename the current file by clicking the file name in the navigation bar or by clicking the <strong>Rename</strong> button in the file explorer.</p>
-<h2 id="Delete-a-file"><a href="#Delete-a-file" class="headerlink" title="Delete a file"></a>Delete a file</h2><p>You can delete the current file by clicking the <strong>Remove</strong> button in the file explorer. The file will be moved into the <strong>Trash</strong> folder and automatically deleted after 7 days of inactivity.</p>
-<h2 id="Export-a-file"><a href="#Export-a-file" class="headerlink" title="Export a file"></a>Export a file</h2><p>You can export the current file by clicking <strong>Export to disk</strong> in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.</p>
-<h1 id="Synchronization"><a href="#Synchronization" class="headerlink" title="Synchronization"></a>Synchronization</h1><p>Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your <strong>Google Drive</strong>, your <strong>Dropbox</strong> and your <strong>GitHub</strong> accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow… The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.</p>
-<p>There are two types of synchronization and they can complement each other:</p>
-<ul>
-<li><p>The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.</p>
-<blockquote>
-<p>To start syncing your workspace, just sign in with Google in the menu.</p>
-</blockquote>
-</li>
-<li><p>The file synchronization will keep one file of the workspace synced with one or multiple files in <strong>Google Drive</strong>, <strong>Dropbox</strong> or <strong>GitHub</strong>.</p>
-<blockquote>
-<p>Before starting to sync files, you must link an account in the <strong>Synchronize</strong> sub-menu.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Open-a-file"><a href="#Open-a-file" class="headerlink" title="Open a file"></a>Open a file</h2><p>You can open a file from <strong>Google Drive</strong>, <strong>Dropbox</strong> or <strong>GitHub</strong> by opening the <strong>Synchronize</strong> sub-menu and clicking <strong>Open from</strong>. Once opened in the workspace, any modification in the file will be automatically synced.</p>
-<h2 id="Save-a-file"><a href="#Save-a-file" class="headerlink" title="Save a file"></a>Save a file</h2><p>You can save any file of the workspace to <strong>Google Drive</strong>, <strong>Dropbox</strong> or <strong>GitHub</strong> by opening the <strong>Synchronize</strong> sub-menu and clicking <strong>Save on</strong>. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.</p>
-<h2 id="Synchronize-a-file"><a href="#Synchronize-a-file" class="headerlink" title="Synchronize a file"></a>Synchronize a file</h2><p>Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.</p>
-<p>If you just have modified your file and you want to force syncing, click the <strong>Synchronize now</strong> button in the navigation bar.</p>
-<blockquote>
-<p><strong>Note:</strong> The <strong>Synchronize now</strong> button is disabled if you have no file to synchronize.</p>
-</blockquote>
-<h2 id="Manage-file-synchronization"><a href="#Manage-file-synchronization" class="headerlink" title="Manage file synchronization"></a>Manage file synchronization</h2><p>Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking <strong>File synchronization</strong> in the <strong>Synchronize</strong> sub-menu. This allows you to list and remove synchronized locations that are linked to your file.</p>
-<h1 id="Publication"><a href="#Publication" class="headerlink" title="Publication"></a>Publication</h1><p>Publishing in StackEdit makes it simple for you to publish online your files. Once you’re happy with a file, you can publish it to different hosting platforms like <strong>Blogger</strong>, <strong>Dropbox</strong>, <strong>Gist</strong>, <strong>GitHub</strong>, <strong>Google Drive</strong>, <strong>WordPress</strong> and <strong>Zendesk</strong>. With <a href="http://handlebarsjs.com/" target="_blank" rel="noopener">Handlebars templates</a>, you have full control over what you export.</p>
-<blockquote>
-<p>Before starting to publish, you must link an account in the <strong>Publish</strong> sub-menu.</p>
-</blockquote>
-<h2 id="Publish-a-File"><a href="#Publish-a-File" class="headerlink" title="Publish a File"></a>Publish a File</h2><p>You can publish your file by opening the <strong>Publish</strong> sub-menu and by clicking <strong>Publish to</strong>. For some locations, you can choose between the following formats:</p>
-<ul>
-<li>Markdown: publish the Markdown text on a website that can interpret it (<strong>GitHub</strong> for instance),</li>
-<li>HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).</li>
-</ul>
-<h2 id="Update-a-publication"><a href="#Update-a-publication" class="headerlink" title="Update a publication"></a>Update a publication</h2><p>After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the <strong>Publish now</strong> button in the navigation bar.</p>
-<blockquote>
-<p><strong>Note:</strong> The <strong>Publish now</strong> button is disabled if your file has not been published yet.</p>
-</blockquote>
-<h2 id="Manage-file-publication"><a href="#Manage-file-publication" class="headerlink" title="Manage file publication"></a>Manage file publication</h2><p>Since one file can be published to multiple locations, you can list and manage publish locations by clicking <strong>File publication</strong> in the <strong>Publish</strong> sub-menu. This allows you to list and remove publication locations that are linked to your file.</p>
-<h1 id="Markdown-extensions"><a href="#Markdown-extensions" class="headerlink" title="Markdown extensions"></a>Markdown extensions</h1><p>StackEdit extends the standard Markdown syntax by adding extra <strong>Markdown extensions</strong>, providing you with some nice features.</p>
-<blockquote>
-<p><strong>ProTip:</strong> You can disable any <strong>Markdown extension</strong> in the <strong>File properties</strong> dialog.</p>
-</blockquote>
-<h2 id="SmartyPants"><a href="#SmartyPants" class="headerlink" title="SmartyPants"></a>SmartyPants</h2><p>SmartyPants converts ASCII punctuation characters into “smart” typographic punctuation HTML entities. For example:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>ASCII</th>
-<th>HTML</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Single backticks</td>
-<td><code>&#39;Isn&#39;t this fun?&#39;</code></td>
-<td>‘Isn’t this fun?’</td>
-</tr>
-<tr>
-<td>Quotes</td>
-<td><code>&quot;Isn&#39;t this fun?&quot;</code></td>
-<td>“Isn’t this fun?”</td>
-</tr>
-<tr>
-<td>Dashes</td>
-<td><code>-- is en-dash, --- is em-dash</code></td>
-<td>— is en-dash, —- is em-dash</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="KaTeX"><a href="#KaTeX" class="headerlink" title="KaTeX"></a>KaTeX</h2><p>You can render LaTeX mathematical expressions using <a href="https://khan.github.io/KaTeX/" target="_blank" rel="noopener">KaTeX</a>:</p>
-<p>The <em>Gamma function</em> satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral</p>
-<script type="math/tex; mode=display">
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.</script><blockquote>
-<p>You can find more information about <strong>LaTeX</strong> mathematical expressions <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">here</a>.</p>
-</blockquote>
-<h2 id="UML-diagrams"><a href="#UML-diagrams" class="headerlink" title="UML diagrams"></a>UML diagrams</h2><p>You can render UML diagrams using <a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">Mermaid</a>. For example, this will produce a sequence diagram:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">Alice -&gt;&gt; Bob: Hello Bob, how are you?</span><br><span class="line">Bob--&gt;&gt;John: How about you John?</span><br><span class="line">Bob--x Alice: I am good thanks!</span><br><span class="line">Bob-x John: I am good thanks!</span><br><span class="line">Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.</span><br><span class="line"></span><br><span class="line">Bob--&gt;Alice: Checking with John...</span><br><span class="line">Alice-&gt;John: Yes... John, how are you?</span><br></pre></td></tr></table></figure>
-<p>And this will produce a flow chart:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[Square Rect] -- Link text --&gt; B((Circle))</span><br><span class="line">A --&gt; C(Round Rect)</span><br><span class="line">B --&gt; D&#123;Rhombus&#125;</span><br><span class="line">C --&gt; D</span><br></pre></td></tr></table></figure>
+        
+
+ Welcome to StackEdit!
+Hi! I’m your first Markdown file in StackEdit. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have fini...
     
 
         <a href="/2018/09/05/I-am-a-title-1/" class="post-more waves-effect waves-button">
