@@ -226,11 +226,11 @@ var _hmt = _hmt || [];
 
         
 
-            <a href="/tags/Hexo/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
+            <a href="/tags/Daily/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">Daily</a>
 
         
 
-            <a href="/tags/Daily/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Daily</a>
+            <a href="/tags/Hexo/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Hexo</a>
 
         
 
@@ -429,6 +429,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
 
 
 
@@ -441,7 +462,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '一个神奇的网站';
+            document.title = 'zhangzq\'s blog';
             clearTimeout(titleTime);
         } else {
             document.title = 'zhangzq\'s blog';
