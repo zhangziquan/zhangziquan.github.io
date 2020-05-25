@@ -35,12 +35,12 @@ var _hmt = _hmt || [];
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="数值计算实验  实验一  1.问题描述 求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。 （1）高斯消去法。 （2）列主元消去法。  2.算法设计  高斯消去法 （1）消元：使用逐次消去未知数的方法把原线性方程组Ax =">
+    <meta name="description" content="数值计算实验实验一1.问题描述求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。  （1）高斯消去法。 （2）列主元消去法。 2.算法设计高斯消去法（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数值计算实验一">
 <meta property="og:url" content="https://zhangziquan.github.io/2018/09/12/数值计算实验一/index.html">
 <meta property="og:site_name" content="缘ね花落的博客">
-<meta property="og:description" content="数值计算实验  实验一  1.问题描述 求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。 （1）高斯消去法。 （2）列主元消去法。  2.算法设计  高斯消去法 （1）消元：使用逐次消去未知数的方法把原线性方程组Ax =">
+<meta property="og:description" content="数值计算实验实验一1.问题描述求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。  （1）高斯消去法。 （2）列主元消去法。 2.算法设计高斯消去法（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangziquan.github.io/2018/09/12/数值计算实验一/test1.png">
 <meta property="og:image" content="https://zhangziquan.github.io/2018/09/12/数值计算实验一/test1-1.png">
@@ -58,7 +58,7 @@ var _hmt = _hmt || [];
 <meta property="og:updated_time" content="2018-09-12T14:01:52.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数值计算实验一">
-<meta name="twitter:description" content="数值计算实验  实验一  1.问题描述 求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。 （1）高斯消去法。 （2）列主元消去法。  2.算法设计  高斯消去法 （1）消元：使用逐次消去未知数的方法把原线性方程组Ax =">
+<meta name="twitter:description" content="数值计算实验实验一1.问题描述求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。 A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。  （1）高斯消去法。 （2）列主元消去法。 2.算法设计高斯消去法（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的">
 <meta name="twitter:image" content="https://zhangziquan.github.io/2018/09/12/数值计算实验一/test1.png">
     
         <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
@@ -199,7 +199,7 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数值计算实验"><span class="post-toc-number">1.</span> <span class="post-toc-text"> 数值计算实验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验一"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> 实验一</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1问题描述"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text"> 1.问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2算法设计"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text"> 2.算法设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高斯消去法"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text"> 高斯消去法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#列主元消去法"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text"> 列主元消去法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3数值实验"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text"> 3.数值实验</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4结果分析"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text"> 4.结果分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验二"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> 实验二</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1问题描述-2"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text"> 1.问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2算法设计-2"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text"> 2.算法设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jacobi迭代法"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text"> Jacobi迭代法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#gauss-seidel-迭代法"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text"> Gauss-Seidel 迭代法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逐次超松弛迭代法"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text"> 逐次超松弛迭代法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#共轭梯度法"><span class="post-toc-number">1.2.2.4.</span> <span class="post-toc-text"> 共轭梯度法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3数值实验-2"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text"> 3.数值实验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四种迭代法的收敛"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text"> 四种迭代法的收敛</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#六种算法计算时间的比较"><span class="post-toc-number">1.2.3.2.</span> <span class="post-toc-text"> 六种算法计算时间的比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逐次超松弛迭代松弛因子w的影响"><span class="post-toc-number">1.2.3.3.</span> <span class="post-toc-text"> 逐次超松弛迭代松弛因子（w）的影响</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4结果分析-2"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text"> 4.结果分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验三"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> 实验三</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1问题描述-3"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text"> 1.问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2算法设计-3"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text"> 2.算法设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3伪代码"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text"> 3.伪代码</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数值计算实验"><span class="post-toc-number">1.</span> <span class="post-toc-text">数值计算实验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验一"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">实验一</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-问题描述"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-算法设计"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2.算法设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高斯消去法"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">高斯消去法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#列主元消去法"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">列主元消去法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-数值实验"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3.数值实验</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-结果分析"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">4.结果分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验二"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实验二</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-问题描述-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1.问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-算法设计-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.算法设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jacobi迭代法"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">Jacobi迭代法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Gauss-Seidel-迭代法"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">Gauss-Seidel 迭代法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逐次超松弛迭代法"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">逐次超松弛迭代法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#共轭梯度法"><span class="post-toc-number">1.2.2.4.</span> <span class="post-toc-text">共轭梯度法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-数值实验-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3.数值实验</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四种迭代法的收敛"><span class="post-toc-number">1.2.3.1.</span> <span class="post-toc-text">四种迭代法的收敛</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#六种算法计算时间的比较"><span class="post-toc-number">1.2.3.2.</span> <span class="post-toc-text">六种算法计算时间的比较</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逐次超松弛迭代松弛因子（w）的影响"><span class="post-toc-number">1.2.3.3.</span> <span class="post-toc-text">逐次超松弛迭代松弛因子（w）的影响</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-结果分析-1"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4.结果分析</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实验三"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">实验三</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-问题描述-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1.问题描述</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-算法设计-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2.算法设计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-伪代码"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3.伪代码</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -223,25 +223,18 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
-</script>
-<h1 id="数值计算实验"><a class="markdownIt-Anchor" href="#数值计算实验"></a> 数值计算实验</h1>
-<h2 id="实验一"><a class="markdownIt-Anchor" href="#实验一"></a> 实验一</h2>
-<h3 id="1问题描述"><a class="markdownIt-Anchor" href="#1问题描述"></a> 1.问题描述</h3>
-<p>求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。</p>
-<p>A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。</p>
+            <p><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
+</script></p>
+<h1 id="数值计算实验"><a href="#数值计算实验" class="headerlink" title="数值计算实验"></a>数值计算实验</h1><h2 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h2><h3 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。</p>
+<p>A 与 b 中的元素服从独立同分布的正态分布。令 n=10、50、100、200，测试计算时间并绘制曲线。 </p>
 <p>（1）高斯消去法。</p>
 <p>（2）列主元消去法。</p>
-<h3 id="2算法设计"><a class="markdownIt-Anchor" href="#2算法设计"></a> 2.算法设计</h3>
-<h4 id="高斯消去法"><a class="markdownIt-Anchor" href="#高斯消去法"></a> 高斯消去法</h4>
-<p>（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的三角形线性方程组。</p>
+<h3 id="2-算法设计"><a href="#2-算法设计" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><h4 id="高斯消去法"><a href="#高斯消去法" class="headerlink" title="高斯消去法"></a>高斯消去法</h4><p>（1）消元：使用逐次消去未知数的方法把原线性方程组Ax = b化为与其等价的三角形线性方程组。</p>
 <p>在这里使用将方程乘以某一乘数加到其它方程上以进行消元，乘数为两个未知数之商。得到等价的三角形线性方程组。</p>
 <p>（2）回代：求解上三角线性方程组利用回代的方法，从下至上求出方程组中的一方程的未知数，然后逐层回代求出其它方程的未知数。</p>
-<h4 id="列主元消去法"><a class="markdownIt-Anchor" href="#列主元消去法"></a> 列主元消去法</h4>
-<p>与高斯消去法类似，在消元阶段进行交换行，选取绝对值最大的元素作为主元素，避免主元素为0，无法进行消元，以及当主元素很小时，作除数导致数值不稳定产生较大的误差。</p>
+<h4 id="列主元消去法"><a href="#列主元消去法" class="headerlink" title="列主元消去法"></a>列主元消去法</h4><p>与高斯消去法类似，在消元阶段进行交换行，选取绝对值最大的元素作为主元素，避免主元素为0，无法进行消元，以及当主元素很小时，作除数导致数值不稳定产生较大的误差。</p>
 <p>回代方法和高斯消去法一致。</p>
-<h3 id="3数值实验"><a class="markdownIt-Anchor" href="#3数值实验"></a> 3.数值实验</h3>
-<p>随机构造出多个矩阵以及多个向量，矩阵和向量的维数n分别为10、50、100、200，同时使用高斯消去法，列主元消去法进行线性方程组的求解，比较两种算法的计算时间以及其计算时间与矩阵的维数（大小）的关系。</p>
+<h3 id="3-数值实验"><a href="#3-数值实验" class="headerlink" title="3.数值实验"></a>3.数值实验</h3><p>随机构造出多个矩阵以及多个向量，矩阵和向量的维数n分别为10、50、100、200，同时使用高斯消去法，列主元消去法进行线性方程组的求解，比较两种算法的计算时间以及其计算时间与矩阵的维数（大小）的关系。</p>
 <p>实验结果一：<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -249,14 +242,14 @@ var _hmt = _hmt || [];
                 </div>
                 <div class="image-caption">test1</div>
             </figure></p>
-<p>实验结果二：	<figure class="image-bubble">
+<p>实验结果二：    <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2018/09/12/数值计算实验一/test1-1.png" alt="test1-1" title="">
                 </div>
                 <div class="image-caption">test1-1</div>
             </figure></p>
-<p>​</p>
+<p>​    </p>
 <p>进行拟合：<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -264,26 +257,16 @@ var _hmt = _hmt || [];
                 </div>
                 <div class="image-caption">拟合</div>
             </figure></p>
-<h3 id="4结果分析"><a class="markdownIt-Anchor" href="#4结果分析"></a> 4.结果分析</h3>
-<p>通过进行计算时间的测试，并绘制曲线得到实验结果，观察可得列主元消去法因为要进行查找绝对值最大主元素，并进行交换使得计算时间比普通高斯消去方法稍长，但两者的计算时间还是相近。</p>
+<h3 id="4-结果分析"><a href="#4-结果分析" class="headerlink" title="4.结果分析"></a>4.结果分析</h3><p>通过进行计算时间的测试，并绘制曲线得到实验结果，观察可得列主元消去法因为要进行查找绝对值最大主元素，并进行交换使得计算时间比普通高斯消去方法稍长，但两者的计算时间还是相近。</p>
 <p>另外当矩阵的维数（大小）变大，这种消元回代方法的计算时间也大幅度增长，通过函数的拟合发现其计算时间为O（n^3）的，n为矩阵的维数。</p>
-<h2 id="实验二"><a class="markdownIt-Anchor" href="#实验二"></a> 实验二</h2>
-<h3 id="1问题描述-2"><a class="markdownIt-Anchor" href="#1问题描述-2"></a> 1.问题描述</h3>
-<p>求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。</p>
-<p>A 为对称正定矩阵，其特征值服从独立同分布的[0,1]间的均匀分布；b 中的元素服从独立同分布的正态分布。</p>
-<p>令 n=10、50、100、200，分别绘制出算法的收敛曲线，横坐标为迭代步数，纵坐标为相对误差。比较Jacobi 迭代法、Gauss-Seidel 迭代法、逐次超松弛迭代法、共轭梯度法与高斯消去法、列主元消去法的计算时间。改变逐次超松弛迭代法的松弛因子，分析其对收敛速度的影响。</p>
-<h3 id="2算法设计-2"><a class="markdownIt-Anchor" href="#2算法设计-2"></a> 2.算法设计</h3>
-<h4 id="jacobi迭代法"><a class="markdownIt-Anchor" href="#jacobi迭代法"></a> Jacobi迭代法</h4>
-<p>雅可比迭代法的思想在于把当前的x初始量当成方程组的解，从而进行回代得出下一步x的近似解，这种方法每次迭代都使用上一次迭代的x，若迭代矩阵谱半径&lt;1，则在一定迭代次数后，x会收敛成精确解。</p>
-<h4 id="gauss-seidel-迭代法"><a class="markdownIt-Anchor" href="#gauss-seidel-迭代法"></a> Gauss-Seidel 迭代法</h4>
-<p>高斯-赛德尔迭代与雅可比迭代类似，但是在每次迭代之中使用变量的最新信息计算x(k+1)，是雅可比迭代法的改进。</p>
-<h4 id="逐次超松弛迭代法"><a class="markdownIt-Anchor" href="#逐次超松弛迭代法"></a> 逐次超松弛迭代法</h4>
-<p>逐次超松弛迭代是高斯-赛德尔迭代的一种修正，当w 为1 时即为高斯-赛德尔迭代，即在每一步的迭代后，对上一步的\(x^(k)\)和迭代后的x‘进行加权运算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>=</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>w</mi><mo>)</mo><mo>∗</mo><mi>x</mi><mo>(</mo><mi>k</mi><mo>)</mo><mo>+</mo><mi>w</mi><mo>∗</mo><mi>x</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x(k+1) = (1-w)*x(k)+ w*x(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>，超松弛迭代w&gt;1，一般为1&lt;w&lt;2，相当于做外插，加快收敛速度。</p>
-<h4 id="共轭梯度法"><a class="markdownIt-Anchor" href="#共轭梯度法"></a> 共轭梯度法</h4>
-<p>将解线性方程组转化成求解一个等价的二次函数\(f(x) = 1/2* x^T * A *x - b^T *x\)极小化的问题，从任意起始点出发沿A的共轭方向进行线性搜索得到二次函数的极小点。</p>
-<h3 id="3数值实验-2"><a class="markdownIt-Anchor" href="#3数值实验-2"></a> 3.数值实验</h3>
-<h4 id="四种迭代法的收敛"><a class="markdownIt-Anchor" href="#四种迭代法的收敛"></a> 四种迭代法的收敛</h4>
-<p>n = 10的收敛曲线：（SOR收敛因子w 为1.1）<figure class="image-bubble">
+<h2 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h2><h3 id="1-问题描述-1"><a href="#1-问题描述-1" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>求解线性方程组 Ax=b，其中 A 为 nⅹn 维的已知矩阵，b 为 n 维的已知向量，x 为 n 维的未知向量。</p>
+<p>A 为对称正定矩阵，其特征值服从独立同分布的[0,1]间的均匀分布；b 中的元素服从独立同分布的正态分布。 </p>
+<p>令 n=10、50、100、200，分别绘制出算法的收敛曲线，横坐标为迭代步数，纵坐标为相对误差。比较Jacobi 迭代法、Gauss-Seidel 迭代法、逐次超松弛迭代法、共轭梯度法与高斯消去法、列主元消去法的计算时间。改变逐次超松弛迭代法的松弛因子，分析其对收敛速度的影响。 </p>
+<h3 id="2-算法设计-1"><a href="#2-算法设计-1" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><h4 id="Jacobi迭代法"><a href="#Jacobi迭代法" class="headerlink" title="Jacobi迭代法"></a>Jacobi迭代法</h4><p>雅可比迭代法的思想在于把当前的x初始量当成方程组的解，从而进行回代得出下一步x的近似解，这种方法每次迭代都使用上一次迭代的x，若迭代矩阵谱半径&lt;1，则在一定迭代次数后，x会收敛成精确解。</p>
+<h4 id="Gauss-Seidel-迭代法"><a href="#Gauss-Seidel-迭代法" class="headerlink" title="Gauss-Seidel 迭代法"></a>Gauss-Seidel 迭代法</h4><p>高斯-赛德尔迭代与雅可比迭代类似，但是在每次迭代之中使用变量的最新信息计算x(k+1)，是雅可比迭代法的改进。</p>
+<h4 id="逐次超松弛迭代法"><a href="#逐次超松弛迭代法" class="headerlink" title="逐次超松弛迭代法"></a>逐次超松弛迭代法</h4><p>逐次超松弛迭代是高斯-赛德尔迭代的一种修正，当w 为1 时即为高斯-赛德尔迭代，即在每一步的迭代后，对上一步的\(x^(k)\)和迭代后的x‘进行加权运算 $x(k+1) = (1-w)<em>x(k)+ w</em>x(k)$，超松弛迭代w&gt;1，一般为1&lt;w&lt;2，相当于做外插，加快收敛速度。</p>
+<h4 id="共轭梯度法"><a href="#共轭梯度法" class="headerlink" title="共轭梯度法"></a>共轭梯度法</h4><p>将解线性方程组转化成求解一个等价的二次函数\(f(x) = 1/2<em> x^T </em> A <em>x - b^T </em>x\)极小化的问题，从任意起始点出发沿A的共轭方向进行线性搜索得到二次函数的极小点。</p>
+<h3 id="3-数值实验-1"><a href="#3-数值实验-1" class="headerlink" title="3.数值实验"></a>3.数值实验</h3><h4 id="四种迭代法的收敛"><a href="#四种迭代法的收敛" class="headerlink" title="四种迭代法的收敛"></a>四种迭代法的收敛</h4><p>n = 10的收敛曲线：（SOR收敛因子w 为1.1）<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2018/09/12/数值计算实验一/test2-1.png" alt="test2-1" title="">
@@ -311,8 +294,7 @@ var _hmt = _hmt || [];
                 </div>
                 <div class="image-caption">test2-4</div>
             </figure></p>
-<h4 id="六种算法计算时间的比较"><a class="markdownIt-Anchor" href="#六种算法计算时间的比较"></a> 六种算法计算时间的比较</h4>
-<p>n = 10：<figure class="image-bubble">
+<h4 id="六种算法计算时间的比较"><a href="#六种算法计算时间的比较" class="headerlink" title="六种算法计算时间的比较"></a>六种算法计算时间的比较</h4><p>n = 10：<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2018/09/12/数值计算实验一/test2-5.png" alt="test2-5" title="">
@@ -340,8 +322,7 @@ var _hmt = _hmt || [];
                 </div>
                 <div class="image-caption">test2-8</div>
             </figure></p>
-<h4 id="逐次超松弛迭代松弛因子w的影响"><a class="markdownIt-Anchor" href="#逐次超松弛迭代松弛因子w的影响"></a> 逐次超松弛迭代松弛因子（w）的影响</h4>
-<p>完整的图：（此时n =200）<figure class="image-bubble">
+<h4 id="逐次超松弛迭代松弛因子（w）的影响"><a href="#逐次超松弛迭代松弛因子（w）的影响" class="headerlink" title="逐次超松弛迭代松弛因子（w）的影响"></a>逐次超松弛迭代松弛因子（w）的影响</h4><p>完整的图：（此时n =200）<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/2018/09/12/数值计算实验一/test3.png" alt="test3" title="">
@@ -355,49 +336,38 @@ var _hmt = _hmt || [];
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
-<h3 id="4结果分析-2"><a class="markdownIt-Anchor" href="#4结果分析-2"></a> 4.结果分析</h3>
-<ol>
+<h3 id="4-结果分析-1"><a href="#4-结果分析-1" class="headerlink" title="4.结果分析"></a>4.结果分析</h3><ol>
 <li>根据实验二的结果可得在四种迭代法中，雅可比迭代法收敛性较差，据其改进的高斯-赛德尔则较好，而增加了加权平均进行外插运算的逐次超松弛迭代收敛速度更快，收敛速度最快的则是共轭梯度法。</li>
 <li>而六种算法的计算时间中可以看出，当矩阵较小时，迭代法和消元法计算时间相差不大，矩阵较大时，共轭梯度法在计算时间中有着较大的优势，达到所需精度的迭代次数比其它迭代次数要少很多，并且每次迭代耗时较少。因为构造的矩阵并不是稀疏矩阵，所以在这种情况下，普通的消元法比其它迭代法所耗时间要少。</li>
 <li>在分析松弛因子对收敛速度影响中，松弛因子对算法的收敛速度影响很大，选择合适的松弛因子能够减少算法的迭代次数，在较少的迭代次数得到较为精确的结果，对于不同的矩阵有着不同的最佳松弛因子，对于本次模拟的矩阵w较大则最好，但是w超过2之后，算法则不再收敛。</li>
 </ol>
-<h2 id="实验三"><a class="markdownIt-Anchor" href="#实验三"></a> 实验三</h2>
-<h3 id="1问题描述-3"><a class="markdownIt-Anchor" href="#1问题描述-3"></a> 1.问题描述</h3>
-<p>在 <a href="https://snap.stanford.edu/data/soc-Epinions1.html" target="_blank" rel="noopener">Epinions 社交数据集</a>中，每个网络节点可以选择信任其它节点。借鉴 Pagerank 的思想编写程序，对网络节点的受信任程度进行评分。在实验报告中，请给出伪代码。</p>
-<h3 id="2算法设计-3"><a class="markdownIt-Anchor" href="#2算法设计-3"></a> 2.算法设计</h3>
-<p>和pagerank相类似，预先给每个网络节点一个信任值Trust值为1/N，N为节点的数量，这样就能得到一个向量v代表每个节点的信任评分rank</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>=</mo><mo>[</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi><mo separator="true">,</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi><mo separator="true">,</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi><mo separator="true">,</mo><mo>…</mo><mo>…</mo><mo>]</mo></mrow><annotation encoding="application/x-tex">v = [1/n,1/n,1/n,……] 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mord">/</span><span class="mord mathit">n</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathit">n</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathit">n</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner">…</span><span class="mclose">]</span></span></span></span></span></p>
-<p>假定每个节点的对其他节点的总的信任程度为1，而且对每个其信任的节点都给予相同的信任程度，这样就可以得到一个信任转移矩阵A。</p>
-<p class="katex-block katex-error" title="ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;（&#039; at position 2: A（̲i，j）= 节点i对节点j的信…">A（i，j）= 节点i对节点j的信任程度
-</p>
-<p>每个节点的信任评分rank由信任它的节点决定，如果信任评分的节点本身的信任评分高，则给予的评分权重也高，反之给予评分权重较低。</p>
+<h2 id="实验三"><a href="#实验三" class="headerlink" title="实验三"></a>实验三</h2><h3 id="1-问题描述-2"><a href="#1-问题描述-2" class="headerlink" title="1.问题描述"></a>1.问题描述</h3><p>在 <a href="https://snap.stanford.edu/data/soc-Epinions1.html" target="_blank" rel="noopener">Epinions 社交数据集</a>中，每个网络节点可以选择信任其它节点。借鉴 Pagerank 的思想编写程序，对网络节点的受信任程度进行评分。在实验报告中，请给出伪代码。 </p>
+<h3 id="2-算法设计-2"><a href="#2-算法设计-2" class="headerlink" title="2.算法设计"></a>2.算法设计</h3><p>和pagerank相类似，预先给每个网络节点一个信任值Trust值为1/N，N为节点的数量，这样就能得到一个向量v代表每个节点的信任评分rank</p>
+<script type="math/tex; mode=display">
+v = [1/n,1/n,1/n,……]</script><p>假定每个节点的对其他节点的总的信任程度为1，而且对每个其信任的节点都给予相同的信任程度，这样就可以得到一个信任转移矩阵A。</p>
+<script type="math/tex; mode=display">
+A（i，j）= 节点i对节点j的信任程度</script><p>每个节点的信任评分rank由信任它的节点决定，如果信任评分的节点本身的信任评分高，则给予的评分权重也高，反之给予评分权重较低。</p>
 <p>所以通过计算</p>
-<p class="katex-block katex-error" title="ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;‘&#039; at position 2: v‘̲ = Mv
-">v‘ = Mv
-</p>
-<p>即</p>
-<p class="katex-block katex-error" title="ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;其&#039; at position 9: v(i) = ∑其̲它节点信任评分v(j)*信任程…">v(i) = ∑其它节点信任评分v(j)*信任程度A(i,j)
-</p>
-<p>可以得到新的一个信任评分，经过有限次的迭代，v’将会收敛稳定下来，得到的即是各个节点的信任评分。</p>
+<script type="math/tex; mode=display">
+v‘ = Mv</script><p>即</p>
+<script type="math/tex; mode=display">
+v(i) = ∑其它节点信任评分v(j)*信任程度A(i,j)</script><p>可以得到新的一个信任评分，经过有限次的迭代，v’将会收敛稳定下来，得到的即是各个节点的信任评分。</p>
 <p><strong>改进</strong></p>
 <p>对于一些只信任自己的，对其它节点并未作出信任的网页节点，采用这种算法有2个缺点</p>
 <p>1.使得信任评分都集中到那一循环的节点上。</p>
 <p>2.对于新建立的网络节点来说，并不公平，因为一开始没有其他节点信任它，可能导致信任评分恶性循环。</p>
 <p>因此添加一个权重占比α，原先的评分仅占α，然后默认每一个节点都对其它节点有一定程度（较小但不为0）的信任，这个信任程度影响评分所占的权重为1-α。因此迭代公式变为：</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>(</mo><mi>i</mi><mo>)</mo><mo>=</mo><mo>∑</mo><mi>v</mi><mo>(</mo><mi>j</mi><mo>)</mo><mo>∗</mo><mi>A</mi><mo>(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>)</mo><mo>∗</mo><mi>α</mi><mo>+</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo>)</mo><mi mathvariant="normal">/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">v(i) = ∑v(j)*A(i,j)*α+(1-α)/N
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.05em;"></span><span class="strut bottom" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mopen">(</span><span class="mord mathit">i</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∑</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit">A</span><span class="mopen">(</span><span class="mord mathit">i</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.0037em;">α</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord mathit" style="margin-right:0.0037em;">α</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span></span></p>
-<p>α一般设定为0.85。</p>
-<h3 id="3伪代码"><a class="markdownIt-Anchor" href="#3伪代码"></a> 3.伪代码</h3>
-<pre><code>
+<script type="math/tex; mode=display">
+v(i) = ∑v(j)*A(i,j)*α+(1-α)/N</script><p>α一般设定为0.85。</p>
+<h3 id="3-伪代码"><a href="#3-伪代码" class="headerlink" title="3.伪代码"></a>3.伪代码</h3><pre><code>
 A = [N,N];
 α = 0.85;%设定权重
 
 %构建转移矩阵，即信任关系矩阵
 for i = 1: N
-	for j = 1 : N
-	A[i,j] = 1/n(n 为i的所有出链，即给予信任的节点数总数)
-	end
+    for j = 1 : N
+    A[i,j] = 1/n(n 为i的所有出链，即给予信任的节点数总数)
+    end
 end
 
 %初始化信任评分rank
@@ -406,15 +376,15 @@ v = v0
 
 %迭代
 while norm(v-v0,'inf')>0.01 %当v逐渐收敛后结束迭代
-	v0 = v;
-	for i = 1: N
-		sum = 0;
-		for j = 1 : N
-			%计算其它节点给予该节点的信任评分
-			sum = sum + A(j,i)*v0(j)*α + (1-α)/N
-		end
-		v(i) = sum;
-	end
+    v0 = v;
+    for i = 1: N
+        sum = 0;
+        for j = 1 : N
+            %计算其它节点给予该节点的信任评分
+            sum = sum + A(j,i)*v0(j)*α + (1-α)/N
+        end
+        v(i) = sum;
+    end
 end
 
 disp(v');

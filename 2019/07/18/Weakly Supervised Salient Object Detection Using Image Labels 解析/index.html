@@ -35,13 +35,13 @@ var _hmt = _hmt || [];
     
     
     <meta name="keywords" content="Salient Object Detection,Supervised">
-    <meta name="description" content="Weakly Supervised Salient Object Detection Using Image Labels  Abstract 这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。  Problem 在目前的显著对象检测中，往往使用非监督方法，采用">
+    <meta name="description" content="Weakly Supervised Salient Object Detection Using Image LabelsAbstract这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。 Problem在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基">
 <meta name="keywords" content="Salient Object Detection,Supervised">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Weakly Supervised Salient Object Detection Using Image Labels 解析">
 <meta property="og:url" content="https://zhangziquan.github.io/2019/07/18/Weakly Supervised Salient Object Detection Using Image Labels 解析/index.html">
 <meta property="og:site_name" content="缘ね花落的博客">
-<meta property="og:description" content="Weakly Supervised Salient Object Detection Using Image Labels  Abstract 这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。  Problem 在目前的显著对象检测中，往往使用非监督方法，采用">
+<meta property="og:description" content="Weakly Supervised Salient Object Detection Using Image LabelsAbstract这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。 Problem在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangziquan.github.io/images/DL/network.png">
 <meta property="og:image" content="https://zhangziquan.github.io/images/DL/multi-FCN.png">
@@ -49,7 +49,7 @@ var _hmt = _hmt || [];
 <meta property="og:updated_time" content="2019-07-18T07:01:00.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weakly Supervised Salient Object Detection Using Image Labels 解析">
-<meta name="twitter:description" content="Weakly Supervised Salient Object Detection Using Image Labels  Abstract 这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。  Problem 在目前的显著对象检测中，往往使用非监督方法，采用">
+<meta name="twitter:description" content="Weakly Supervised Salient Object Detection Using Image LabelsAbstract这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。 Problem在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基">
 <meta name="twitter:image" content="https://zhangziquan.github.io/images/DL/network.png">
     
         <link rel="alternate" type="application/atom+xml" title="缘ね花落的博客" href="/atom.xml">
@@ -192,7 +192,7 @@ var _hmt = _hmt || [];
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#weakly-supervised-salient-object-detection-using-image-labels"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Weakly Supervised Salient Object Detection Using Image Labels</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#abstract"><span class="post-toc-number">1.1.</span> <span class="post-toc-text"> Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#problem"><span class="post-toc-number">1.2.</span> <span class="post-toc-text"> Problem</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#network"><span class="post-toc-number">1.3.</span> <span class="post-toc-text"> Network</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#multi-fcn"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text"> Multi-FCN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cam"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text"> CAM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#crf模型"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text"> CRF模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#result"><span class="post-toc-number">1.4.</span> <span class="post-toc-text"> Result</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ablation-studies"><span class="post-toc-number">1.5.</span> <span class="post-toc-text"> Ablation Studies</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#related"><span class="post-toc-number">1.6.</span> <span class="post-toc-text"> Related</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Weakly-Supervised-Salient-Object-Detection-Using-Image-Labels"><span class="post-toc-number">1.</span> <span class="post-toc-text">Weakly Supervised Salient Object Detection Using Image Labels</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Problem"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Network"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Network</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Multi-FCN"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Multi-FCN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CAM"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">CAM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CRF模型"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">CRF模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Result"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Result</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ablation-Studies"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Ablation Studies</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Related"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Related</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -218,11 +218,8 @@ var _hmt = _hmt || [];
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="weakly-supervised-salient-object-detection-using-image-labels"><a class="markdownIt-Anchor" href="#weakly-supervised-salient-object-detection-using-image-labels"></a> Weakly Supervised Salient Object Detection Using Image Labels</h1>
-<h2 id="abstract"><a class="markdownIt-Anchor" href="#abstract"></a> Abstract</h2>
-<p>这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。</p>
-<h2 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> Problem</h2>
-<p>在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基于低级特征的方法，无法处理多类图片，通常存在2个问题：</p>
+            <h1 id="Weakly-Supervised-Salient-Object-Detection-Using-Image-Labels"><a href="#Weakly-Supervised-Salient-Object-Detection-Using-Image-Labels" class="headerlink" title="Weakly Supervised Salient Object Detection Using Image Labels"></a>Weakly Supervised Salient Object Detection Using Image Labels</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>这一篇论文提出了一个关于显著对象检测的一种新的优化框架，能够在以前常用的无监督学习下使用，能够显著提高性能，并有着较快的速度。以及将CRF运用在模型上，用于降噪，使用CAM进行对象定位。</p>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>在目前的显著对象检测中，往往使用非监督方法，采用的都是一些基于低级特征的方法，无法处理多类图片，通常存在2个问题：</p>
 <ol>
 <li>缺少空间相关性推断，位置附近的像素</li>
 <li>无法检测高语义特征，因为某些物体在低语义特征（颜色，大小，纹理）上和其它对象对比度较低，因此要进行检测需要高语义特征支持。</li>
@@ -233,8 +230,7 @@ var _hmt = _hmt || [];
 <li>监督学习的数据集需要进行标记且整个过程耗时耗费人力物力。</li>
 </ol>
 <p>因此本文就监督学习的两个问题给出了解决方案。</p>
-<h2 id="network"><a class="markdownIt-Anchor" href="#network"></a> Network</h2>
-<figure class="image-bubble">
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/images/DL/network.png" alt="network" title="">
@@ -243,8 +239,7 @@ var _hmt = _hmt || [];
             </figure>
 <p>整个网络的主要流程就是使用无监督学习的检测方法，生成初始预测显著性图，用原图像对Multi-FCN进行训练，得到CAM图以及FCN预测的显著性图，这三个图通过CRF模型，进行综合增强，得到第二轮的显著性概率图。</p>
 <p>就框架中的3个比较重要的地方展开</p>
-<h3 id="multi-fcn"><a class="markdownIt-Anchor" href="#multi-fcn"></a> Multi-FCN</h3>
-<figure class="image-bubble">
+<h3 id="Multi-FCN"><a href="#Multi-FCN" class="headerlink" title="Multi-FCN"></a>Multi-FCN</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/images/DL/multi-FCN.png" alt="multi-FCN" title="">
@@ -253,8 +248,7 @@ var _hmt = _hmt || [];
             </figure>
 <p>作为监督学习的一个重要的部分，FCN是CNN上的拓展，与CNN相比，FCN将全连接层全部换成deconv（反卷积，最通常的叫法是上采样）即对最后一个卷基层的特征图进行上采样，使其恢复到与输入相同的尺寸，从而对每个像素都能进行预测。（在这里FCN使用多个只是为了能够检测不同比例的图像的视觉对比。）</p>
 <p>论文中的FCN主要任务是输出分类任务和以及输出逐像素的显著图，这里体现了监督学习，因为通过分类任务的训练，能够通过高语义特征的划分来区分不同对象，这样能够纠正在无监督学习下，因为语义信息模糊的规则，如在低特征上无法区分的对象，也能检测出来了。</p>
-<h3 id="cam"><a class="markdownIt-Anchor" href="#cam"></a> CAM</h3>
-<figure class="image-bubble">
+<h3 id="CAM"><a href="#CAM" class="headerlink" title="CAM"></a>CAM</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/images/DL/CAM.png" alt="CAM" title="">
@@ -264,16 +258,12 @@ var _hmt = _hmt || [];
 <p>CAM即类激活映射，一开始是作为对分类问题的网络，提供关注区域（提供依据），在对卷积层结果进行全局池化后，能够进行特征图加权求和得到对某一类的热力图，这样就能得知模型是通过哪些像素来确定图片中的物体的属于哪一类的。</p>
 <p>CAM得到的热力图相对于FCN的逐像素预测图来说相对没这么准确，但是对于对象位置的定位十分准确，并且在泛化性上表现很好，对于一些未知类别的图像，也能够对显著对象进行准确的定位，所以可以加入到CRF中，为第二轮生成更加精确的预测图做一个引导。</p>
 <p>个人认为是因为CAM在FCN训练过程中，在一些背景等无关信息上得到了训练，所以不会过度关注这些地方。</p>
-<h3 id="crf模型"><a class="markdownIt-Anchor" href="#crf模型"></a> CRF模型</h3>
-<p>CRF是这个框架中的核心部分，即条件概率分布模型，在文章中只提到了能够通过空间相对位置，以及显著对象定位来纠正一些错误的预测。这个模型是一个概率图模型，用于求联合概率。即在上文提到的，无监督学习的一个缺点就是没有考虑空间一致性（鼓励附近具有相似颜色的像素采用相似的显着性概率），因此在通过CRF后，能得到更具有空间相关性的概率图。</p>
+<h3 id="CRF模型"><a href="#CRF模型" class="headerlink" title="CRF模型"></a>CRF模型</h3><p>CRF是这个框架中的核心部分，即条件概率分布模型，在文章中只提到了能够通过空间相对位置，以及显著对象定位来纠正一些错误的预测。这个模型是一个概率图模型，用于求联合概率。即在上文提到的，无监督学习的一个缺点就是没有考虑空间一致性（鼓励附近具有相似颜色的像素采用相似的显着性概率），因此在通过CRF后，能得到更具有空间相关性的概率图。</p>
 <p>在这里为了让未知的图像能够有更好的预测效果，使用无标记的数据集进行微调，即让CAM来指导预测图，在上面已经提到过CAM对于未知图像有比较好的定位效果。</p>
-<h2 id="result"><a class="markdownIt-Anchor" href="#result"></a> Result</h2>
-<p>在表现上超越许多非监督学习模型，并且能够和许多监督学习的模型相比较。证明了在泛化性上是表现很好的，能够和监督学习模型相比也说明了这一弱监督学习的成功。</p>
-<h2 id="ablation-studies"><a class="markdownIt-Anchor" href="#ablation-studies"></a> Ablation Studies</h2>
-<p>在模型检测测试当中，可见CAM和CRF的作用十分重要，单使用FCN的预测效果仅能和原来的无监督学习相比，而增加了CRF，能够增强空间相关性，解决了第一个问题。</p>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>在表现上超越许多非监督学习模型，并且能够和许多监督学习的模型相比较。证明了在泛化性上是表现很好的，能够和监督学习模型相比也说明了这一弱监督学习的成功。</p>
+<h2 id="Ablation-Studies"><a href="#Ablation-Studies" class="headerlink" title="Ablation Studies"></a>Ablation Studies</h2><p>在模型检测测试当中，可见CAM和CRF的作用十分重要，单使用FCN的预测效果仅能和原来的无监督学习相比，而增加了CRF，能够增强空间相关性，解决了第一个问题。</p>
 <p>而CAM的加入提供了定位以及对模型的引导有一个泛化作用，并且是强监督学习变为了弱监督学习，能让FCN训练有素，避免了过拟合，而且能够纠正一些错误的预测，其中包含大量的网络参数能够发现大规模样本中某些潜在规则，从而进行降噪。</p>
-<h2 id="related"><a class="markdownIt-Anchor" href="#related"></a> Related</h2>
-<p>Deep Unsupervised Saliency Detection: A Multiple Noisy Labeling Perspective</p>
+<h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><p>Deep Unsupervised Saliency Detection: A Multiple Noisy Labeling Perspective</p>
 <p>在2018年的CVPR中，同样有一篇论文采取了类似的使用无监督学习作为初始化思路，使用伪监督学习，以此来进行监督学习并且避免了过拟合的问题。</p>
 <p>文章认为传统的无监督学习由于独立数据集，使得在自然环境中的泛化性较强，并且有一些噪音也有一定的作用，因此使用传统无监督学习得到的结果作为ground truth + noisy, 作为监督来同时训练一个显著性检测模块和噪声模块，在一定程度上也取得了一定的效果。</p>
 
@@ -365,7 +355,14 @@ var _hmt = _hmt || [];
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/05/25/博客重启计划/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">博客重启计划</h4>
+      </a>
+    </div>
   
 
   
