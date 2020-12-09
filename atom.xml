@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangziquan.github.io/"/>
-  <updated>2020-05-25T09:33:10.901Z</updated>
+  <updated>2020-05-25T09:32:41.213Z</updated>
   <id>https://zhangziquan.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>系统分析与设计（六）</title>
+    <link href="https://zhangziquan.github.io/2020/11/12/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%85%AD%EF%BC%89/"/>
+    <id>https://zhangziquan.github.io/2020/11/12/系统分析与设计（六）/</id>
+    <published>2020-11-12T09:00:56.400Z</published>
+    <updated>2020-05-25T09:32:41.213Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="系统分析与设计六"><a class="markdownIt-Anchor" href="#系统分析与设计六"></a> 系统分析与设计（六）</h1><h2 id="使用-umlet-建模"><a class="markdownIt-Anchor" href="#使用-umlet-建模"></a> 使用 <strong>UMLet</strong> 建模</h2><ol><li>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键<ul><li>注意事项：<ul><li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li><li>关联必须有多重性、部分有名称与导航方向</li><li>属性要注意计算字段</li></ul></li><li>数据建模，为了简化描述仅需要给出表清单，例如：<ul><li>Hotel（ID/Key，Name，LoctionID/Fkey，Address……）</li></ul></li></ul></li></ol><ul><li><p>Make Reservation 用例<br><img src="/images/SSAD/hw6-1.png" alt="hw6-1"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure></li><li><p>Payment 用例<br><img src="/images/SSAD/hw6-2.png" alt="hw6-2"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure></li></ul><ol start="2"><li>使用 UML State Model，对每个订单对象生命周期建模<ul><li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li><li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li></ul></li></ol><ul><li>Reservation<br><img src="/images/SSAD/hw6-3.png" alt="hw6-3"></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;系统分析与设计六&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统分析与设计六&quot;&gt;&lt;/a&gt; 系统分析与设计（六）&lt;/h1&gt;
+&lt;h2 id=&quot;使用-umlet-建模&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=
+      
+    
+    </summary>
+    
+      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
+    
+    
+      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://zhangziquan.github.io/2020/11/12/hello-world/"/>
+    <id>https://zhangziquan.github.io/2020/11/12/hello-world/</id>
+    <published>2020-11-12T09:00:55.533Z</published>
+    <updated>2018-09-04T10:58:54.147Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>博客重启计划</title>
@@ -68,32 +115,6 @@
       <category term="Salient Object Detection" scheme="https://zhangziquan.github.io/tags/Salient-Object-Detection/"/>
     
       <category term="Supervised" scheme="https://zhangziquan.github.io/tags/Supervised/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>系统分析与设计（六）</title>
-    <link href="https://zhangziquan.github.io/2019/06/28/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%85%AD%EF%BC%89/"/>
-    <id>https://zhangziquan.github.io/2019/06/28/系统分析与设计（六）/</id>
-    <published>2019-06-28T07:44:31.673Z</published>
-    <updated>2020-05-25T09:32:41.213Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="系统分析与设计六"><a class="markdownIt-Anchor" href="#系统分析与设计六"></a> 系统分析与设计（六）</h1><h2 id="使用-umlet-建模"><a class="markdownIt-Anchor" href="#使用-umlet-建模"></a> 使用 <strong>UMLet</strong> 建模</h2><ol><li>使用类图，分别对 Asg_RH 文档中 Make Reservation 用例以及 Payment 用例开展领域建模。然后，根据上述模型，给出建议的数据表以及主要字段，特别是主键和外键<ul><li>注意事项：<ul><li>对象必须是名词、特别是技术名词、报表、描述类的处理；</li><li>关联必须有多重性、部分有名称与导航方向</li><li>属性要注意计算字段</li></ul></li><li>数据建模，为了简化描述仅需要给出表清单，例如：<ul><li>Hotel（ID/Key，Name，LoctionID/Fkey，Address……）</li></ul></li></ul></li></ol><ul><li><p>Make Reservation 用例<br><img src="/images/SSAD/hw6-1.png" alt="hw6-1"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Hotel(ID/key, Name, address, starRating, price)</span><br><span class="line">Room(ID/key, type, availability)</span><br><span class="line">customer(ID/key, fullName, emailAddress)</span><br><span class="line">shoppingBasket(ID/key)</span><br><span class="line">Reservation(ID/key, checkInDate, checkOutDate, price, numberofnights, requried, numberOfAdult, numberOfChildren, smoking)</span><br></pre></td></tr></table></figure></li><li><p>Payment 用例<br><img src="/images/SSAD/hw6-2.png" alt="hw6-2"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Payment(ID/key, totalPrice, reservationID/Fkey, cardID/Fkey)</span><br><span class="line">ReservationItem(ID/key, paymentID/Fkey,checkInDate, ...)</span><br><span class="line">CreditCard(ID/key, Type, CardSecurityCode, ExpiryDate, CardHolderID/Fkey)</span><br><span class="line">CardHolder(ID/key, Title, FirstName, LastName, Address1, Address2, City, CountyOrState, Country, Postcode, DaytimeTelephone, EveningTelephone)</span><br></pre></td></tr></table></figure></li></ul><ol start="2"><li>使用 UML State Model，对每个订单对象生命周期建模<ul><li>建模对象： 参考 Asg_RH 文档， 对 Reservation/Order 对象建模。</li><li>建模要求： 参考练习不能提供足够信息帮助你对订单对象建模，请参考现在 定旅馆 的旅游网站，尽可能分析围绕订单发生的各种情况，直到订单通过销售事件（柜台销售）结束订单。</li></ul></li></ol><ul><li>Reservation<br><img src="/images/SSAD/hw6-3.png" alt="hw6-3"></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;系统分析与设计六&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统分析与设计六&quot;&gt;&lt;/a&gt; 系统分析与设计（六）&lt;/h1&gt;
-&lt;h2 id=&quot;使用-umlet-建模&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=
-      
-    
-    </summary>
-    
-      <category term="Software System Analysis and Design" scheme="https://zhangziquan.github.io/categories/Software-System-Analysis-and-Design/"/>
-    
-    
-      <category term="SSAD" scheme="https://zhangziquan.github.io/tags/SSAD/"/>
     
   </entry>
   
@@ -415,9 +436,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
       <category term="Graph" scheme="https://zhangziquan.github.io/tags/Graph/"/>
     
@@ -446,9 +467,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
       <category term="Dynamic Programming" scheme="https://zhangziquan.github.io/tags/Dynamic-Programming/"/>
     
@@ -476,9 +497,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
       <category term="Dynamic Programming" scheme="https://zhangziquan.github.io/tags/Dynamic-Programming/"/>
     
@@ -510,9 +531,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
       <category term="Dynamic Programming" scheme="https://zhangziquan.github.io/tags/Dynamic-Programming/"/>
     
@@ -540,9 +561,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -597,9 +618,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -627,9 +648,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -654,9 +675,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -684,9 +705,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -711,9 +732,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -738,9 +759,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -767,9 +788,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -819,9 +840,9 @@
       <category term="The Design and Analysis of Computer Algorithms" scheme="https://zhangziquan.github.io/categories/The-Design-and-Analysis-of-Computer-Algorithms/"/>
     
     
-      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
-    
       <category term="LeetCode" scheme="https://zhangziquan.github.io/tags/LeetCode/"/>
+    
+      <category term="Algorithms" scheme="https://zhangziquan.github.io/tags/Algorithms/"/>
     
   </entry>
   
@@ -847,27 +868,6 @@
     
     
       <category term="test" scheme="https://zhangziquan.github.io/tags/test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://zhangziquan.github.io/2018/09/04/hello-world/"/>
-    <id>https://zhangziquan.github.io/2018/09/04/hello-world/</id>
-    <published>2018-09-04T10:58:54.147Z</published>
-    <updated>2018-09-04T10:58:54.147Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
